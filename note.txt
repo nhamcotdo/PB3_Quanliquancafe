@@ -1,0 +1,5 @@
+thiết kế disign
+đăng ký tk quản lý
+khi mình vào thì sẽ bóc 1 cái số bàn
+trạng thái món, hủy món
+nhân viên đặt món
