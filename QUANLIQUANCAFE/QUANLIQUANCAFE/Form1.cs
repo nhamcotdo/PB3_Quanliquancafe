@@ -21,5 +21,10 @@ namespace QUANLIQUANCAFE
         {
 
         }
+
+        private void toolStripQuanli_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
