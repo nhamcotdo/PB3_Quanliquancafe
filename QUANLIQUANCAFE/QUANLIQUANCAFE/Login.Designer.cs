@@ -110,7 +110,7 @@
             // 
             // butDN
             // 
-            this.butDN.Location = new System.Drawing.Point(144, 160);
+            this.butDN.Location = new System.Drawing.Point(135, 160);
             this.butDN.Name = "butDN";
             this.butDN.Size = new System.Drawing.Size(116, 37);
             this.butDN.TabIndex = 3;
