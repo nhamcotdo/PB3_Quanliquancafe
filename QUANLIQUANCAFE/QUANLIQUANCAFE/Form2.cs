@@ -15,6 +15,10 @@ namespace QUANLIQUANCAFE
         public Form2()
         {
             InitializeComponent();
+
+
+
+
         }
     }
 }
