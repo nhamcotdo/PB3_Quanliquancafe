@@ -116,6 +116,7 @@
             this.butDN.TabIndex = 3;
             this.butDN.Text = "Đăng nhập";
             this.butDN.UseVisualStyleBackColor = true;
+            this.butDN.Click += new System.EventHandler(this.butDN_Click);
             // 
             // butExit
             // 
@@ -125,6 +126,7 @@
             this.butExit.TabIndex = 4;
             this.butExit.Text = "Thoát";
             this.butExit.UseVisualStyleBackColor = true;
+            this.butExit.Click += new System.EventHandler(this.butExit_Click);
             // 
             // Login
             // 
@@ -136,6 +138,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
