@@ -51,6 +51,11 @@ namespace QUANLIQUANCAFE
             foreach (FlowLayoutPanel i in bll.ListPanelKV(w, c))
                 this.flowLayout1.Controls.Add(i);
         }
+
+        private void button34_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Hello Linh");
+        }
     }
 }
 
