@@ -8,22 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QUANLIQUANCAFE
+namespace QUANLIQUANCAFE.GUI
 {
-    public partial class Form2 : Form
+    public partial class Login : Form
     {
-        public Form2()
+        public Login()
         {
             InitializeComponent();
-
-
-
-
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QUANLIQUANCAFE.DAL;
+using QUANLIQUANCAFE.DTO;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -6,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QUANLIQUANCAFE
+namespace QUANLIQUANCAFE.BLL
 {
     public class Quanli
     {
-//Nhâm
+        //Nhâm
         private List<Button> ListButtonBan(int w, string mkv, Color c)
         {
             List<Ban> listBan = DB.Instance.GetAllListBan();
@@ -92,7 +94,6 @@ namespace QUANLIQUANCAFE
 
             return listPanel;
         }
-        
 
 
 
@@ -102,7 +103,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -112,7 +112,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -122,7 +121,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -132,7 +130,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -142,7 +139,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -152,7 +148,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -162,7 +157,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -172,7 +166,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -182,7 +175,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -192,7 +184,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -202,7 +193,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -212,7 +202,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -222,7 +211,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -235,7 +223,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -245,8 +232,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        //ĐỨc
-        
 
 
 
@@ -256,17 +241,16 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
 
 
 
+        //ĐỨc//248
 
 
 
-        
 
 
 
@@ -276,7 +260,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -286,7 +269,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -296,7 +278,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -306,7 +287,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -316,7 +296,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -326,7 +305,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -336,7 +314,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -346,7 +323,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -356,7 +332,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -366,7 +341,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -376,7 +350,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -386,7 +359,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -396,7 +368,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        //Linh
 
 
 
@@ -427,11 +398,11 @@ namespace QUANLIQUANCAFE
 
 
 
+        //Linh//399
 
 
 
 
-       
 
 
 
@@ -441,7 +412,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -451,7 +421,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -461,7 +430,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -471,7 +439,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -481,7 +448,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -491,7 +457,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -501,7 +466,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -511,7 +475,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -521,7 +484,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -531,7 +493,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -541,7 +502,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -551,7 +511,6 @@ namespace QUANLIQUANCAFE
 
 
 
-        
 
 
 
@@ -561,6 +520,49 @@ namespace QUANLIQUANCAFE
 
 
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }//566

@@ -1,3 +1,4 @@
+using QUANLIQUANCAFE.BLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QUANLIQUANCAFE
+namespace QUANLIQUANCAFE.GUI
 {
     public partial class Form1 : Form
     {
@@ -23,19 +24,6 @@ namespace QUANLIQUANCAFE
 
             LoadComponet();
         }
-
-        private void Form1_Resize(object sender, EventArgs e)
-        {
-            int mg = (int)(this.flowLayoutPanel6.Width - this.button33.Width - this.button34.Width - this.button35.Width) / 6;
-            this.button34.Margin = new System.Windows.Forms.Padding(mg, 3, mg, 3);
-            this.button35.Margin = new System.Windows.Forms.Padding(mg, 3, mg, 3);
-            this.button33.Margin = new System.Windows.Forms.Padding(mg, 3, mg, 3);
-
-        }
-
-
-
-
         private void LoadComponet()
         {
             // set location and color for button(Gọi món, Gộp bàn, Thanh toán)
@@ -251,7 +239,7 @@ namespace QUANLIQUANCAFE
 
 
 
-        // ĐỨc
+        // ĐỨc//254
 
 
 
@@ -484,7 +472,183 @@ namespace QUANLIQUANCAFE
 
 
 
-        // Linh
+        // Linh//487
 
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }//665
 }

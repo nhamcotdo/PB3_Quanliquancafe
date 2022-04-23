@@ -1,4 +1,4 @@
-﻿namespace QUANLIQUANCAFE
+﻿namespace QUANLIQUANCAFE.GUI
 {
     partial class Login
     {

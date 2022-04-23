@@ -1,4 +1,4 @@
-﻿namespace QUANLIQUANCAFE
+﻿namespace QUANLIQUANCAFE.GUI
 {
     partial class Form1
     {
@@ -73,7 +73,7 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Microsoft Uighur", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 10);
@@ -206,9 +206,9 @@
             // 
             this.label6.Dock = System.Windows.Forms.DockStyle.Top;
             this.label6.Font = new System.Drawing.Font("Mistral", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(904, 55);
+            this.label6.Location = new System.Drawing.Point(0, 55);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 43);
+            this.label6.Size = new System.Drawing.Size(574, 43);
             this.label6.TabIndex = 3;
             this.label6.Text = "Bàn 1";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -216,10 +216,10 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 55);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(904, 521);
+            this.dataGridView1.Size = new System.Drawing.Size(574, 521);
             this.dataGridView1.TabIndex = 1;
             // 
             // flowLayoutPanel6
@@ -243,7 +243,6 @@
             this.button34.TabIndex = 1;
             this.button34.Text = "GỌI MÓN";
             this.button34.UseVisualStyleBackColor = false;
-            this.button34.Click += new System.EventHandler(this.button34_Click);
             // 
             // button33
             // 
@@ -302,7 +301,6 @@
             this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "Form1";
             this.Text = "QUẢN LÍ BÁN HÀNG";
-            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.flowLayout1.ResumeLayout(false);
             this.flowLayout1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
