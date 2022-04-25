@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QUANLIQUANCAFE.GUI
 {
-    public partial class Form3 : Form
+    public partial class Table : Form
     {
-        public Form3()
+        public Table()
         {
             InitializeComponent();
         }

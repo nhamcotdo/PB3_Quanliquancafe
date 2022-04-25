@@ -47,6 +47,7 @@ D:\02.02\PBL\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQU
 D:\02.02\PBL\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.csproj.CoreCompileInputs.cache
 D:\02.02\PBL\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.exe
 D:\02.02\PBL\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.pdb
-C:\Users\nhamq\Desktop\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.Form1.resources
 C:\Users\nhamq\Desktop\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.Form2.resources
 C:\Users\nhamq\Desktop\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.Login.resources
+C:\Users\nhamq\Desktop\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.MainForm.resources
+C:\Users\nhamq\Desktop\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.Table.resources
