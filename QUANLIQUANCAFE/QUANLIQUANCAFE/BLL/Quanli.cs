@@ -14,24 +14,24 @@ namespace QUANLIQUANCAFE.BLL
     public class Quanli
     {
         //Nhâm
-        private List<Button> ListButtonBan(int w, string mkv, Color c, Color c1)
+        private List<Button> ListButtonTable(int w, string AreaID, Color c, Color c1)
         {
-            List<Ban> listBan = BanDAL.Instance.LayDanhSachBanTheoKhuVuc(mkv);
+            List<Table> listTable = TableDAL.Instance.GetListTableByAreaID(AreaID);
 
             List<Button> listButton = new List<Button>();
-            for (int i = 0; i < listBan.Count; i++)
+            for (int i = 0; i < listTable.Count; i++)
             {
-                if (listBan[i].MaKV == mkv)
+                if (listTable[i].AreaID == AreaID)
                 {
                     Button b = new Button();
-                    b.Text = listBan[i].TenBan;
+                    b.Text = listTable[i].TableName;
                     b.Width = w / 3 - 10;
                     b.Height = 50;
                     int mg = (int)(w - b.Width * 3) / 6;
                     b.Margin = new System.Windows.Forms.Padding(mg, 3, mg, 3);
                     b.TextAlign = ContentAlignment.MiddleCenter;
-                    b.Name = listBan[i].MaBan;
-                    if (listBan[i].TrangThai == true)
+                    b.Name = listTable[i].TableID;
+                    if (listTable[i].Status == true)
                     {
                         b.BackColor = c1;
                     }
@@ -49,35 +49,35 @@ namespace QUANLIQUANCAFE.BLL
 
 
 
-        public List<FlowLayoutPanel> ListPanelKV(int w, Color c, Color c1)
+        public List<FlowLayoutPanel> ListPanelArea(int w, Color c, Color c1)
         {
             List<FlowLayoutPanel> listPanel = new List<FlowLayoutPanel>();
-            List<KV> listKV = KVDAL.Instance.LayDanhSachKV();
+            List<Area> listArea = AreaDAL.Instance.GetListArea();
 
-            foreach (KV item in listKV)
+            foreach (Area item in listArea)
             {
-                //creat panel for each KV
+                //creat panel for each Area
                 FlowLayoutPanel p = new FlowLayoutPanel();
                 p.Width = w;
                 p.AutoSize = true;
                 p.BackColor = Color.FromArgb(255, 255, 255);
                 p.BorderStyle = BorderStyle.FixedSingle;
                 p.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
-                p.Name = item.MaKV;
+                p.Name = item.AreaID;
                 p.Tag = item;
-                //creat label for each KV
+                //creat label for each Area
                 Label l = new Label();
-                l.Text = item.TenKV;
+                l.Text = item.AreaName;
                 l.Font = new Font("Arial", 12, FontStyle.Bold);
                 l.Width = w;
                 l.Height = 50;
                 l.TextAlign = ContentAlignment.MiddleCenter;
                 l.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
-                l.Name = item.MaKV;
+                l.Name = item.AreaID;
                 //add label to panel
                 p.Controls.Add(l);
                 //add button  to each panel, ench line 3 button
-                foreach (Button btn in ListButtonBan(w, item.MaKV, c, c1))
+                foreach (Button btn in ListButtonTable(w, item.AreaID, c, c1))
                 {
                     p.Controls.Add(btn);
 
@@ -88,34 +88,22 @@ namespace QUANLIQUANCAFE.BLL
 
             return listPanel;
         }
-        public List<Ban> LayDanhSachBanTheoMaKV(string MKV = "")
+        public List<Table> GetListTableByAreaIDID(string AreaID = "")
         {
-            return BanDAL.Instance.LayDanhSachBanTheoKhuVuc(MKV);
+            return TableDAL.Instance.GetListTableByAreaID(AreaID);
         }
         public List<Order> GetListOrderByTableID(string id)
         {
             return OrderDAL.Instance.GetListOrderByTableID(id);
         }
-        public void MoveTable(string oldTable, string newTable)
+        public void MoveTable(string oldTable, string newTable, bool isMerge = false)
         {
-            BanDAL.Instance.MoveTable(oldTable, newTable);
+            TableDAL.Instance.MoveTable(oldTable, newTable, isMerge);
         }
-        public List<Ban> LayDanhSachBanTrong()
+        public bool IsFreeTable(string id)
         {
-            return BanDAL.Instance.LayDanhSachBanTrong();
+            return TableDAL.Instance.IsFreeTable(id);
         }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

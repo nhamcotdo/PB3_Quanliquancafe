@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cbbKV = new System.Windows.Forms.ComboBox();
+            this.cbbArea = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // cbbKV
+            // cbbArea
             // 
-            this.cbbKV.FormattingEnabled = true;
-            this.cbbKV.Location = new System.Drawing.Point(39, 26);
-            this.cbbKV.Name = "cbbKV";
-            this.cbbKV.Size = new System.Drawing.Size(121, 21);
-            this.cbbKV.TabIndex = 0;
+            this.cbbArea.FormattingEnabled = true;
+            this.cbbArea.Location = new System.Drawing.Point(39, 26);
+            this.cbbArea.Name = "cbbArea";
+            this.cbbArea.Size = new System.Drawing.Size(121, 21);
+            this.cbbArea.TabIndex = 0;
             // 
             // dataGridView1
             // 
@@ -66,7 +66,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.cbbKV);
+            this.Controls.Add(this.cbbArea);
             this.Name = "Table";
             this.Text = "Form3";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -76,7 +76,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cbbKV;
+        private System.Windows.Forms.ComboBox cbbArea;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
     }

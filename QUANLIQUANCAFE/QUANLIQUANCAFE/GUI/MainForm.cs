@@ -30,8 +30,8 @@ namespace QUANLIQUANCAFE.GUI
         private void LoadComponent()
         {
             int w = this.flowLayout1.Width;
-            //add KV to flowLayoutPanel
-            foreach (FlowLayoutPanel i in bll.ListPanelKV(w, c, c1))
+            //add Area to flowLayoutPanel
+            foreach (FlowLayoutPanel i in bll.ListPanelArea(w, c, c1))
             {
                 foreach (Control j in i.Controls)
                 {
@@ -42,50 +42,86 @@ namespace QUANLIQUANCAFE.GUI
                 }
                 this.flowLayout1.Controls.Add(i);
             }
-            foreach (Ban i in bll.LayDanhSachBanTrong())
+            cbbTableName.Items.Clear();
+            foreach (DTO.Table i in bll.GetListTableByAreaIDID())
             {
-                cbbtenban.Items.Add(new CBBItem(i.TenBan, i.MaBan));
+                cbbTableName.Items.Add(new CBBItem(i.TableName, i.TableID));
             }
+            cbbTableName.SelectedIndex = 0;
         }
         private void btnTable_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = bll.GetListOrderByTableID((sender as Button).Name);
-            lbTenBan.Text = (sender as Button).Text;
-            lbTenBan.Tag = (sender as Button).Name;
-        }
+            DataTable data = new DataTable();
+            data.Columns.AddRange(new DataColumn[] {
+                new DataColumn("Tên món", typeof(int)),
+                new DataColumn("Số lượng", typeof(string)),
+                new DataColumn("Đơn giá", typeof(string)),
+                new DataColumn("Thành tiền", typeof(int))
+            });
 
-        private void btnMove_Click(object sender, EventArgs e)
-        {
-            if (cbbtenban.SelectedItem != null && lbTenBan.Tag != null && dataGridView1.Rows.Count > 0)
+            foreach (Order i in bll.GetListOrderByTableID((sender as Button).Name))
             {
-                bll.MoveTable(lbTenBan.Tag.ToString(), ((CBBItem)cbbtenban.SelectedItem).Value.ToString());
-                //change color
-                foreach (Control i in flowLayout1.Controls)
+                data.Rows.Add(i.DishName, i.Quantity, i.Price, i.Price * i.Quantity);
+            }
+            dataGridView1.DataSource = data;
+            lbTableName.Text = (sender as Button).Text;
+            lbTableName.Tag = (sender as Button).Name;
+        }
+        private void StatusTable()
+        {
+            foreach (Control i in flowLayout1.Controls)
+            {
+                if (i is FlowLayoutPanel)
                 {
-                    if (i is FlowLayoutPanel)
+                    foreach (Control j in i.Controls)
                     {
-                        foreach (Control j in i.Controls)
+                        if (j is Button)
                         {
-                            if (j is Button)
+                            if (bll.IsFreeTable(j.Name))
                             {
-                                if (((Button)j).Name == lbTenBan.Tag.ToString())
-                                {
-                                    (j as Button).BackColor = c;
-                                }
-                                else if (((Button)j).Name == ((CBBItem)cbbtenban.SelectedItem).Value.ToString())
-                                {
-                                    (j as Button).BackColor = c1;
-                                }
-
+                                ((Button)j).BackColor = c;
+                            }
+                            else
+                            {
+                                ((Button)j).BackColor = c1;
                             }
                         }
                     }
                 }
-                lbTenBan.Text = ((CBBItem)cbbtenban.SelectedItem).Text;
-                lbTenBan.Tag = ((CBBItem)cbbtenban.SelectedItem).Value;
-                dataGridView1.DataSource = bll.GetListOrderByTableID(((CBBItem)cbbtenban.SelectedItem).Value);
             }
         }
+        private void btnMove_Click(object sender, EventArgs e)
+        {
+            //kiểm tra bàn đang được chọn có trống không
+            if (!bll.IsFreeTable(((CBBItem)cbbTableName.SelectedItem).Value))
+            {
+                MessageBox.Show("Bàn đang có khách");
+                return;
+            }
+            //kiểm tra xem có bàn nào được chọn không
+            if (lbTableName.Tag != null && dataGridView1.Rows.Count > 0)
+            {
+                //chuyển dữ liệu
+                bll.MoveTable(lbTableName.Tag.ToString(), ((CBBItem)cbbTableName.SelectedItem).Value.ToString());
+                StatusTable();
+                lbTableName.Text = ((CBBItem)cbbTableName.SelectedItem).Text;
+                lbTableName.Tag = ((CBBItem)cbbTableName.SelectedItem).Value;
+                dataGridView1.DataSource = bll.GetListOrderByTableID(((CBBItem)cbbTableName.SelectedItem).Value);
+            }
+        }
+        // Gộp hóa đơn từ bàn chọn trong combox vào vào đang hiển thị
+        private void btnMerge_Click(object sender, EventArgs e)
+        {
+            //chuyển dữ liệu
+            bll.MoveTable(((CBBItem)cbbTableName.SelectedItem).Value.ToString(), lbTableName.Tag.ToString(), true);
+            StatusTable();
+            dataGridView1.DataSource = bll.GetListOrderByTableID(lbTableName.Tag.ToString());
+
+        }
+
+
+
+
 
 
 

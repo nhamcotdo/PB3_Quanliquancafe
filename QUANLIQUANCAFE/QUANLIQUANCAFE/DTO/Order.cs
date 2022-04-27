@@ -7,16 +7,17 @@ using System.Threading.Tasks;
 
 namespace QUANLIQUANCAFE.DTO
 {
+
     public class Order
     {
-        public string TenMon { get; set; }
-        public int SoLuong { get; set; }
-        public int ThanhTien { get; set; }
+        public string DishName { get; set; }
+        public int Quantity { get; set; }
+        public int Price { get; set; }
         public Order(DataRow dr)
         {
-            TenMon = dr["TenMon"].ToString();
-            SoLuong = (int)dr["SoLuong"];
-            ThanhTien = (int)dr["DonGia"] * SoLuong;
+            DishName = dr["DishName"].ToString();
+            Quantity = (int)dr["Quantity"];
+            Price = (int)dr["Price"];
         }
     }
 }

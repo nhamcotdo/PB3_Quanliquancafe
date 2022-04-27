@@ -8,30 +8,30 @@ using System.Threading.Tasks;
 
 namespace QUANLIQUANCAFE.DAL
 {
-    public class KVDAL
+    public class AreaDAL
     {
-        private static KVDAL instance;
+        private static AreaDAL instance;
 
-        public static KVDAL Instance
+        public static AreaDAL Instance
         {
             get
             {
                 if (instance == null)
-                    instance = new KVDAL();
+                    instance = new AreaDAL();
                 return instance;
             }
             set => instance = value;
         }
-        private KVDAL() { }
-        public List<KV> LayDanhSachKV()
+        private AreaDAL() { }
+        public List<Area> GetListArea()
         {
-            List<KV> list = new List<KV>();
-            string query = "SELECT * FROM dbo.KhuVuc";
+            List<Area> list = new List<Area>();
+            string query = "SELECT * FROM [Area]";
             DataTable data = DBHelper.Instance.GetRecords(query);
             foreach (DataRow item in data.Rows)
             {
-                KV kv = new KV(item);
-                list.Add(kv);
+                Area Area = new Area(item);
+                list.Add(Area);
             }
             return list;
         }
