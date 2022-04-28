@@ -43,6 +43,8 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.flowLayout1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,25 +52,28 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnMove = new System.Windows.Forms.Button();
+            this.button35 = new System.Windows.Forms.Button();
             this.btnMerge = new System.Windows.Forms.Button();
             this.cbbTableName = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button34 = new System.Windows.Forms.Button();
-            this.button35 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lbTableName = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.flowLayout1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.flowLayoutPanel6.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -183,6 +188,26 @@
             this.tabPage1.Size = new System.Drawing.Size(200, 100);
             this.tabPage1.TabIndex = 0;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.panel5);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(922, 550);
+            this.tabPage4.TabIndex = 1;
+            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.dataGridView2);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(3, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(916, 544);
+            this.panel5.TabIndex = 0;
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.flowLayout1);
@@ -208,7 +233,7 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Microsoft Uighur", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 10);
@@ -230,8 +255,8 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.flowLayoutPanel6);
@@ -243,7 +268,10 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnDel);
+            this.panel3.Controls.Add(this.btnAdd);
             this.panel3.Controls.Add(this.btnMove);
+            this.panel3.Controls.Add(this.button35);
             this.panel3.Controls.Add(this.btnMerge);
             this.panel3.Controls.Add(this.cbbTableName);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -256,7 +284,7 @@
             // 
             this.btnMove.AutoSize = true;
             this.btnMove.BackColor = System.Drawing.Color.White;
-            this.btnMove.Location = new System.Drawing.Point(196, 21);
+            this.btnMove.Location = new System.Drawing.Point(160, 3);
             this.btnMove.Name = "btnMove";
             this.btnMove.Size = new System.Drawing.Size(125, 33);
             this.btnMove.TabIndex = 5;
@@ -264,11 +292,22 @@
             this.btnMove.UseVisualStyleBackColor = false;
             this.btnMove.Click += new System.EventHandler(this.btnMove_Click);
             // 
+            // button35
+            // 
+            this.button35.AutoSize = true;
+            this.button35.BackColor = System.Drawing.Color.White;
+            this.button35.Location = new System.Drawing.Point(473, 10);
+            this.button35.Name = "button35";
+            this.button35.Size = new System.Drawing.Size(88, 70);
+            this.button35.TabIndex = 2;
+            this.button35.Text = "THANH TOÁN";
+            this.button35.UseVisualStyleBackColor = false;
+            // 
             // btnMerge
             // 
             this.btnMerge.AutoSize = true;
             this.btnMerge.BackColor = System.Drawing.Color.White;
-            this.btnMerge.Location = new System.Drawing.Point(392, 21);
+            this.btnMerge.Location = new System.Drawing.Point(316, 0);
             this.btnMerge.Name = "btnMerge";
             this.btnMerge.Size = new System.Drawing.Size(125, 33);
             this.btnMerge.TabIndex = 0;
@@ -279,47 +318,23 @@
             // cbbTableName
             // 
             this.cbbTableName.FormattingEnabled = true;
-            this.cbbTableName.Location = new System.Drawing.Point(24, 28);
+            this.cbbTableName.Location = new System.Drawing.Point(6, 10);
             this.cbbTableName.Name = "cbbTableName";
             this.cbbTableName.Size = new System.Drawing.Size(121, 21);
             this.cbbTableName.TabIndex = 3;
             // 
             // flowLayoutPanel6
             // 
-            this.flowLayoutPanel6.Controls.Add(this.button34);
-            this.flowLayoutPanel6.Controls.Add(this.button35);
             this.flowLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel6.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
             this.flowLayoutPanel6.Size = new System.Drawing.Size(580, 61);
             this.flowLayoutPanel6.TabIndex = 0;
             // 
-            // button34
-            // 
-            this.button34.AutoSize = true;
-            this.button34.BackColor = System.Drawing.Color.White;
-            this.button34.Location = new System.Drawing.Point(3, 3);
-            this.button34.Name = "button34";
-            this.button34.Size = new System.Drawing.Size(75, 52);
-            this.button34.TabIndex = 1;
-            this.button34.Text = "GỌI MÓN";
-            this.button34.UseVisualStyleBackColor = false;
-            // 
-            // button35
-            // 
-            this.button35.AutoSize = true;
-            this.button35.BackColor = System.Drawing.Color.White;
-            this.button35.Location = new System.Drawing.Point(84, 3);
-            this.button35.Name = "button35";
-            this.button35.Size = new System.Drawing.Size(88, 52);
-            this.button35.TabIndex = 2;
-            this.button35.Text = "THANH TOÁN";
-            this.button35.UseVisualStyleBackColor = false;
-            // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.dataGridView1);
             this.panel4.Controls.Add(this.lbTableName);
@@ -361,15 +376,37 @@
             this.tabControl1.Size = new System.Drawing.Size(930, 576);
             this.tabControl1.TabIndex = 2;
             // 
-            // tabPage4
+            // dataGridView2
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(922, 550);
-            this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "tabPage4";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(40, 288);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(839, 228);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.AutoSize = true;
+            this.btnAdd.BackColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(160, 47);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(125, 33);
+            this.btnAdd.TabIndex = 6;
+            this.btnAdd.Text = "Tạo bàn";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnDel
+            // 
+            this.btnDel.AutoSize = true;
+            this.btnDel.BackColor = System.Drawing.Color.White;
+            this.btnDel.Location = new System.Drawing.Point(316, 47);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(125, 33);
+            this.btnDel.TabIndex = 7;
+            this.btnDel.Text = "Xóa Bàn";
+            this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // MainForm
             // 
@@ -387,17 +424,18 @@
             this.Text = "QUẢN LÍ BÁN HÀNG";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.flowLayout1.ResumeLayout(false);
             this.flowLayout1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.flowLayoutPanel6.ResumeLayout(false);
-            this.flowLayoutPanel6.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -420,6 +458,8 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.FlowLayoutPanel flowLayout1;
         private System.Windows.Forms.Label label1;
@@ -430,12 +470,13 @@
         private System.Windows.Forms.Button btnMerge;
         private System.Windows.Forms.ComboBox cbbTableName;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
-        private System.Windows.Forms.Button button34;
         private System.Windows.Forms.Button button35;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lbTableName;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

@@ -14,6 +14,24 @@ namespace QUANLIQUANCAFE.BLL
     public class Quanli
     {
         //Nhâm
+        public delegate void Mydel(object sender, EventArgs e);
+        public Mydel d;
+        private static Quanli instance;
+
+        public static Quanli Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new Quanli();
+                }
+                return instance;
+            }
+            set => instance = value;
+        }
+
+        //Table
         private List<Button> ListButtonTable(int w, string AreaID, Color c, Color c1)
         {
             List<Table> listTable = TableDAL.Instance.GetListTableByAreaID(AreaID);
@@ -40,13 +58,20 @@ namespace QUANLIQUANCAFE.BLL
                         b.BackColor = c;
                         //b.Text += "\n Bàn trống";
                     }
+                    b.Click += new EventHandler(d);
+
                     listButton.Add(b);
+
                 }
+
             }
             return listButton;
 
         }
-
+        public List<Area> GetListArea()
+        {
+            return AreaDAL.Instance.GetListArea();
+        }
 
 
         public List<FlowLayoutPanel> ListPanelArea(int w, Color c, Color c1)
@@ -88,7 +113,7 @@ namespace QUANLIQUANCAFE.BLL
 
             return listPanel;
         }
-        public List<Table> GetListTableByAreaIDID(string AreaID = "")
+        public List<Table> GetListTableByAreaID(string AreaID = "")
         {
             return TableDAL.Instance.GetListTableByAreaID(AreaID);
         }
@@ -104,9 +129,60 @@ namespace QUANLIQUANCAFE.BLL
         {
             return TableDAL.Instance.IsFreeTable(id);
         }
+        public void DeleteTable(string id)
+        {
+            TableDAL.Instance.DeleteTable(id);
+        }
+        public String NewTableID()
+        {
+            string lastID = TableDAL.Instance.GetLastTableID();
+            string lastIDNumber = lastID.Substring(lastID.Length - 2, 2);
+            int lastIDNumberInt = int.Parse(lastIDNumber);
+            lastIDNumberInt++;
+            string newIDNumber = lastIDNumberInt.ToString();
+            if (newIDNumber.Length == 1)
+            {
+                newIDNumber = "0" + newIDNumber;
+            }
+            return lastID.Substring(0, 2) + newIDNumber;
+        }
+        public void AddTable(string name, string areaID)
+        {
+            string ID = NewTableID();
+            TableDAL.Instance.AddTable(ID, name, areaID);
+        }
+        public string NewAreaID()
+        {
+            string lastID = AreaDAL.Instance.GetLastAreaID();//0001
+            string newID = "";
+            if (lastID == "")
+            {
+                newID = "0001";
+            }
+            else
+            {
+                int id = int.Parse(lastID.Substring(2, lastID.Length - 2)) + 1;
+                newID = id.ToString();
+                if (newID.Length == 1)
+                {
+                    newID = "000" + newID;
+                }
+                else if (newID.Length == 2)
+                {
+                    newID = "00" + newID;
+                }
+            }
 
-
-
+            return newID;
+        }
+        public void AddArea(string name, string ID = "")
+        {
+            if (ID == "")
+            {
+                ID = NewAreaID();
+            }
+            AreaDAL.Instance.AddArea(ID, name);
+        }
 
 
 

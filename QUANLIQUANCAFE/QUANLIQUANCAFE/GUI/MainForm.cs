@@ -21,6 +21,7 @@ namespace QUANLIQUANCAFE.GUI
         Color c = Color.FromArgb(0, 255, 255);// Bàn trống
         Color c1 = Color.FromArgb(255, 255, 0);// Bàn đang được đặt
 
+
         public MainForm()
         {
             InitializeComponent();
@@ -31,19 +32,14 @@ namespace QUANLIQUANCAFE.GUI
         {
             int w = this.flowLayout1.Width;
             //add Area to flowLayoutPanel
-            foreach (FlowLayoutPanel i in bll.ListPanelArea(w, c, c1))
+            flowLayout1.Controls.Clear();
+            Quanli.Instance.d = new Quanli.Mydel(btnTable_Click);
+            foreach (FlowLayoutPanel i in Quanli.Instance.ListPanelArea(w, c, c1))
             {
-                foreach (Control j in i.Controls)
-                {
-                    if (j is Button)
-                    {
-                        j.Click += new EventHandler(btnTable_Click);
-                    }
-                }
                 this.flowLayout1.Controls.Add(i);
             }
             cbbTableName.Items.Clear();
-            foreach (DTO.Table i in bll.GetListTableByAreaIDID())
+            foreach (DTO.Table i in Quanli.Instance.GetListTableByAreaID())
             {
                 cbbTableName.Items.Add(new CBBItem(i.TableName, i.TableID));
             }
@@ -59,7 +55,7 @@ namespace QUANLIQUANCAFE.GUI
                 new DataColumn("Thành tiền", typeof(int))
             });
 
-            foreach (Order i in bll.GetListOrderByTableID((sender as Button).Name))
+            foreach (Order i in Quanli.Instance.GetListOrderByTableID((sender as Button).Name))
             {
                 data.Rows.Add(i.DishName, i.Quantity, i.Price, i.Price * i.Quantity);
             }
@@ -77,7 +73,7 @@ namespace QUANLIQUANCAFE.GUI
                     {
                         if (j is Button)
                         {
-                            if (bll.IsFreeTable(j.Name))
+                            if (Quanli.Instance.IsFreeTable(j.Name))
                             {
                                 ((Button)j).BackColor = c;
                             }
@@ -93,7 +89,7 @@ namespace QUANLIQUANCAFE.GUI
         private void btnMove_Click(object sender, EventArgs e)
         {
             //kiểm tra bàn đang được chọn có trống không
-            if (!bll.IsFreeTable(((CBBItem)cbbTableName.SelectedItem).Value))
+            if (!Quanli.Instance.IsFreeTable(((CBBItem)cbbTableName.SelectedItem).Value))
             {
                 MessageBox.Show("Bàn đang có khách");
                 return;
@@ -102,21 +98,45 @@ namespace QUANLIQUANCAFE.GUI
             if (lbTableName.Tag != null && dataGridView1.Rows.Count > 0)
             {
                 //chuyển dữ liệu
-                bll.MoveTable(lbTableName.Tag.ToString(), ((CBBItem)cbbTableName.SelectedItem).Value.ToString());
+                Quanli.Instance.MoveTable(lbTableName.Tag.ToString(), ((CBBItem)cbbTableName.SelectedItem).Value.ToString());
                 StatusTable();
                 lbTableName.Text = ((CBBItem)cbbTableName.SelectedItem).Text;
                 lbTableName.Tag = ((CBBItem)cbbTableName.SelectedItem).Value;
-                dataGridView1.DataSource = bll.GetListOrderByTableID(((CBBItem)cbbTableName.SelectedItem).Value);
+                dataGridView1.DataSource = Quanli.Instance.GetListOrderByTableID(((CBBItem)cbbTableName.SelectedItem).Value);
             }
         }
         // Gộp hóa đơn từ bàn chọn trong combox vào vào đang hiển thị
         private void btnMerge_Click(object sender, EventArgs e)
         {
             //chuyển dữ liệu
-            bll.MoveTable(((CBBItem)cbbTableName.SelectedItem).Value.ToString(), lbTableName.Tag.ToString(), true);
+            Quanli.Instance.MoveTable(((CBBItem)cbbTableName.SelectedItem).Value.ToString(), lbTableName.Tag.ToString(), true);
             StatusTable();
-            dataGridView1.DataSource = bll.GetListOrderByTableID(lbTableName.Tag.ToString());
+            dataGridView1.DataSource = Quanli.Instance.GetListOrderByTableID(lbTableName.Tag.ToString());
 
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            Table selectedTable = new Table(lbTableName.Tag.ToString());
+            if (selectedTable.Status)
+            {
+                MessageBox.Show("Bàn đang có khách! Không thể xóa");
+                return;
+            }
+            // messagebox confirm
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa bàn này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Quanli.Instance.DeleteTable(lbTableName.Tag.ToString());
+                LoadComponent();
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            AddTable f = new AddTable();
+            f.d = new AddTable.Mydel(LoadComponent);
+            f.Show();
         }
 
 

@@ -39,40 +39,55 @@ namespace QUANLIQUANCAFE.DAL
         }
         public void MoveTable(string oldTable, string newTable, bool isMergered = false)
         {
-            string query = string.Format("UPDATE [Order] SET TableID = N'{0}' WHERE TableID = N'{1}'", newTable, oldTable);
-            DBHelper.Instance.ExecuteDB(query);
-            query = string.Format("UPDATE [Table] SET Status = N'{0}' WHERE TableID = N'{1}'", "true", newTable);
-            DBHelper.Instance.ExecuteDB(query);
+            DBHelper.Instance.ExecuteDB(string.Format("UPDATE [Order] SET TableID = N'{0}' WHERE TableID = N'{1}'", newTable, oldTable));
+            DBHelper.Instance.ExecuteDB(string.Format("UPDATE [Table] SET Status = N'{0}' WHERE TableID = N'{1}'", "true", newTable));
             if (!isMergered)
             {
-                query = string.Format("UPDATE [Table] SET Status = N'{0}' WHERE TableID = N'{1}'", "false", oldTable);
-                DBHelper.Instance.ExecuteDB(query);
+                DBHelper.Instance.ExecuteDB(string.Format("UPDATE [Table] SET Status = N'{0}' WHERE TableID = N'{1}'", "false", oldTable));
             }
             else
             {
-                query = string.Format("UPDATE [Table] SET Status = N'{0}' WHERE TableID = N'{1}'", "true", oldTable);
-                DBHelper.Instance.ExecuteDB(query);
-
-                string queryCheck = string.Format("Select * from Table where TableID = N'{0}' and Merge like '%{1}%'", newTable, oldTable);
-                DataTable check = DBHelper.Instance.GetRecords(queryCheck);
+                DBHelper.Instance.ExecuteDB(string.Format("UPDATE [Table] SET Status = N'{0}' WHERE TableID = N'{1}'", "true", oldTable));
+                DataTable check = DBHelper.Instance.GetRecords(string.Format("Select * from [Table] where TableID = N'{0}' and MergeList like '%{1}%'", newTable, oldTable));
                 if (check.Rows.Count == 0)
                 {
-                    query = string.Format("UPDATE [Table] SET Merge = concat(Merge, N',{0}') WHERE TableID = N'{1}'", oldTable, newTable);
-                    DBHelper.Instance.ExecuteDB(query);
+                    DBHelper.Instance.ExecuteDB(string.Format("UPDATE [Table] SET MergeList = concat(MergeList, N',{0}') WHERE TableID = N'{1}'", oldTable, newTable));
                 }
             }
 
         }
         public bool IsFreeTable(string TableID)
         {
-            string query = string.Format("SELECT * FROM [Table] WHERE TableID = N'{0}'", TableID);
-            DataTable data = DBHelper.Instance.GetRecords(query);
+            DataTable data = DBHelper.Instance.GetRecords(string.Format("SELECT * FROM [Table] WHERE TableID = N'{0}'", TableID));
             if (data.Rows.Count > 0)
             {
                 Table Table = new Table(data.Rows[0]);
                 return Table.Status == false;
             }
             return false;
+        }
+        public DataTable GetTableByID(string ID)
+        {
+            return DBHelper.Instance.GetRecords(string.Format("SELECT * FROM [Table] WHERE TableID = N'{0}'", ID));
+        }
+        public void DeleteTable(string ID)
+        {
+            DBHelper.Instance.ExecuteDB(string.Format("DELETE FROM [Table] WHERE TableID = N'{0}'", ID));
+        }
+        //get last tableID
+        public string GetLastTableID()
+        {
+            DataTable data = DBHelper.Instance.GetRecords("SELECT TOP 1 * FROM [Table] ORDER BY TableID DESC");
+            if (data.Rows.Count > 0)
+            {
+                Table Table = new Table(data.Rows[0]);
+                return Table.TableID;
+            }
+            return "";
+        }
+        public void AddTable(string ID, string name, string areaID)
+        {
+            DBHelper.Instance.ExecuteDB(string.Format("INSERT INTO [Table] VALUES (N'{0}', N'{1}', N'{2}', N'{3}', '{4}')", ID, areaID, name, "false", ID));
         }
     }
 }

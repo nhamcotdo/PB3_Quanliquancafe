@@ -50,4 +50,4 @@ D:\02.02\PBL\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQU
 C:\Users\nhamq\Desktop\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.Form2.resources
 C:\Users\nhamq\Desktop\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.Login.resources
 C:\Users\nhamq\Desktop\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.MainForm.resources
-C:\Users\nhamq\Desktop\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.Table.resources
+C:\Users\nhamq\Desktop\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.AddTable.resources

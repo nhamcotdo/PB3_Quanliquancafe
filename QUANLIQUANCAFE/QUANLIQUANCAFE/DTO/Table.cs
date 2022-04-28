@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QUANLIQUANCAFE.DAL;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -21,7 +22,16 @@ namespace QUANLIQUANCAFE.DTO
             AreaID = dr["AreaID"].ToString();
             TableName = dr["TableName"].ToString();
             Status = (bool)dr["Status"];
-            Merge = dr["Merge"].ToString().Split(',').ToList();
+            Merge = dr["MergeList"].ToString().Split(',').ToList();
+        }
+        public Table(string ID)
+        {
+            Table temp = new Table(TableDAL.Instance.GetTableByID(ID).Rows[0]);
+            TableID = temp.TableID;
+            AreaID = temp.AreaID;
+            TableName = temp.TableName;
+            Status = temp.Status;
+            Merge = temp.Merge;
         }
     }
 }

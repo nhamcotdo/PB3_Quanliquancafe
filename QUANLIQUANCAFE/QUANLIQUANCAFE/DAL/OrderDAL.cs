@@ -29,14 +29,13 @@ namespace QUANLIQUANCAFE.DAL
         public List<Order> GetListOrderByTableID(string ID)
         {
             List<Order> list = new List<Order>();
-            string query = "SELECT DishName, Quantity, Price " +
+            DataTable data = DBHelper.Instance.GetRecords("SELECT DishName, Quantity, Price " +
                 "FROM [Order] as D inner join" +
                 " [Table] as B" +
                 " on D.TableID = B.TableID inner join " +
                 " [Menu] as A " +
                 " on A.DishID = D.DishID" +
-                " WHERE D.TableID = '" + ID + "'";
-            DataTable data = DBHelper.Instance.GetRecords(query);
+                " WHERE D.TableID = '" + ID + "'");
             //MessageBox.Show(data.Rows.Count.ToString());
             foreach (DataRow item in data.Rows)
             {
