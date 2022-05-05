@@ -139,6 +139,13 @@ namespace QUANLIQUANCAFE.GUI
             f.Show();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddDish f = new AddDish();
+            f.d = new AddDish.Mydel(LoadComponent);
+            f.Show();
+        }
+
 
 
 
