@@ -35,9 +35,9 @@ namespace QUANLIQUANCAFE.DAL
             return list;
         }
 
-        public void AddDish(string dishID, string dishName, string price)
+        public void AddDish(string dishID, string dishName, int price, string group, string size)
         {
-            string query = string.Format("INSERT INTO [Menu] VALUES (N'{0}', N'{1}', N'{2}')", AreaID, AreaName, false);
+            string query = string.Format("INSERT INTO [Menu] VALUES (N'{0}', N'{1}', N'{2}', N'{3}', N'{4}')", dishID, dishName, price, group, size);
             DBHelper.Instance.ExecuteDB(query);
         }
     }
