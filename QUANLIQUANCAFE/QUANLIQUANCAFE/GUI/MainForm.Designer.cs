@@ -45,12 +45,15 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.flowLayout1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutQuanLiTable = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.btnMove = new System.Windows.Forms.Button();
             this.button35 = new System.Windows.Forms.Button();
             this.btnMerge = new System.Windows.Forms.Button();
@@ -60,12 +63,11 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lbTableName = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDel = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.flowLayout1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -73,7 +75,6 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -208,6 +209,14 @@
             this.panel5.Size = new System.Drawing.Size(916, 544);
             this.panel5.TabIndex = 0;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(40, 288);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(839, 228);
+            this.dataGridView2.TabIndex = 0;
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.flowLayout1);
@@ -280,6 +289,30 @@
             this.panel3.Size = new System.Drawing.Size(580, 85);
             this.panel3.TabIndex = 5;
             // 
+            // btnDel
+            // 
+            this.btnDel.AutoSize = true;
+            this.btnDel.BackColor = System.Drawing.Color.White;
+            this.btnDel.Location = new System.Drawing.Point(316, 47);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(125, 33);
+            this.btnDel.TabIndex = 7;
+            this.btnDel.Text = "Xóa Bàn";
+            this.btnDel.UseVisualStyleBackColor = false;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.AutoSize = true;
+            this.btnAdd.BackColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(160, 47);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(125, 33);
+            this.btnAdd.TabIndex = 6;
+            this.btnAdd.Text = "Tạo bàn";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // btnMove
             // 
             this.btnMove.AutoSize = true;
@@ -336,6 +369,7 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.dataGridView1);
             this.panel4.Controls.Add(this.lbTableName);
             this.panel4.Location = new System.Drawing.Point(3, 78);
@@ -376,37 +410,15 @@
             this.tabControl1.Size = new System.Drawing.Size(930, 576);
             this.tabControl1.TabIndex = 2;
             // 
-            // dataGridView2
+            // button1
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(40, 288);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(839, 228);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.AutoSize = true;
-            this.btnAdd.BackColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(160, 47);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(125, 33);
-            this.btnAdd.TabIndex = 6;
-            this.btnAdd.Text = "Tạo bàn";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnDel
-            // 
-            this.btnDel.AutoSize = true;
-            this.btnDel.BackColor = System.Drawing.Color.White;
-            this.btnDel.Location = new System.Drawing.Point(316, 47);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(125, 33);
-            this.btnDel.TabIndex = 7;
-            this.btnDel.Text = "Xóa Bàn";
-            this.btnDel.UseVisualStyleBackColor = false;
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            this.button1.Location = new System.Drawing.Point(535, 29);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(23, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "+";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainForm
             // 
@@ -426,6 +438,7 @@
             this.menuStrip1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.flowLayout1.ResumeLayout(false);
             this.flowLayout1.PerformLayout();
@@ -435,7 +448,6 @@
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -478,5 +490,6 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button button1;
     }
 }
