@@ -478,6 +478,10 @@ namespace QUANLIQUANCAFE.BLL
         {
             DishDAL.Instance.AddDish(DishID, DishName, price, group, size);
         }
+        public void DelDish(string id)
+        {
+            DishDAL.Instance.DelDish(id);
+        }
 
 
 

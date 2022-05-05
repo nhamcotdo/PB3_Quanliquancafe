@@ -38,8 +38,8 @@
             this.butCC = new System.Windows.Forms.Button();
             this.cbbGroup = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.cbbSize = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -94,7 +94,7 @@
             // 
             // butOK
             // 
-            this.butOK.Location = new System.Drawing.Point(87, 232);
+            this.butOK.Location = new System.Drawing.Point(99, 182);
             this.butOK.Name = "butOK";
             this.butOK.Size = new System.Drawing.Size(75, 23);
             this.butOK.TabIndex = 6;
@@ -104,7 +104,7 @@
             // 
             // butCC
             // 
-            this.butCC.Location = new System.Drawing.Point(193, 232);
+            this.butCC.Location = new System.Drawing.Point(214, 182);
             this.butCC.Name = "butCC";
             this.butCC.Size = new System.Drawing.Size(75, 23);
             this.butCC.TabIndex = 7;
@@ -138,15 +138,6 @@
             this.panel1.Size = new System.Drawing.Size(396, 287);
             this.panel1.TabIndex = 10;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(96, 115);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Nhóm đồ ăn";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -155,6 +146,15 @@
             this.label5.Size = new System.Drawing.Size(27, 13);
             this.label5.TabIndex = 11;
             this.label5.Text = "Size";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(96, 115);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Nhóm đồ ăn";
             // 
             // cbbSize
             // 
