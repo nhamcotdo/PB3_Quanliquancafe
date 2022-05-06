@@ -40,7 +40,7 @@ namespace QUANLIQUANCAFE.GUI
         private void butAddDish_Click(object sender, EventArgs e)
         {
             AddDish f = new AddDish();
-            f.ShowDialog();
+            //f.d = new AddDish.Mydel();
             this.Show();
         }
 
