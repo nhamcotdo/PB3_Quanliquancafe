@@ -474,23 +474,13 @@ namespace QUANLIQUANCAFE.BLL
 
         //Linh//399
 
-        public void AddDish(string DishID, string DishName, string price)
+        public void AddDish(string DishID, string DishName, int price, string group, string size)
         {
-            string ID = NewTableID();
-            DishDAL.Instance.AddDish(DishID, DishName, Price);
+            DishDAL.Instance.AddDish(DishID, DishName, price, group, size);
         }
-        public String NewDishID()
+        public void DelDish(string id)
         {
-            string lastID = TableDAL.Instance.GetLastTableID();
-            string lastIDNumber = lastID.Substring(lastID.Length - 2, 2);
-            int lastIDNumberInt = int.Parse(lastIDNumber);
-            lastIDNumberInt++;
-            string newIDNumber = lastIDNumberInt.ToString();
-            if (newIDNumber.Length == 1)
-            {
-                newIDNumber = "0" + newIDNumber;
-            }
-            return lastID.Substring(0, 2) + newIDNumber;
+            DishDAL.Instance.DelDish(id);
         }
 
 

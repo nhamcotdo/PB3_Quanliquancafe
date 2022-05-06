@@ -139,12 +139,7 @@ namespace QUANLIQUANCAFE.GUI
             f.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AddDish f = new AddDish();
-            f.d = new AddDish.Mydel(LoadComponent);
-            f.Show();
-        }
+
 
 
 
@@ -555,210 +550,28 @@ namespace QUANLIQUANCAFE.GUI
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         // Linh//487
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string Warning = "Bạn chưa chọn món để xóa";
+            if (dataGridView1.SelectedRows.Count == 0) MessageBox.Show(Warning);
+            else
+            {
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa món này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    Quanli.Instance.DelDish(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+                    LoadComponent();
+                }
+            }
+        }
+
+        private void điềuChỉnhMenuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowMenu f = new ShowMenu();
+            f.ShowDialog();
+            this.Show();
+        }
     }//665
 }

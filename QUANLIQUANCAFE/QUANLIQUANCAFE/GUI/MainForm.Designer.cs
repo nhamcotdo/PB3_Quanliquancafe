@@ -63,7 +63,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lbTableName = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.button1 = new System.Windows.Forms.Button();
+            this.điềuChỉnhMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -95,7 +95,8 @@
             this.lịchTrựcNhânViênToolStripMenuItem,
             this.tàiKhoảnNhânViênToolStripMenuItem,
             this.khoToolStripMenuItem,
-            this.thuChiToolStripMenuItem});
+            this.thuChiToolStripMenuItem,
+            this.điềuChỉnhMenuToolStripMenuItem});
             this.quảnLíToolStripMenuItem.Name = "quảnLíToolStripMenuItem";
             this.quảnLíToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.quảnLíToolStripMenuItem.Text = "Quản lí";
@@ -369,7 +370,6 @@
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.dataGridView1);
             this.panel4.Controls.Add(this.lbTableName);
             this.panel4.Location = new System.Drawing.Point(3, 78);
@@ -410,15 +410,12 @@
             this.tabControl1.Size = new System.Drawing.Size(930, 576);
             this.tabControl1.TabIndex = 2;
             // 
-            // button1
+            // điềuChỉnhMenuToolStripMenuItem
             // 
-            this.button1.Location = new System.Drawing.Point(535, 29);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(23, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.điềuChỉnhMenuToolStripMenuItem.Name = "điềuChỉnhMenuToolStripMenuItem";
+            this.điềuChỉnhMenuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.điềuChỉnhMenuToolStripMenuItem.Text = "Điều chỉnh Menu";
+            this.điềuChỉnhMenuToolStripMenuItem.Click += new System.EventHandler(this.điềuChỉnhMenuToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -490,6 +487,6 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem điềuChỉnhMenuToolStripMenuItem;
     }
 }
