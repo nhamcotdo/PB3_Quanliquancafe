@@ -45,5 +45,25 @@ namespace QUANLIQUANCAFE.DAL
             return list;
         }
 
+        internal void Order(string TableID, string dishID, int quantity)
+        {
+
+            DataTable qtt = DBHelper.Instance.GetRecords("SELECT Quantity FROM [Order] WHERE TableID = '" + TableID + "' AND DishID = '" + dishID + "'");
+            if (qtt.Rows.Count > 0)
+            {
+                int q = int.Parse(qtt.Rows[0]["Quantity"].ToString());
+                q += quantity;
+                if (q > 0)
+                    DBHelper.Instance.ExecuteDB("UPDATE [Order] SET Quantity = '" + q + "' WHERE TableID = '" + TableID + "' AND DishID = '" + dishID + "'");
+                else
+                    DBHelper.Instance.ExecuteDB("DELETE FROM [Order] WHERE TableID = '" + TableID + "' AND DishID = '" + dishID + "'");
+            }
+            else
+            {
+                if (quantity <= 0)
+                    return;
+                DBHelper.Instance.ExecuteDB(string.Format("INSERT INTO [Order] VALUES ('{0}', '{1}', '{2}')", TableID, dishID, quantity));
+            }
+        }
     }
 }

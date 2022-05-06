@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txtbUser = new System.Windows.Forms.TextBox();
-            this.lbTDN = new System.Windows.Forms.Label();
+            this.butDN = new System.Windows.Forms.Button();
+            this.butExit = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtbPassWord = new System.Windows.Forms.TextBox();
             this.lbMK = new System.Windows.Forms.Label();
-            this.butDN = new System.Windows.Forms.Button();
-            this.butExit = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txtbAccout = new System.Windows.Forms.TextBox();
+            this.lbTDN = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -53,32 +53,25 @@
             this.panel1.Size = new System.Drawing.Size(540, 226);
             this.panel1.TabIndex = 0;
             // 
-            // panel2
+            // butDN
             // 
-            this.panel2.Controls.Add(this.txtbUser);
-            this.panel2.Controls.Add(this.lbTDN);
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(534, 56);
-            this.panel2.TabIndex = 1;
+            this.butDN.Location = new System.Drawing.Point(135, 160);
+            this.butDN.Name = "butDN";
+            this.butDN.Size = new System.Drawing.Size(116, 37);
+            this.butDN.TabIndex = 3;
+            this.butDN.Text = "Đăng nhập";
+            this.butDN.UseVisualStyleBackColor = true;
+            this.butDN.Click += new System.EventHandler(this.butDN_Click);
             // 
-            // txtbUser
+            // butExit
             // 
-            this.txtbUser.Cursor = System.Windows.Forms.Cursors.No;
-            this.txtbUser.Location = new System.Drawing.Point(217, 14);
-            this.txtbUser.Name = "txtbUser";
-            this.txtbUser.Size = new System.Drawing.Size(276, 22);
-            this.txtbUser.TabIndex = 1;
-            // 
-            // lbTDN
-            // 
-            this.lbTDN.AutoSize = true;
-            this.lbTDN.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTDN.Location = new System.Drawing.Point(26, 14);
-            this.lbTDN.Name = "lbTDN";
-            this.lbTDN.Size = new System.Drawing.Size(152, 24);
-            this.lbTDN.TabIndex = 1;
-            this.lbTDN.Text = "Tên đăng nhập";
+            this.butExit.Location = new System.Drawing.Point(297, 160);
+            this.butExit.Name = "butExit";
+            this.butExit.Size = new System.Drawing.Size(116, 37);
+            this.butExit.TabIndex = 4;
+            this.butExit.Text = "Thoát";
+            this.butExit.UseVisualStyleBackColor = true;
+            this.butExit.Click += new System.EventHandler(this.butExit_Click);
             // 
             // panel3
             // 
@@ -108,23 +101,32 @@
             this.lbMK.TabIndex = 1;
             this.lbMK.Text = "Mật khẩu";
             // 
-            // butDN
+            // panel2
             // 
-            this.butDN.Location = new System.Drawing.Point(135, 160);
-            this.butDN.Name = "butDN";
-            this.butDN.Size = new System.Drawing.Size(116, 37);
-            this.butDN.TabIndex = 3;
-            this.butDN.Text = "Đăng nhập";
-            this.butDN.UseVisualStyleBackColor = true;
+            this.panel2.Controls.Add(this.txtbAccout);
+            this.panel2.Controls.Add(this.lbTDN);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(534, 56);
+            this.panel2.TabIndex = 1;
             // 
-            // butExit
+            // txtbAccout
             // 
-            this.butExit.Location = new System.Drawing.Point(297, 160);
-            this.butExit.Name = "butExit";
-            this.butExit.Size = new System.Drawing.Size(116, 37);
-            this.butExit.TabIndex = 4;
-            this.butExit.Text = "Thoát";
-            this.butExit.UseVisualStyleBackColor = true;
+            this.txtbAccout.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtbAccout.Location = new System.Drawing.Point(217, 14);
+            this.txtbAccout.Name = "txtbAccout";
+            this.txtbAccout.Size = new System.Drawing.Size(276, 22);
+            this.txtbAccout.TabIndex = 1;
+            // 
+            // lbTDN
+            // 
+            this.lbTDN.AutoSize = true;
+            this.lbTDN.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTDN.Location = new System.Drawing.Point(26, 14);
+            this.lbTDN.Name = "lbTDN";
+            this.lbTDN.Size = new System.Drawing.Size(152, 24);
+            this.lbTDN.TabIndex = 1;
+            this.lbTDN.Text = "Tên đăng nhập";
             // 
             // Login
             // 
@@ -136,11 +138,12 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -150,7 +153,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbTDN;
-        private System.Windows.Forms.TextBox txtbUser;
+        private System.Windows.Forms.TextBox txtbAccout;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtbPassWord;
         private System.Windows.Forms.Label lbMK;

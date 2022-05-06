@@ -46,11 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\DishDAL.cs" />
+    <Compile Include="DAL\DishGroupDAL.cs" />
+    <Compile Include="DAL\FoodDAL.cs" />
     <Compile Include="DAL\TableDAL.cs" />
     <Compile Include="DAL\AreaDAL.cs" />
     <Compile Include="DAL\OrderDAL.cs" />
     <Compile Include="DTO\Dish.cs" />
+    <Compile Include="DTO\DishGroup.cs" />
+    <Compile Include="DTO\Food.cs" />
     <Compile Include="DTO\Table.cs" />
     <Compile Include="DAL\DBHelper.cs" />
     <Compile Include="DTO\CBBItem.cs" />

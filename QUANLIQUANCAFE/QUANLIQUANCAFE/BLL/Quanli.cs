@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data;
 namespace QUANLIQUANCAFE.BLL
 {
     public class Quanli
@@ -324,7 +324,10 @@ namespace QUANLIQUANCAFE.BLL
         //ĐỨc//248
 
 
-
+        public int fLogin(string account, string passWord)
+        {
+            return AccountDAL.Instance.fLogin(account, passWord);
+        }
 
 
 
@@ -484,165 +487,9 @@ namespace QUANLIQUANCAFE.BLL
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        internal void Order(string TableID, string DishID, int Quantity)
+        {
+            OrderDAL.Instance.Order(TableID, DishID, Quantity);
+        }
     }
 }//566

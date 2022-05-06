@@ -40,22 +40,26 @@ namespace QUANLIQUANCAFE.GUI
         private void butAddDish_Click(object sender, EventArgs e)
         {
             AddDish f = new AddDish();
-            //f.d = new AddDish.Mydel();
-            this.Show();
+            f.Show();
+            d();
         }
 
         private void butDelDish_Click(object sender, EventArgs e)
         {
-                string Warning = "Bạn chưa chọn món để xóa";
-                if (dataGridView1.SelectedRows.Count == 0) MessageBox.Show(Warning);
-                else
+            string Warning = "Bạn chưa chọn món để xóa";
+            if (dataGridView1.SelectedRows.Count == 0) MessageBox.Show(Warning);
+            else
+            {
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa món này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa món này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (result == DialogResult.Yes)
+                    foreach (DataGridViewRow row in dataGridView1.SelectedRows)
                     {
-                        Quanli.Instance.DelDish(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+                        Quanli.Instance.DelDish(row.Cells[0].Value.ToString());
                     }
                 }
+                d();
+            }
         }
     }
 }

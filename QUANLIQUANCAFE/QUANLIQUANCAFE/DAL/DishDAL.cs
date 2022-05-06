@@ -42,8 +42,7 @@ namespace QUANLIQUANCAFE.DAL
         }
         public void DelDish(string data)
         {
-            //string query = string.Format("DELETE FROM [Menu] VALUES (N'{0}', N'{1}', N'{2}', N'{3}', N'{4}')", dishID, dishName, price, group, size);
-            //DBHelper.Instance.ExecuteDB(query);
+            DBHelper.Instance.ExecuteDB(string.Format("DELETE FROM [Menu] WHERE [DishID] = N'{0}'", data));
         }
     }
 }

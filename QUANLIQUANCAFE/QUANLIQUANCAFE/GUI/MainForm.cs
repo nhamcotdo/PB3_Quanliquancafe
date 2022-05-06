@@ -22,11 +22,16 @@ namespace QUANLIQUANCAFE.GUI
         Color c1 = Color.FromArgb(255, 255, 0);// Bàn đang được đặt
 
 
-        public MainForm()
+        public MainForm(bool Role)
         {
             InitializeComponent();
-
             LoadComponent();
+            LoadDishGroup();
+            if (!Role)
+            {
+                quảnLíToolStripMenuItem.Enabled = false;
+            }
+
         }
         private void LoadComponent()
         {
@@ -44,22 +49,30 @@ namespace QUANLIQUANCAFE.GUI
                 cbbTableName.Items.Add(new CBBItem(i.TableName, i.TableID));
             }
             cbbTableName.SelectedIndex = 0;
+            lbTableName.Text = (cbbTableName.SelectedItem as CBBItem).Text;
+            lbTableName.Tag = (cbbTableName.SelectedItem as CBBItem).Value;
+            LoadOrder(lbTableName.Tag.ToString());
         }
-        private void btnTable_Click(object sender, EventArgs e)
+        void LoadOrder(string tableID)
         {
             DataTable data = new DataTable();
             data.Columns.AddRange(new DataColumn[] {
-                new DataColumn("Tên món", typeof(int)),
+                new DataColumn("Tên món", typeof(string)),
                 new DataColumn("Số lượng", typeof(string)),
                 new DataColumn("Đơn giá", typeof(string)),
                 new DataColumn("Thành tiền", typeof(int))
             });
 
-            foreach (Order i in Quanli.Instance.GetListOrderByTableID((sender as Button).Name))
+            foreach (Order i in Quanli.Instance.GetListOrderByTableID(tableID))
             {
                 data.Rows.Add(i.DishName, i.Quantity, i.Price, i.Price * i.Quantity);
             }
             dataGridView1.DataSource = data;
+        }
+        private void btnTable_Click(object sender, EventArgs e)
+        {
+            DataTable data = new DataTable();
+            LoadOrder((sender as Button).Name.ToString());
             lbTableName.Text = (sender as Button).Text;
             lbTableName.Tag = (sender as Button).Name;
         }
@@ -347,7 +360,35 @@ namespace QUANLIQUANCAFE.GUI
         // ĐỨc//254
 
 
+        void LoadDishGroup()
+        {
+            List<DishGroup> listDishGroup = DishGroupDAL.Instance.GetListDishGroup();
+            foreach (DishGroup i in listDishGroup)
+            {
+                cbbDishGroup.Items.Add(new CBBItem(i.GroupName.TrimEnd(), i.GroupID));
+            }
+            cbbDishGroup.SelectedIndex = 0;
+        }
 
+        void LoadFoodListByDishGroupID(string id)
+        {
+            cbbFoodMenu.Items.Clear();
+            List<Food> listFood = FoodDAL.Instance.GetFoodByGroupID(id);
+            foreach (Food i in listFood)
+            {
+                Console.WriteLine(i.DishName);
+                cbbFoodMenu.Items.Add(new CBBItem(i.DishName, i.DishID));
+            }
+            cbbFoodMenu.SelectedIndex = 0;
+        }
+
+        private void cbbDishGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox cb = sender as ComboBox;
+            if (cb.SelectedItem == null)
+                return;
+            LoadFoodListByDishGroupID((cbbDishGroup.SelectedItem as CBBItem).Value);
+        }
 
 
 
@@ -567,11 +608,17 @@ namespace QUANLIQUANCAFE.GUI
             }
         }
 
-        private void điềuChỉnhMenuToolStripMenuItem_Click(object sender, EventArgs e)
+        private void editMenu_cCick(object sender, EventArgs e)
         {
             ShowMenu f = new ShowMenu();
-            f.ShowDialog();
-            this.Show();
+            f.d = new ShowMenu.Mydel(LoadDishGroup);
+            f.Show();
+        }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            Quanli.Instance.Order(lbTableName.Tag.ToString(), (cbbFoodMenu.SelectedItem as CBBItem).Value, (int)numericUpDown1.Value);
+            LoadOrder(lbTableName.Tag.ToString());
         }
     }//665
 }
