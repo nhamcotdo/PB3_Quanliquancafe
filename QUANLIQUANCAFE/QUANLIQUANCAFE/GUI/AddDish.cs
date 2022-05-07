@@ -48,16 +48,31 @@ namespace QUANLIQUANCAFE.GUI
                 return;
             }
 
-            if (txtDishName.Text == "")
+            else if (txtDishName.Text == "")
             {
                 MessageBox.Show("Bạn chưa nhập tên món");
                 return;
             }
-            if (txtPrice.Text == "")
+            else if (txtPrice.Text == "")
             {
                 MessageBox.Show("Bạn chưa nhập giá");
                 return;
             }
+            else if (cbbGroup.SelectedItem.ToString() == "")
+            {
+                MessageBox.Show("Bạn chưa nhập loại");
+                return;
+            }
+            else if (cbbSize.SelectedItem.ToString() == "")
+            {
+                MessageBox.Show("Bạn chưa nhập size");
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Bạn có muốn thêm mặt hàng này không?","Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            }
+         
             Quanli.Instance.AddDish(txtDishName.Text,txtDishID.Text,Convert.ToInt32(txtPrice.Text),cbbGroup.SelectedItem.ToString(),cbbSize.SelectedItem.ToString());
             d();
             this.Dispose();
