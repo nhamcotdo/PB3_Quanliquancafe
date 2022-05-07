@@ -40,13 +40,8 @@ namespace QUANLIQUANCAFE.GUI
         private void butAddDish_Click(object sender, EventArgs e)
         {
             AddDish f = new AddDish();
-<<<<<<< Updated upstream
-            //f.d = new AddDish.Mydel();
-            this.Show();
-=======
             f.d = new AddDish.Mydel(addDatagrid);
             f.Show();
->>>>>>> Stashed changes
         }
 
         private void butDelDish_Click(object sender, EventArgs e)
@@ -61,11 +56,7 @@ namespace QUANLIQUANCAFE.GUI
                         Quanli.Instance.DelDish(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
                     }
                 }
-<<<<<<< Updated upstream
-=======
-            }
-            addDatagrid();
->>>>>>> Stashed changes
+                addDatagrid();
         }
     }
 }
