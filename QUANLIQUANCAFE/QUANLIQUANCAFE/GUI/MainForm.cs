@@ -362,6 +362,7 @@ namespace QUANLIQUANCAFE.GUI
 
         void LoadDishGroup()
         {
+            cbbDishGroup.Items.Clear();
             List<DishGroup> listDishGroup = DishGroupDAL.Instance.GetListDishGroup();
             foreach (DishGroup i in listDishGroup)
             {
@@ -389,7 +390,12 @@ namespace QUANLIQUANCAFE.GUI
                 return;
             LoadFoodListByDishGroupID((cbbDishGroup.SelectedItem as CBBItem).Value);
         }
-
+        private void btnPay_Click(object sender, EventArgs e)
+        {
+            PaymentForm f = new PaymentForm(lbTableName.Tag.ToString());
+            f.d = new PaymentForm.Mydel(LoadComponent);
+            f.Show();
+        }
 
 
 
@@ -620,5 +626,7 @@ namespace QUANLIQUANCAFE.GUI
             Quanli.Instance.Order(lbTableName.Tag.ToString(), (cbbFoodMenu.SelectedItem as CBBItem).Value, (int)numericUpDown1.Value);
             LoadOrder(lbTableName.Tag.ToString());
         }
+
+
     }//665
 }

@@ -44,43 +44,37 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabHome = new System.Windows.Forms.TabPage();
             this.flowLayout1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutQuanLiTable = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.btnOrder = new System.Windows.Forms.Button();
+            this.cbbFoodMenu = new System.Windows.Forms.ComboBox();
+            this.cbbDishGroup = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnMove = new System.Windows.Forms.Button();
-            this.button35 = new System.Windows.Forms.Button();
+            this.btnPay = new System.Windows.Forms.Button();
             this.btnMerge = new System.Windows.Forms.Button();
             this.cbbTableName = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lbTableName = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.cbbDishGroup = new System.Windows.Forms.ComboBox();
-            this.cbbFoodMenu = new System.Windows.Forms.ComboBox();
-            this.btnOrder = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.menuStrip1.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.tabPage3.SuspendLayout();
+            this.tabHome.SuspendLayout();
             this.flowLayout1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -110,31 +104,31 @@
             // lịchTrựcNhânViênToolStripMenuItem
             // 
             this.lịchTrựcNhânViênToolStripMenuItem.Name = "lịchTrựcNhânViênToolStripMenuItem";
-            this.lịchTrựcNhânViênToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lịchTrựcNhânViênToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.lịchTrựcNhânViênToolStripMenuItem.Text = "Lịch trực nhân viên";
             // 
             // tàiKhoảnNhânViênToolStripMenuItem
             // 
             this.tàiKhoảnNhânViênToolStripMenuItem.Name = "tàiKhoảnNhânViênToolStripMenuItem";
-            this.tàiKhoảnNhânViênToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tàiKhoảnNhânViênToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.tàiKhoảnNhânViênToolStripMenuItem.Text = "Tài khoản nhân viên";
             // 
             // khoToolStripMenuItem
             // 
             this.khoToolStripMenuItem.Name = "khoToolStripMenuItem";
-            this.khoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.khoToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.khoToolStripMenuItem.Text = "Kho";
             // 
             // thuChiToolStripMenuItem
             // 
             this.thuChiToolStripMenuItem.Name = "thuChiToolStripMenuItem";
-            this.thuChiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.thuChiToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.thuChiToolStripMenuItem.Text = "Thu chi";
             // 
             // editMenu
             // 
             this.editMenu.Name = "editMenu";
-            this.editMenu.Size = new System.Drawing.Size(180, 22);
+            this.editMenu.Size = new System.Drawing.Size(179, 22);
             this.editMenu.Text = "Điều chỉnh Menu";
             this.editMenu.Click += new System.EventHandler(this.editMenu_cCick);
             // 
@@ -150,13 +144,13 @@
             // đổiMàuNềnToolStripMenuItem
             // 
             this.đổiMàuNềnToolStripMenuItem.Name = "đổiMàuNềnToolStripMenuItem";
-            this.đổiMàuNềnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.đổiMàuNềnToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.đổiMàuNềnToolStripMenuItem.Text = "Đổi màu nền";
             // 
             // đổiNgônNgữToolStripMenuItem
             // 
             this.đổiNgônNgữToolStripMenuItem.Name = "đổiNgônNgữToolStripMenuItem";
-            this.đổiNgônNgữToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.đổiNgônNgữToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.đổiNgônNgữToolStripMenuItem.Text = "Đổi ngôn ngữ";
             // 
             // tàiKhoảnToolStripMenuItem
@@ -171,13 +165,13 @@
             // đổiMậtKhẩuToolStripMenuItem
             // 
             this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             // 
             // tabPage2
@@ -203,45 +197,17 @@
             this.tabPage1.Size = new System.Drawing.Size(200, 100);
             this.tabPage1.TabIndex = 0;
             // 
-            // tabPage4
+            // tabHome
             // 
-            this.tabPage4.Controls.Add(this.panel5);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(922, 550);
-            this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "tabPage4";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.dataGridView2);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(916, 544);
-            this.panel5.TabIndex = 0;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(40, 288);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(839, 228);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.flowLayout1);
-            this.tabPage3.Controls.Add(this.panel2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(922, 550);
-            this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "Home";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabHome.Controls.Add(this.flowLayout1);
+            this.tabHome.Controls.Add(this.panel2);
+            this.tabHome.Location = new System.Drawing.Point(4, 22);
+            this.tabHome.Name = "tabHome";
+            this.tabHome.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHome.Size = new System.Drawing.Size(922, 550);
+            this.tabHome.TabIndex = 0;
+            this.tabHome.Text = "Home";
+            this.tabHome.UseVisualStyleBackColor = true;
             // 
             // flowLayout1
             // 
@@ -289,12 +255,67 @@
             this.panel2.Size = new System.Drawing.Size(580, 544);
             this.panel2.TabIndex = 7;
             // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.Controls.Add(this.numericUpDown1);
+            this.panel6.Controls.Add(this.btnOrder);
+            this.panel6.Controls.Add(this.cbbFoodMenu);
+            this.panel6.Controls.Add(this.cbbDishGroup);
+            this.panel6.Location = new System.Drawing.Point(6, 10);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(569, 62);
+            this.panel6.TabIndex = 7;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(411, 20);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown1.TabIndex = 9;
+            // 
+            // btnOrder
+            // 
+            this.btnOrder.AutoSize = true;
+            this.btnOrder.BackColor = System.Drawing.Color.White;
+            this.btnOrder.Location = new System.Drawing.Point(252, 12);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Size = new System.Drawing.Size(125, 33);
+            this.btnOrder.TabIndex = 8;
+            this.btnOrder.Text = "Gọi món";
+            this.btnOrder.UseVisualStyleBackColor = false;
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
+            // 
+            // cbbFoodMenu
+            // 
+            this.cbbFoodMenu.FormattingEnabled = true;
+            this.cbbFoodMenu.Location = new System.Drawing.Point(19, 30);
+            this.cbbFoodMenu.Name = "cbbFoodMenu";
+            this.cbbFoodMenu.Size = new System.Drawing.Size(209, 21);
+            this.cbbFoodMenu.TabIndex = 1;
+            // 
+            // cbbDishGroup
+            // 
+            this.cbbDishGroup.FormattingEnabled = true;
+            this.cbbDishGroup.Location = new System.Drawing.Point(19, 3);
+            this.cbbDishGroup.Name = "cbbDishGroup";
+            this.cbbDishGroup.Size = new System.Drawing.Size(209, 21);
+            this.cbbDishGroup.TabIndex = 0;
+            this.cbbDishGroup.SelectedIndexChanged += new System.EventHandler(this.cbbDishGroup_SelectedIndexChanged);
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnDel);
             this.panel3.Controls.Add(this.btnAdd);
             this.panel3.Controls.Add(this.btnMove);
-            this.panel3.Controls.Add(this.button35);
+            this.panel3.Controls.Add(this.btnPay);
             this.panel3.Controls.Add(this.btnMerge);
             this.panel3.Controls.Add(this.cbbTableName);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -339,16 +360,17 @@
             this.btnMove.UseVisualStyleBackColor = false;
             this.btnMove.Click += new System.EventHandler(this.btnMove_Click);
             // 
-            // button35
+            // btnPay
             // 
-            this.button35.AutoSize = true;
-            this.button35.BackColor = System.Drawing.Color.White;
-            this.button35.Location = new System.Drawing.Point(473, 10);
-            this.button35.Name = "button35";
-            this.button35.Size = new System.Drawing.Size(88, 70);
-            this.button35.TabIndex = 2;
-            this.button35.Text = "THANH TOÁN";
-            this.button35.UseVisualStyleBackColor = false;
+            this.btnPay.AutoSize = true;
+            this.btnPay.BackColor = System.Drawing.Color.White;
+            this.btnPay.Location = new System.Drawing.Point(473, 10);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.Size = new System.Drawing.Size(88, 70);
+            this.btnPay.TabIndex = 2;
+            this.btnPay.Text = "THANH TOÁN";
+            this.btnPay.UseVisualStyleBackColor = false;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // btnMerge
             // 
@@ -406,69 +428,13 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabHome);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(930, 576);
             this.tabControl1.TabIndex = 2;
-            // 
-            // panel6
-            // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.Controls.Add(this.numericUpDown1);
-            this.panel6.Controls.Add(this.btnOrder);
-            this.panel6.Controls.Add(this.cbbFoodMenu);
-            this.panel6.Controls.Add(this.cbbDishGroup);
-            this.panel6.Location = new System.Drawing.Point(6, 10);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(569, 62);
-            this.panel6.TabIndex = 7;
-            // 
-            // cbbDishGroup
-            // 
-            this.cbbDishGroup.FormattingEnabled = true;
-            this.cbbDishGroup.Location = new System.Drawing.Point(19, 3);
-            this.cbbDishGroup.Name = "cbbDishGroup";
-            this.cbbDishGroup.Size = new System.Drawing.Size(209, 21);
-            this.cbbDishGroup.TabIndex = 0;
-            this.cbbDishGroup.SelectedIndexChanged += new System.EventHandler(this.cbbDishGroup_SelectedIndexChanged);
-            // 
-            // cbbFoodMenu
-            // 
-            this.cbbFoodMenu.FormattingEnabled = true;
-            this.cbbFoodMenu.Location = new System.Drawing.Point(19, 30);
-            this.cbbFoodMenu.Name = "cbbFoodMenu";
-            this.cbbFoodMenu.Size = new System.Drawing.Size(209, 21);
-            this.cbbFoodMenu.TabIndex = 1;
-            // 
-            // btnOrder
-            // 
-            this.btnOrder.AutoSize = true;
-            this.btnOrder.BackColor = System.Drawing.Color.White;
-            this.btnOrder.Location = new System.Drawing.Point(252, 12);
-            this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(125, 33);
-            this.btnOrder.TabIndex = 8;
-            this.btnOrder.Text = "Gọi món";
-            this.btnOrder.UseVisualStyleBackColor = false;
-            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(411, 20);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            -2147483648});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 9;
             // 
             // MainForm
             // 
@@ -486,21 +452,18 @@
             this.Text = "QUẢN LÍ BÁN HÀNG";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.tabPage3.ResumeLayout(false);
+            this.tabHome.ResumeLayout(false);
             this.flowLayout1.ResumeLayout(false);
             this.flowLayout1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -523,30 +486,27 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.ToolStripMenuItem editMenu;
+        private System.Windows.Forms.TabPage tabHome;
         private System.Windows.Forms.FlowLayoutPanel flowLayout1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutQuanLiTable;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnMove;
-        private System.Windows.Forms.Button btnMerge;
-        private System.Windows.Forms.ComboBox cbbTableName;
-        private System.Windows.Forms.Button button35;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label lbTableName;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Button btnDel;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.ToolStripMenuItem editMenu;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.ComboBox cbbFoodMenu;
         private System.Windows.Forms.ComboBox cbbDishGroup;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnMove;
+        private System.Windows.Forms.Button btnPay;
+        private System.Windows.Forms.Button btnMerge;
+        private System.Windows.Forms.ComboBox cbbTableName;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lbTableName;
+        private System.Windows.Forms.TabControl tabControl1;
     }
 }

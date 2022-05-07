@@ -31,6 +31,11 @@ namespace QUANLIQUANCAFE.BLL
             set => instance = value;
         }
 
+        internal void Pay(string tableID)
+        {
+            BillDAL.Instance.Pay(tableID, NewBillID());
+        }
+
         //Table
         private List<Button> ListButtonTable(int w, string AreaID, Color c, Color c1)
         {
@@ -145,6 +150,15 @@ namespace QUANLIQUANCAFE.BLL
                 newIDNumber = "0" + newIDNumber;
             }
             return lastID.Substring(0, 2) + newIDNumber;
+        }
+        public string NewBillID()
+        {
+            string s = (Convert.ToInt32(BillDAL.Instance.GetLastBillID()) + 1).ToString();
+            while (s.Length < 4)
+            {
+                s = "0" + s;
+            }
+            return s;
         }
         public void AddTable(string name, string areaID)
         {
