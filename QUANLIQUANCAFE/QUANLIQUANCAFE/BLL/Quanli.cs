@@ -73,6 +73,12 @@ namespace QUANLIQUANCAFE.BLL
             return listButton;
 
         }
+
+        public Table GetTableByID(string tableID)
+        {
+            return TableDAL.Instance.GetTableByID(tableID);
+        }
+
         public List<Area> GetListArea()
         {
             return AreaDAL.Instance.GetListArea();

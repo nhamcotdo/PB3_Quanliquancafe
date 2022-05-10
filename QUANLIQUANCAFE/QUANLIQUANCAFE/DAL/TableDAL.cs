@@ -66,9 +66,9 @@ namespace QUANLIQUANCAFE.DAL
             }
             return false;
         }
-        public DataTable GetTableByID(string ID)
+        public Table GetTableByID(string ID)
         {
-            return DBHelper.Instance.GetRecords(string.Format("SELECT * FROM [Table] WHERE TableID = N'{0}'", ID));
+            return new Table(DBHelper.Instance.GetRecords(string.Format("SELECT * FROM [Table] WHERE TableID = N'{0}'", ID)).Rows[0]);
         }
         public void DeleteTable(string ID)
         {

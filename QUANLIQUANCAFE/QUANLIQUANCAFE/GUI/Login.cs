@@ -53,5 +53,13 @@ namespace QUANLIQUANCAFE.GUI
             }
 
         }
+        //on enter key
+        private void txtbAccout_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                butDN_Click(sender, e);
+            }
+        }
     }
 }

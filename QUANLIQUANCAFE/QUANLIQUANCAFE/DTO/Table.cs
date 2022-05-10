@@ -26,7 +26,7 @@ namespace QUANLIQUANCAFE.DTO
         }
         public Table(string ID)
         {
-            Table temp = new Table(TableDAL.Instance.GetTableByID(ID).Rows[0]);
+            Table temp = TableDAL.Instance.GetTableByID(ID);
             TableID = temp.TableID;
             AreaID = temp.AreaID;
             TableName = temp.TableName;
