@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace QUANLIQUANCAFE
 {
-    internal static class Program
+    public static class Program
     {
         /// <summary>
         /// The main entry point for the application.
@@ -17,7 +17,7 @@ namespace QUANLIQUANCAFE
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm(true));
+            Application.Run(new Login());
         }
     }
 }

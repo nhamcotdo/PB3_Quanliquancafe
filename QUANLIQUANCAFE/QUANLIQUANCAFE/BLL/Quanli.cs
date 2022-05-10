@@ -31,7 +31,7 @@ namespace QUANLIQUANCAFE.BLL
             set => instance = value;
         }
 
-        internal void Pay(string tableID)
+        public void Pay(string tableID)
         {
             BillDAL.Instance.Pay(tableID, NewBillID());
         }
@@ -338,9 +338,13 @@ namespace QUANLIQUANCAFE.BLL
         //ĐỨc//248
 
 
-        public int fLogin(string account, string passWord)
+        public Staff fLogin(string account, string passWord)
         {
             return AccountDAL.Instance.fLogin(account, passWord);
+        }
+        public AccountDTO GetAccountByStaffID(string id)
+        {
+            return AccountDAL.Instance.GetAccountByStaffID(id);
         }
 
 
@@ -501,7 +505,7 @@ namespace QUANLIQUANCAFE.BLL
         }
 
 
-        internal void Order(string TableID, string DishID, int Quantity)
+        public void Order(string TableID, string DishID, int Quantity)
         {
             OrderDAL.Instance.Order(TableID, DishID, Quantity);
         }

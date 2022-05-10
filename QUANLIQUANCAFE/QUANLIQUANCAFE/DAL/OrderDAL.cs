@@ -47,7 +47,7 @@ namespace QUANLIQUANCAFE.DAL
 
 
 
-        internal void Order(string TableID, string dishID, int quantity)
+        public void Order(string TableID, string dishID, int quantity)
         {
 
             DataTable qtt = DBHelper.Instance.GetRecords("SELECT Quantity FROM [Order] WHERE TableID = '" + TableID + "' AND DishID = '" + dishID + "'");

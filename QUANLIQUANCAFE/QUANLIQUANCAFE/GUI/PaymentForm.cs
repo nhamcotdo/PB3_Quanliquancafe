@@ -1,4 +1,5 @@
 ﻿using QUANLIQUANCAFE.BLL;
+using QUANLIQUANCAFE.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,12 +17,15 @@ namespace QUANLIQUANCAFE.GUI
         public delegate void Mydel();
         public Mydel d;
         string TableID;
-        public PaymentForm(string TableID)
+        public PaymentForm(string TableID, Staff NV)
         {
             InitializeComponent();
             this.TableID = TableID;
         }
+        void GUI()
+        {
 
+        }
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             Quanli.Instance.Pay(TableID);

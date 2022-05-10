@@ -24,14 +24,14 @@ namespace QUANLIQUANCAFE.GUI
         {
             string account = txtbAccout.Text;
             string passWord = txtbPassWord.Text;
-            if (Quanli.Instance.fLogin(account, passWord) == -1)
+            if (Quanli.Instance.fLogin(account, passWord) == null)
             {
                 MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!");
 
             }
             else
             {
-                MainForm mainForm = new MainForm(Convert.ToBoolean(Quanli.Instance.fLogin(account, passWord)));
+                MainForm mainForm = new MainForm(Quanli.Instance.fLogin(account, passWord));
                 this.Hide();
                 mainForm.ShowDialog();
                 txtbAccout.Text = "";

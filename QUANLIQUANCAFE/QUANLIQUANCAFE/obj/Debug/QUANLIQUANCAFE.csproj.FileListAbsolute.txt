@@ -70,3 +70,4 @@ C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAF
 C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.csproj.CoreCompileInputs.cache
 C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.exe
 C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.pdb
+C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.PaymentForm.resources

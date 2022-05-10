@@ -20,18 +20,19 @@ namespace QUANLIQUANCAFE.GUI
         Quanli bll = new Quanli();
         Color c = Color.FromArgb(0, 255, 255);// Bàn trống
         Color c1 = Color.FromArgb(255, 255, 0);// Bàn đang được đặt
+        Staff NV;
 
-
-        public MainForm(bool Role)
+        public MainForm(Staff Role)
         {
+            NV = Role;
             InitializeComponent();
             LoadComponent();
             LoadDishGroup();
-            if (!Role)
+            if (!Quanli.Instance.GetAccountByStaffID(NV.StaffID).Role)
             {
                 quảnLíToolStripMenuItem.Enabled = false;
             }
-
+            lbNameNV.Text = NV.StaffName;
         }
         private void LoadComponent()
         {
@@ -392,7 +393,7 @@ namespace QUANLIQUANCAFE.GUI
         }
         private void btnPay_Click(object sender, EventArgs e)
         {
-            PaymentForm f = new PaymentForm(lbTableName.Tag.ToString());
+            PaymentForm f = new PaymentForm(lbTableName.Tag.ToString(), NV);
             f.d = new PaymentForm.Mydel(LoadComponent);
             f.Show();
         }

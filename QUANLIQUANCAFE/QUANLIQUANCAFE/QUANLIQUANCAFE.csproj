@@ -54,9 +54,11 @@
     <Compile Include="DAL\TableDAL.cs" />
     <Compile Include="DAL\AreaDAL.cs" />
     <Compile Include="DAL\OrderDAL.cs" />
+    <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\Dish.cs" />
     <Compile Include="DTO\DishGroup.cs" />
     <Compile Include="DTO\Food.cs" />
+    <Compile Include="DTO\Staff.cs" />
     <Compile Include="DTO\Table.cs" />
     <Compile Include="DAL\DBHelper.cs" />
     <Compile Include="DTO\CBBItem.cs" />

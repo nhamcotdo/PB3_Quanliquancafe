@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace QUANLIQUANCAFE.DAL
 {
 
-    internal class BillDAL
+    public class BillDAL
     {
         private static BillDAL instance;
         public static BillDAL Instance
@@ -18,12 +18,12 @@ namespace QUANLIQUANCAFE.DAL
         }
         private BillDAL() { }
 
-        internal void Pay(string tableID, string billID)
+        public void Pay(string tableID, string billID)
         {
 
         }
 
-        internal string GetLastBillID()
+        public string GetLastBillID()
         {
             //get last bill id
             if (DBHelper.Instance.GetRecords("SELECT * FROM Bill").Rows.Count == 0)

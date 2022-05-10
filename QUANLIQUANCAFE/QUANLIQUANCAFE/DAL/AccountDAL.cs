@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QUANLIQUANCAFE.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -21,17 +22,24 @@ namespace QUANLIQUANCAFE.DAL
 
         }
         private AccountDAL() { }
-        public int fLogin(string account, string passWord)
+        public Staff GetStaffByStaffID(string StaffID)
         {
-            DataTable result = DBHelper.Instance.GetRecords("SELECT Role FROM dbo.Account WHERE Account=N'" + account + "' AND Password=N'" + passWord + "'");
-            if (result.Rows.Count == 0)
+            return new Staff(DBHelper.Instance.GetRecords("SELECT *  FROM dbo.Staff WHERE StaffID = '" + StaffID + "'").Rows[0]);
+        }
+        public Staff fLogin(string account, string passWord)
+        {
+            if (DBHelper.Instance.GetRecords("SELECT * FROM dbo.Account WHERE Account = '" + account + "' AND Password = '" + passWord + "'").Rows.Count > 0)
             {
-                return -1;
+                return GetStaffByStaffID(DBHelper.Instance.GetRecords("SELECT * FROM dbo.Account WHERE Account = '" + account + "' AND Password = '" + passWord + "'").Rows[0]["StaffID"].ToString());
             }
             else
             {
-                return Convert.ToInt16(Convert.ToBoolean(result.Rows[0]["Role"]));
+                return null;
             }
+        }
+        public AccountDTO GetAccountByStaffID(string StaffID)
+        {
+            return new AccountDTO(DBHelper.Instance.GetRecords("SELECT * FROM dbo.Account WHERE StaffID = '" + StaffID + "'").Rows[0]);
         }
     }
 }
