@@ -54,3 +54,23 @@ D:\02.02\PBL\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQU
 D:\02.02\PBL\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.Login.resources
 D:\02.02\PBL\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.AddDish.resources
 D:\02.02\PBL\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.ShowMenu.resources
+<<<<<<< Updated upstream
+=======
+C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\bin\Debug\QUANLIQUANCAFE.exe.config
+C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\bin\Debug\QUANLIQUANCAFE.exe
+C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\bin\Debug\QUANLIQUANCAFE.pdb
+C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.csproj.AssemblyReference.cache
+C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.csproj.SuggestedBindingRedirects.cache
+C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.AddDish.resources
+C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.AddTable.resources
+C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.MainForm.resources
+C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.Form2.resources
+C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.Login.resources
+C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.ShowMenu.resources
+C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.Properties.Resources.resources
+C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.csproj.GenerateResource.cache
+C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.csproj.CoreCompileInputs.cache
+C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.exe
+C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.pdb
+D:\02.02\PBL\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.PaymentForm.resources
+>>>>>>> Stashed changes

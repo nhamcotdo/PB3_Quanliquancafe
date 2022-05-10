@@ -17,7 +17,11 @@ namespace QUANLIQUANCAFE
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< Updated upstream
             Application.Run(new MainForm());
+=======
+            Application.Run(new Login());
+>>>>>>> Stashed changes
         }
     }
 }
