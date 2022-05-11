@@ -120,7 +120,7 @@
             // 
             // txtbAccout
             // 
-            this.txtbAccout.Cursor = System.Windows.Forms.Cursors.No;
+            this.txtbAccout.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtbAccout.Location = new System.Drawing.Point(163, 11);
             this.txtbAccout.Margin = new System.Windows.Forms.Padding(2);
             this.txtbAccout.Name = "txtbAccout";

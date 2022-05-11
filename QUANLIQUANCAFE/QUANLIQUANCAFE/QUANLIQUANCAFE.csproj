@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\DiscountDAL.cs" />
     <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\BillDAL.cs" />
     <Compile Include="DAL\DishDAL.cs" />
@@ -55,6 +56,8 @@
     <Compile Include="DAL\AreaDAL.cs" />
     <Compile Include="DAL\OrderDAL.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
+    <Compile Include="DTO\Bill.cs" />
+    <Compile Include="DTO\Discount.cs" />
     <Compile Include="DTO\Dish.cs" />
     <Compile Include="DTO\DishGroup.cs" />
     <Compile Include="DTO\Food.cs" />

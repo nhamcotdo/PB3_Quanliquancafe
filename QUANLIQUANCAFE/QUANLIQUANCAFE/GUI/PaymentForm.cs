@@ -20,11 +20,13 @@ namespace QUANLIQUANCAFE.GUI
         string TableID;
         int Total;
         Bitmap bmp;
+        Staff staff;
         public PaymentForm(string TableID, Staff NV)
         {
             InitializeComponent();
             this.TableID = TableID;
-            lbNV.Text = NV.StaffName;
+            staff = NV;
+            lbNV.Text = NV.StaffID;
             GUI();
         }
         void GUI()
@@ -46,6 +48,16 @@ namespace QUANLIQUANCAFE.GUI
             lbtable.Text = Quanli.Instance.GetTableByID(TableID).TableName;
             lbTotal.Text = Total.ToString();
             lbTotalPrice.Text = (Total + Convert.ToInt32(lbPromotion.Text) + Convert.ToInt32(lbPromotion.Text)).ToString();
+            //dont change color when select
+            dataGridView1.DefaultCellStyle.SelectionBackColor = dataGridView1.DefaultCellStyle.BackColor;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = dataGridView1.DefaultCellStyle.ForeColor;
+
+            foreach (Discount item in Quanli.Instance.GetAllDiscount())
+            {
+                cbbkm.Items.Add(new CBBItem(item.DisCountName, item.DiscountID));
+            }
+            cbbkm.SelectedIndex = 0;
+
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -55,20 +67,42 @@ namespace QUANLIQUANCAFE.GUI
         }
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            Quanli.Instance.Pay(TableID);
-            d();
-            Graphics g = this.CreateGraphics();
+            // In hoá đơn
+            Graphics g = panelBill.CreateGraphics();
             // bmp new bit map A5 size
-            bmp = new Bitmap(panelBill.Width, panelBill.Height, g);
-            //draw panel to full page A5 
-            panelBill.DrawToBitmap(bmp, new Rectangle(0, 0, panelBill.Width, panelBill.Height));
+            bmp = new Bitmap(this.Size.Width, this.Size.Height, g);
+            printDocument1.DefaultPageSettings.PaperSize = new PaperSize("", panelBill.Width, panelBill.Height + 20);
 
+            panelBill.DrawToBitmap(bmp, new Rectangle(0, 0, panelBill.Width, panelBill.Height));
             printPreviewDialog1.ShowDialog();
-            this.Close();
+            // Lưu dữ liệu
+            //            [BillID] NCHAR(10)   NOT NULL,
+
+            //[TimeCheckOut] DATETIME NOT NULL,
+            //    [TotalBill] INT NOT NULL,
+            //    [DiscountID] NCHAR(10)   NULL,
+            //    [OtherFee] INT NULL,
+            //    [TableID]      NVARCHAR(4) NOT NULL,
+
+            //   [StaffID]      NCHAR(10)   NOT NULL,
+            Quanli.Instance.Pay(new Bill
+            {
+                BillID = Quanli.Instance.NewBillID(),
+                TimeCheckOut = Convert.ToDateTime(lbTime.Text),
+                TotalBill = Convert.ToInt32(lbTotalPrice.Text),
+                DiscountID = (cbbkm.SelectedItem as CBBItem).Value,
+                OtherFee = Convert.ToInt32(lbPromotion.Text),
+                TableID = TableID,
+                StaffID = staff.StaffID,
+            }
+              );
+
+            d();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            d();
             this.Dispose();
         }
 
@@ -89,8 +123,6 @@ namespace QUANLIQUANCAFE.GUI
 
 
         }
-
-
 
 
     }

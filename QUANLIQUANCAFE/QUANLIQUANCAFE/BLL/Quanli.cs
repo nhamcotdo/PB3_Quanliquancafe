@@ -31,9 +31,12 @@ namespace QUANLIQUANCAFE.BLL
             set => instance = value;
         }
 
-        public void Pay(string tableID)
+        public void Pay(Bill bill)
         {
-            BillDAL.Instance.Pay(tableID, NewBillID());
+            BillDAL.Instance.Pay(bill);
+
+
+
         }
 
         //Table
@@ -203,7 +206,10 @@ namespace QUANLIQUANCAFE.BLL
             }
             AreaDAL.Instance.AddArea(ID, name);
         }
-
+        public List<Discount> GetAllDiscount()
+        {
+            return DiscountDAL.Instance.GetAllDiscount();
+        }
 
 
 

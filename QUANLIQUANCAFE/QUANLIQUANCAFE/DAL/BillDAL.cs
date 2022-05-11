@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QUANLIQUANCAFE.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,9 +19,14 @@ namespace QUANLIQUANCAFE.DAL
         }
         private BillDAL() { }
 
-        public void Pay(string tableID, string billID)
+        public void Pay(Bill bill)
         {
-
+            DBHelper.Instance.ExecuteDB(String.Format("INSERT INTO Bill VALUES('{0}', '{1}', '{2}', '{3}', {4}, '{5}', '{6}')", bill.BillID, bill.TimeCheckOut, bill.TotalBill, bill.DiscountID, bill.OtherFee, bill.TableID, bill.StaffID));
+            foreach (Order i in OrderDAL.Instance.GetListOrderByTableID(bill.TableID))
+            {
+                DBHelper.Instance.ExecuteDB(String.Format("Insert into Data VALUES('{0}', N'{1}', N'{2}', N'{3}')", bill.BillID, i.DishName, i.Quantity, bill.TimeCheckOut));
+            }
+            DBHelper.Instance.ExecuteDB(String.Format("Delete from [Order] where TableID = '{0}'", bill.TableID));
         }
 
         public string GetLastBillID()
@@ -28,7 +34,7 @@ namespace QUANLIQUANCAFE.DAL
             //get last bill id
             if (DBHelper.Instance.GetRecords("SELECT * FROM Bill").Rows.Count == 0)
                 return "0000";
-            return DBHelper.Instance.GetRecords("SELECT * FROM Bill").Rows[DBHelper.Instance.GetRecords("SELECT * FROM Bill").Rows.Count - 1]["ID"].ToString();
+            return DBHelper.Instance.GetRecords("SELECT * FROM Bill").Rows[DBHelper.Instance.GetRecords("SELECT * FROM Bill").Rows.Count - 1]["BillID"].ToString();
         }
     }
 }
