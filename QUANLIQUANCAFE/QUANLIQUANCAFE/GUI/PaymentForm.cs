@@ -71,7 +71,7 @@ namespace QUANLIQUANCAFE.GUI
             Graphics g = panelBill.CreateGraphics();
             // bmp new bit map A5 size
             bmp = new Bitmap(this.Size.Width, this.Size.Height, g);
-            printDocument1.DefaultPageSettings.PaperSize = new PaperSize("", panelBill.Width, panelBill.Height + 20);
+            printDocument1.DefaultPageSettings.PaperSize = new PaperSize("A5", panelBill.Width, panelBill.Height + 20);
 
             panelBill.DrawToBitmap(bmp, new Rectangle(0, 0, panelBill.Width, panelBill.Height));
             printPreviewDialog1.ShowDialog();
@@ -88,7 +88,8 @@ namespace QUANLIQUANCAFE.GUI
             Quanli.Instance.Pay(new Bill
             {
                 BillID = Quanli.Instance.NewBillID(),
-                TimeCheckOut = Convert.ToDateTime(lbTime.Text),
+                //lbtime.text = 13/05/2020 12:44:22 to datetime
+                TimeCheckOut = DateTime.ParseExact(lbTime.Text, "dd/MM/yyyy HH:mm:ss", null),
                 TotalBill = Convert.ToInt32(lbTotalPrice.Text),
                 DiscountID = (cbbkm.SelectedItem as CBBItem).Value,
                 OtherFee = Convert.ToInt32(lbPromotion.Text),

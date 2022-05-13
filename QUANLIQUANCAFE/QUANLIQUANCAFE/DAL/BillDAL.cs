@@ -27,6 +27,7 @@ namespace QUANLIQUANCAFE.DAL
                 DBHelper.Instance.ExecuteDB(String.Format("Insert into Data VALUES('{0}', N'{1}', N'{2}', N'{3}')", bill.BillID, i.DishName, i.Quantity, bill.TimeCheckOut));
             }
             DBHelper.Instance.ExecuteDB(String.Format("Delete from [Order] where TableID = '{0}'", bill.TableID));
+            DBHelper.Instance.ExecuteDB(string.Format("Update [Table] set Status = 'false' where TableID = '{0}'", bill.TableID));
         }
 
         public string GetLastBillID()
