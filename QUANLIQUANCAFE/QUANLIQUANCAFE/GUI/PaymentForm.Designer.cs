@@ -301,6 +301,7 @@
             this.cbbkm.Name = "cbbkm";
             this.cbbkm.Size = new System.Drawing.Size(97, 21);
             this.cbbkm.TabIndex = 11;
+            this.cbbkm.SelectedIndexChanged += new System.EventHandler(this.cbbkm_SelectedIndexChanged);
             // 
             // label9
             // 

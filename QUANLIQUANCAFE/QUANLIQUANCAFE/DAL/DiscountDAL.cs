@@ -27,6 +27,7 @@ namespace QUANLIQUANCAFE.BLL
             List<Discount> list = new List<Discount>();
             foreach (DataRow item in DBHelper.Instance.GetRecords("SELECT * FROM Discount").Rows)
             {
+                //Console.WriteLine("1" + item["Type"].ToString() + "1");
                 list.Add(new Discount(item));
             }
             return list;

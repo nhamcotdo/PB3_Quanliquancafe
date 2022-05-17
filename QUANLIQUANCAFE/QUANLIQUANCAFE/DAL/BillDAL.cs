@@ -30,6 +30,11 @@ namespace QUANLIQUANCAFE.DAL
             DBHelper.Instance.ExecuteDB(string.Format("Update [Table] set Status = 'false' where TableID = '{0}'", bill.TableID));
         }
 
+        public List<BillView> SelectBillByDate(DateTime from, DateTime to)
+        {
+            DBHelper.Instance.GetRecords(string.Format("Select Bill.BillID, Bill.TimeCheckOut, Bill.TotalBill Staff.StaffName from Bill, Staff where and Bill.StaffID = Staff.StaffID and TimeCheckOut between '{0}' and '{1}'", from, to));
+        }
+
         public string GetLastBillID()
         {
             //get last bill id

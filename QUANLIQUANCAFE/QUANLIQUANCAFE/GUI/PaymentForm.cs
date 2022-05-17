@@ -54,7 +54,7 @@ namespace QUANLIQUANCAFE.GUI
 
             foreach (Discount item in Quanli.Instance.GetAllDiscount())
             {
-                cbbkm.Items.Add(new CBBItem(item.DisCountName, item.DiscountID));
+                cbbkm.Items.Add(item);
             }
             cbbkm.SelectedIndex = 0;
 
@@ -91,13 +91,13 @@ namespace QUANLIQUANCAFE.GUI
                 //lbtime.text = 13/05/2020 12:44:22 to datetime
                 TimeCheckOut = DateTime.ParseExact(lbTime.Text, "dd/MM/yyyy HH:mm:ss", null),
                 TotalBill = Convert.ToInt32(lbTotalPrice.Text),
-                DiscountID = (cbbkm.SelectedItem as CBBItem).Value,
-                OtherFee = Convert.ToInt32(lbPromotion.Text),
+                DiscountID = (cbbkm.SelectedItem as Discount).DiscountID,
+                OtherFee = Convert.ToInt32(lbOther.Text),
                 TableID = TableID,
                 StaffID = staff.StaffID,
             }
               );
-
+            this.Dispose();
             d();
         }
 
@@ -125,6 +125,18 @@ namespace QUANLIQUANCAFE.GUI
 
         }
 
+        private void cbbkm_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((cbbkm.SelectedItem as Discount).Percent == true)
+            {
+                lbPromotion.Text = (-Convert.ToInt32(lbTotal.Text) * (cbbkm.SelectedItem as Discount).Value / 100).ToString();
+            }
+            else
+            {
+                lbPromotion.Text = (-(cbbkm.SelectedItem as Discount).Value).ToString();
+            }
+            lbTotalPrice.Text = (Convert.ToInt32(lbTotal.Text) + Convert.ToInt32(lbPromotion.Text) + Convert.ToInt32(lbOther.Text)).ToString();
 
+        }
     }
 }

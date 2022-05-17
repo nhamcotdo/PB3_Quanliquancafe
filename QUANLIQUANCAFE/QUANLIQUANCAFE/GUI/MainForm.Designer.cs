@@ -36,8 +36,10 @@
             this.thuChiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.càiĐặToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.đổiMàuNềnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemChangeColor = new System.Windows.Forms.ToolStripMenuItem();
             this.đổiNgônNgữToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuITiengViet = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemenglish = new System.Windows.Forms.ToolStripMenuItem();
             this.tàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,7 +47,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabHome = new System.Windows.Forms.TabPage();
-            this.flowLayout1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutTable = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutQuanLiTable = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -68,7 +70,7 @@
             this.lbNameNV = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabHome.SuspendLayout();
-            this.flowLayout1.SuspendLayout();
+            this.flowLayoutTable.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -105,54 +107,73 @@
             // lịchTrựcNhânViênToolStripMenuItem
             // 
             this.lịchTrựcNhânViênToolStripMenuItem.Name = "lịchTrựcNhânViênToolStripMenuItem";
-            this.lịchTrựcNhânViênToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.lịchTrựcNhânViênToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.lịchTrựcNhânViênToolStripMenuItem.Text = "Lịch trực nhân viên";
             // 
             // tàiKhoảnNhânViênToolStripMenuItem
             // 
             this.tàiKhoảnNhânViênToolStripMenuItem.Name = "tàiKhoảnNhânViênToolStripMenuItem";
-            this.tàiKhoảnNhânViênToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.tàiKhoảnNhânViênToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tàiKhoảnNhânViênToolStripMenuItem.Text = "Tài khoản nhân viên";
             // 
             // khoToolStripMenuItem
             // 
             this.khoToolStripMenuItem.Name = "khoToolStripMenuItem";
-            this.khoToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.khoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.khoToolStripMenuItem.Text = "Kho";
             // 
             // thuChiToolStripMenuItem
             // 
             this.thuChiToolStripMenuItem.Name = "thuChiToolStripMenuItem";
-            this.thuChiToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.thuChiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.thuChiToolStripMenuItem.Text = "Thu chi";
+            this.thuChiToolStripMenuItem.Click += new System.EventHandler(this.thuChiToolStripMenuItem_Click);
             // 
             // editMenu
             // 
             this.editMenu.Name = "editMenu";
-            this.editMenu.Size = new System.Drawing.Size(179, 22);
+            this.editMenu.Size = new System.Drawing.Size(180, 22);
             this.editMenu.Text = "Điều chỉnh Menu";
             this.editMenu.Click += new System.EventHandler(this.editMenu_cCick);
             // 
             // càiĐặToolStripMenuItem
             // 
             this.càiĐặToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.đổiMàuNềnToolStripMenuItem,
+            this.ToolStripMenuItemChangeColor,
             this.đổiNgônNgữToolStripMenuItem});
             this.càiĐặToolStripMenuItem.Name = "càiĐặToolStripMenuItem";
             this.càiĐặToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.càiĐặToolStripMenuItem.Text = "Cài đặt";
             // 
-            // đổiMàuNềnToolStripMenuItem
+            // ToolStripMenuItemChangeColor
             // 
-            this.đổiMàuNềnToolStripMenuItem.Name = "đổiMàuNềnToolStripMenuItem";
-            this.đổiMàuNềnToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
-            this.đổiMàuNềnToolStripMenuItem.Text = "Đổi màu nền";
+            this.ToolStripMenuItemChangeColor.Name = "ToolStripMenuItemChangeColor";
+            this.ToolStripMenuItemChangeColor.Size = new System.Drawing.Size(147, 22);
+            this.ToolStripMenuItemChangeColor.Text = "Đổi màu nền";
+            this.ToolStripMenuItemChangeColor.Click += new System.EventHandler(this.ToolStripMenuItemChangeColor_Click);
             // 
             // đổiNgônNgữToolStripMenuItem
             // 
+            this.đổiNgônNgữToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuITiengViet,
+            this.ToolStripMenuItemenglish});
             this.đổiNgônNgữToolStripMenuItem.Name = "đổiNgônNgữToolStripMenuItem";
             this.đổiNgônNgữToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.đổiNgônNgữToolStripMenuItem.Text = "Đổi ngôn ngữ";
+            // 
+            // ToolStripMenuITiengViet
+            // 
+            this.ToolStripMenuITiengViet.Name = "ToolStripMenuITiengViet";
+            this.ToolStripMenuITiengViet.Size = new System.Drawing.Size(125, 22);
+            this.ToolStripMenuITiengViet.Text = "Tiếng việt";
+            this.ToolStripMenuITiengViet.Click += new System.EventHandler(this.ToolStripMenuITiengViet_Click);
+            // 
+            // ToolStripMenuItemenglish
+            // 
+            this.ToolStripMenuItemenglish.Name = "ToolStripMenuItemenglish";
+            this.ToolStripMenuItemenglish.Size = new System.Drawing.Size(125, 22);
+            this.ToolStripMenuItemenglish.Text = "English";
+            this.ToolStripMenuItemenglish.Click += new System.EventHandler(this.ToolStripMenuItemenglish_Click);
             // 
             // tàiKhoảnToolStripMenuItem
             // 
@@ -200,7 +221,7 @@
             // 
             // tabHome
             // 
-            this.tabHome.Controls.Add(this.flowLayout1);
+            this.tabHome.Controls.Add(this.flowLayoutTable);
             this.tabHome.Controls.Add(this.panel2);
             this.tabHome.Location = new System.Drawing.Point(4, 22);
             this.tabHome.Name = "tabHome";
@@ -210,16 +231,16 @@
             this.tabHome.Text = "Home";
             this.tabHome.UseVisualStyleBackColor = true;
             // 
-            // flowLayout1
+            // flowLayoutTable
             // 
-            this.flowLayout1.AutoScroll = true;
-            this.flowLayout1.Controls.Add(this.label1);
-            this.flowLayout1.Controls.Add(this.flowLayoutQuanLiTable);
-            this.flowLayout1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayout1.Location = new System.Drawing.Point(3, 3);
-            this.flowLayout1.Name = "flowLayout1";
-            this.flowLayout1.Size = new System.Drawing.Size(330, 544);
-            this.flowLayout1.TabIndex = 8;
+            this.flowLayoutTable.AutoScroll = true;
+            this.flowLayoutTable.Controls.Add(this.label1);
+            this.flowLayoutTable.Controls.Add(this.flowLayoutQuanLiTable);
+            this.flowLayoutTable.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flowLayoutTable.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutTable.Name = "flowLayoutTable";
+            this.flowLayoutTable.Size = new System.Drawing.Size(330, 544);
+            this.flowLayoutTable.TabIndex = 8;
             // 
             // label1
             // 
@@ -251,28 +272,26 @@
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.panel4);
-            this.panel2.Location = new System.Drawing.Point(339, 3);
+            this.panel2.Location = new System.Drawing.Point(342, 1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(580, 544);
+            this.panel2.Size = new System.Drawing.Size(580, 541);
             this.panel2.TabIndex = 7;
             // 
             // panel6
             // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.Controls.Add(this.numericUpDown1);
             this.panel6.Controls.Add(this.btnOrder);
             this.panel6.Controls.Add(this.cbbFoodMenu);
             this.panel6.Controls.Add(this.cbbDishGroup);
-            this.panel6.Location = new System.Drawing.Point(6, 10);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(569, 62);
+            this.panel6.Size = new System.Drawing.Size(580, 57);
             this.panel6.TabIndex = 7;
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(411, 20);
+            this.numericUpDown1.Location = new System.Drawing.Point(419, 19);
             this.numericUpDown1.Minimum = new decimal(new int[] {
             100,
             0,
@@ -320,7 +339,7 @@
             this.panel3.Controls.Add(this.btnMerge);
             this.panel3.Controls.Add(this.cbbTableName);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 459);
+            this.panel3.Location = new System.Drawing.Point(0, 456);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(580, 85);
             this.panel3.TabIndex = 5;
@@ -400,9 +419,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.dataGridView1);
             this.panel4.Controls.Add(this.lbTableName);
-            this.panel4.Location = new System.Drawing.Point(3, 78);
+            this.panel4.Location = new System.Drawing.Point(6, 63);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(577, 476);
+            this.panel4.Size = new System.Drawing.Size(568, 387);
             this.panel4.TabIndex = 6;
             // 
             // dataGridView1
@@ -411,9 +430,9 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 78);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 75);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(577, 398);
+            this.dataGridView1.Size = new System.Drawing.Size(568, 312);
             this.dataGridView1.TabIndex = 1;
             // 
             // lbTableName
@@ -423,7 +442,7 @@
             this.lbTableName.Font = new System.Drawing.Font("Mistral", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTableName.Location = new System.Drawing.Point(0, 0);
             this.lbTableName.Name = "lbTableName";
-            this.lbTableName.Size = new System.Drawing.Size(577, 78);
+            this.lbTableName.Size = new System.Drawing.Size(568, 75);
             this.lbTableName.TabIndex = 3;
             this.lbTableName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -464,8 +483,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabHome.ResumeLayout(false);
-            this.flowLayout1.ResumeLayout(false);
-            this.flowLayout1.PerformLayout();
+            this.flowLayoutTable.ResumeLayout(false);
+            this.flowLayoutTable.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -489,7 +508,7 @@
         private System.Windows.Forms.ToolStripMenuItem khoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thuChiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem càiĐặToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem đổiMàuNềnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemChangeColor;
         private System.Windows.Forms.ToolStripMenuItem đổiNgônNgữToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tàiKhoảnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
@@ -499,7 +518,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.ToolStripMenuItem editMenu;
         private System.Windows.Forms.TabPage tabHome;
-        private System.Windows.Forms.FlowLayoutPanel flowLayout1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutTable;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutQuanLiTable;
         private System.Windows.Forms.Panel panel2;
@@ -520,5 +539,9 @@
         private System.Windows.Forms.Label lbTableName;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.Label lbNameNV;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuITiengViet;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemenglish;
     }
 }

@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\DiscountDAL.cs" />
+    <Compile Include="DAL\DiscountDAL.cs" />
     <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\BillDAL.cs" />
     <Compile Include="DAL\DishDAL.cs" />
@@ -78,17 +80,17 @@
     <Compile Include="GUI\AddTable.Designer.cs">
       <DependentUpon>AddTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\BillManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\BillManagement.Designer.cs">
+      <DependentUpon>BillManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="DTO\Area.cs" />
     <Compile Include="GUI\Login.cs">
@@ -118,12 +120,12 @@
     <EmbeddedResource Include="GUI\AddTable.resx">
       <DependentUpon>AddTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\BillManagement.resx">
+      <DependentUpon>BillManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
