@@ -73,8 +73,4 @@ C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAF
 C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.exe
 C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.pdb
 D:\02.02\PBL\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.PaymentForm.resources
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
-D:\02.02\PBL\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.Storage.resources
 >>>>>>> Stashed changes

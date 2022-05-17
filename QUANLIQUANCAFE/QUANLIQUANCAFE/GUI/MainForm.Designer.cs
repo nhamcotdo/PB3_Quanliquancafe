@@ -104,38 +104,27 @@
             // lịchTrựcNhânViênToolStripMenuItem
             // 
             this.lịchTrựcNhânViênToolStripMenuItem.Name = "lịchTrựcNhânViênToolStripMenuItem";
-            this.lịchTrựcNhânViênToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lịchTrựcNhânViênToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.lịchTrựcNhânViênToolStripMenuItem.Text = "Lịch trực nhân viên";
             // 
             // tàiKhoảnNhânViênToolStripMenuItem
             // 
             this.tàiKhoảnNhânViênToolStripMenuItem.Name = "tàiKhoảnNhânViênToolStripMenuItem";
-            this.tàiKhoảnNhânViênToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tàiKhoảnNhânViênToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.tàiKhoảnNhânViênToolStripMenuItem.Text = "Tài khoản nhân viên";
             // 
             // khoToolStripMenuItem
             // 
             this.khoToolStripMenuItem.Name = "khoToolStripMenuItem";
-            this.khoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.khoToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.khoToolStripMenuItem.Text = "Kho";
-            this.khoToolStripMenuItem.Click += new System.EventHandler(this.khoToolStripMenuItem_Click);
             // 
             // thuChiToolStripMenuItem
             // 
             this.thuChiToolStripMenuItem.Name = "thuChiToolStripMenuItem";
-            this.thuChiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.thuChiToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.thuChiToolStripMenuItem.Text = "Thu chi";
             // 
-<<<<<<< Updated upstream
-=======
-            // editMenu
-            // 
-            this.editMenu.Name = "editMenu";
-            this.editMenu.Size = new System.Drawing.Size(180, 22);
-            this.editMenu.Text = "Điều chỉnh Menu";
-            this.editMenu.Click += new System.EventHandler(this.editMenu_cCick);
-            // 
->>>>>>> Stashed changes
             // càiĐặToolStripMenuItem
             // 
             this.càiĐặToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {

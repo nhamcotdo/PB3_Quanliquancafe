@@ -573,21 +573,5 @@ namespace QUANLIQUANCAFE.GUI
             f.ShowDialog();
             this.Show();
         }
-<<<<<<< Updated upstream
-=======
-
-        private void btnOrder_Click(object sender, EventArgs e)
-        {
-            Quanli.Instance.Order(lbTableName.Tag.ToString(), (cbbFoodMenu.SelectedItem as CBBItem).Value, (int)numericUpDown1.Value);
-            LoadOrder(lbTableName.Tag.ToString());
-        }
-
-        private void khoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Storage f = new Storage();
-            f.d = new Storage.Mydel(LoadDishGroup);
-            f.Show();
-        }
->>>>>>> Stashed changes
     }//665
 }
