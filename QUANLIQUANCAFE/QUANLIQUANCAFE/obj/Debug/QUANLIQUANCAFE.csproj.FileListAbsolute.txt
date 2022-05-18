@@ -72,3 +72,4 @@ C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAF
 C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.pdb
 C:\Users\nhamq\Desktop\Workspace\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.PaymentForm.resources
 D:\02.02\PBL\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.PaymentForm.resources
+D:\02.02\PBL\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.Storage.resources

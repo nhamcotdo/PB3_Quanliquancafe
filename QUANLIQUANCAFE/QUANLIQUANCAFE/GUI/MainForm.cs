@@ -628,6 +628,13 @@ namespace QUANLIQUANCAFE.GUI
             LoadOrder(lbTableName.Tag.ToString());
         }
 
+        private void khoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Storage f = new Storage();
+            f.d = new Storage.Mydel(LoadDishGroup);
+            f.Show();
+        }
+
 
     }//665
 }
