@@ -32,5 +32,10 @@ namespace QUANLIQUANCAFE.BLL
             }
             return list;
         }
+
+        public Discount GetDiscountByID(string discountID)
+        {
+            return new Discount(DBHelper.Instance.GetRecords("SELECT * FROM Discount WHERE DiscountID = '" + discountID + "'").Rows[0]);
+        }
     }
 }

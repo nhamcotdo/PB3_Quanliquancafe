@@ -59,6 +59,7 @@
     <Compile Include="DAL\OrderDAL.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\Bill.cs" />
+    <Compile Include="DTO\BillView.cs" />
     <Compile Include="DTO\Discount.cs" />
     <Compile Include="DTO\Dish.cs" />
     <Compile Include="DTO\DishGroup.cs" />
@@ -105,11 +106,23 @@
     <Compile Include="GUI\PaymentForm.Designer.cs">
       <DependentUpon>PaymentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ShowBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ShowBill.Designer.cs">
+      <DependentUpon>ShowBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ShowMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\ShowMenu.Designer.cs">
       <DependentUpon>ShowMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StatisticForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\StatisticForm.Designer.cs">
+      <DependentUpon>StatisticForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -133,8 +146,14 @@
     <EmbeddedResource Include="GUI\PaymentForm.resx">
       <DependentUpon>PaymentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ShowBill.resx">
+      <DependentUpon>ShowBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\ShowMenu.resx">
       <DependentUpon>ShowMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StatisticForm.resx">
+      <DependentUpon>StatisticForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

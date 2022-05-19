@@ -9,10 +9,10 @@ namespace QUANLIQUANCAFE.DTO
 {
     public class BillView
     {
-        String BillID { get; set; }
-        String TimeCheckOut { get; set; }
-        int TotalBill { get; set; }
-        string StaffName { get; set; }
+        public String BillID { get; set; }
+        public String TimeCheckOut { get; set; }
+        public int TotalBill { get; set; }
+        public string StaffName { get; set; }
         public BillView(DataRow row)
         {
             BillID = row["BillID"].ToString();

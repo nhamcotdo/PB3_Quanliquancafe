@@ -35,6 +35,17 @@ namespace QUANLIQUANCAFE.BLL
             set => instance = value;
         }
 
+        public Bill GetBillByID(string billID)
+        {
+            return BillDAL.Instance.GetBillByID(billID);
+        }
+
+        public List<Bill> GetListBillByYearMonth(int Year, int Month = 0)
+        {
+            return BillDAL.Instance.GetListBillByYearMonth(Year, Month);
+
+        }
+
         public List<BillView> SelectBillByDate(DateTime from, DateTime to)
         {
             return BillDAL.Instance.SelectBillByDate(from, to);
@@ -46,6 +57,11 @@ namespace QUANLIQUANCAFE.BLL
 
 
 
+        }
+
+        public DataTable GetListOrderByBillID(string billID)
+        {
+            return BillDAL.Instance.GetListOrderByBillID(billID);
         }
 
         //Table
@@ -84,6 +100,11 @@ namespace QUANLIQUANCAFE.BLL
             }
             return listButton;
 
+        }
+
+        public Discount GetDiscountByID(string discountID)
+        {
+            return DiscountDAL.Instance.GetDiscountByID(discountID);
         }
 
         public Table GetTableByID(string tableID)

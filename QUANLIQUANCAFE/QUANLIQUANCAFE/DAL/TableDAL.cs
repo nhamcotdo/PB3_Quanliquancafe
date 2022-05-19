@@ -44,6 +44,8 @@ namespace QUANLIQUANCAFE.DAL
             if (!isMergered)
             {
                 DBHelper.Instance.ExecuteDB(string.Format("UPDATE [Table] SET Status = N'{0}' WHERE TableID = N'{1}'", "false", oldTable));
+                DBHelper.Instance.ExecuteDB(string.Format("UPDATE [Table] SET MergeList = N'{0}' WHERE TableID = N'{1}'", newTable + "," + GetTableByID(oldTable).MergeString, newTable));
+                DBHelper.Instance.ExecuteDB(string.Format("UPDATE [Table] SET MergeList = N'{0}' WHERE TableID = N'{1}'", oldTable, oldTable));
             }
             else
             {
@@ -51,7 +53,7 @@ namespace QUANLIQUANCAFE.DAL
                 DataTable check = DBHelper.Instance.GetRecords(string.Format("Select * from [Table] where TableID = N'{0}' and MergeList like '%{1}%'", newTable, oldTable));
                 if (check.Rows.Count == 0)
                 {
-                    DBHelper.Instance.ExecuteDB(string.Format("UPDATE [Table] SET MergeList = concat(MergeList, N',{0}') WHERE TableID = N'{1}'", oldTable, newTable));
+                    DBHelper.Instance.ExecuteDB(string.Format("UPDATE [Table] SET MergeList = concat(MergeList, N',{0}') WHERE TableID = N'{1}'", GetTableByID(oldTable).MergeString, newTable));
                 }
             }
 

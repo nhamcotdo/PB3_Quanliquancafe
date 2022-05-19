@@ -202,7 +202,9 @@ namespace QUANLIQUANCAFE.GUI
             Quanli.Instance.MoveTable(((CBBItem)cbbTableName.SelectedItem).Value.ToString(), lbTableName.Tag.ToString(), true);
             StatusTable();
             dataGridView1.DataSource = Quanli.Instance.GetListOrderByTableID(lbTableName.Tag.ToString());
-
+            dataGridView1.Columns[0].HeaderText = "Tên món";
+            dataGridView1.Columns[1].HeaderText = "Số lượng";
+            dataGridView1.Columns[2].HeaderText = "Đơn giá";
         }
 
         private void btnDel_Click(object sender, EventArgs e)
@@ -715,6 +717,7 @@ namespace QUANLIQUANCAFE.GUI
         {
             Quanli.Instance.Order(lbTableName.Tag.ToString(), (cbbFoodMenu.SelectedItem as CBBItem).Value, (int)numericUpDown1.Value);
             LoadOrder(lbTableName.Tag.ToString());
+            this.Controls.Find(lbTableName.Tag.ToString(), true)[0].BackColor = c1;
         }
 
         private void ToolStripMenuItemChangeColor_Click(object sender, EventArgs e)
@@ -724,7 +727,7 @@ namespace QUANLIQUANCAFE.GUI
 
         private void thuChiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            new BillManagement().Show();
         }
     }//665
 }

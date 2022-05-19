@@ -75,30 +75,26 @@ namespace QUANLIQUANCAFE.GUI
 
             panelBill.DrawToBitmap(bmp, new Rectangle(0, 0, panelBill.Width, panelBill.Height));
             printPreviewDialog1.ShowDialog();
-            // Lưu dữ liệu
-            //            [BillID] NCHAR(10)   NOT NULL,
-
-            //[TimeCheckOut] DATETIME NOT NULL,
-            //    [TotalBill] INT NOT NULL,
-            //    [DiscountID] NCHAR(10)   NULL,
-            //    [OtherFee] INT NULL,
-            //    [TableID]      NVARCHAR(4) NOT NULL,
-
-            //   [StaffID]      NCHAR(10)   NOT NULL,
-            Quanli.Instance.Pay(new Bill
+            //messagebox confirm
+            if (MessageBox.Show("Bạn có chắc chắn thanh toán đơn này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                BillID = Quanli.Instance.NewBillID(),
-                //lbtime.text = 13/05/2020 12:44:22 to datetime
-                TimeCheckOut = DateTime.ParseExact(lbTime.Text, "dd/MM/yyyy HH:mm:ss", null),
-                TotalBill = Convert.ToInt32(lbTotalPrice.Text),
-                DiscountID = (cbbkm.SelectedItem as Discount).DiscountID,
-                OtherFee = Convert.ToInt32(lbOther.Text),
-                TableID = TableID,
-                StaffID = staff.StaffID,
+
+                Quanli.Instance.Pay(new Bill
+                {
+                    BillID = Quanli.Instance.NewBillID(),
+                    //lbtime.text = 13/05/2020 12:44:22 to datetime
+                    TimeCheckOut = DateTime.ParseExact(lbTime.Text, "dd/MM/yyyy HH:mm:ss", null),
+                    TotalBill = Convert.ToInt32(lbTotalPrice.Text),
+                    DiscountID = (cbbkm.SelectedItem as Discount).DiscountID,
+                    OtherFee = Convert.ToInt32(lbOther.Text),
+                    TableID = TableID,
+                    StaffID = staff.StaffID,
+                }
+                 );
+                this.Dispose();
+                d();
             }
-              );
-            this.Dispose();
-            d();
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -121,8 +117,6 @@ namespace QUANLIQUANCAFE.GUI
         private void tbOther_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
-
-
         }
 
         private void cbbkm_SelectedIndexChanged(object sender, EventArgs e)
