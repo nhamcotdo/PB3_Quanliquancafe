@@ -419,7 +419,17 @@ namespace QUANLIQUANCAFE.BLL
 
         public bool CheckDatetime(string id, string datetime)
         {
-            return StorageDAL.Instance.CheckDateTime(id, datetime);
+            if (StorageDAL.Instance.CheckID(id))
+                return StorageDAL.Instance.CheckDateTime(datetime);
+            return false;
+        }
+        public int GetQuantityByID(string id)
+        {
+            return StorageDAL.Instance.GetQuantityByID(id);
+        }
+        public void AddStorage(string grocID, string grocName, string quantity, string unit, int price, string dateCheckIn)
+        {
+            StorageDAL.Instance.AddStorage(grocID, grocName, quantity, unit, price, dateCheckIn);
         }
     }
 

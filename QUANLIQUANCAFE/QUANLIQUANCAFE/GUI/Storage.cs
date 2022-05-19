@@ -64,12 +64,29 @@ namespace QUANLIQUANCAFE.GUI
 
         private void butAdd_Click(object sender, EventArgs e)
         {
-            string id = txtID.Text;
-            string datetime = dateTimePicker1.Value.ToString();
-            if (Quanli.Instance.CheckDatetime(id, datetime))
-            {
+            int OldQuantity, AddQuantity, NewQuantity;
 
+            string id = txtID.Text;
+            string datetime = DateTime.Now.ToString();
+            int price = Convert.ToInt32(txtPrice.Text);
+            string unit = cbbUnit.Text;
+            string name = txtName.Text;
+            string time = dateTimePicker1.Value.Date.ToString();
+            MessageBox.Show(time);
+
+            if (!Quanli.Instance.CheckDatetime(id, datetime))
+            {
+                AddQuantity = Convert.ToInt32(numericUpDown1.Value);
+                OldQuantity = Convert.ToInt32(Quanli.Instance.GetQuantityByID(id));
+                NewQuantity = (OldQuantity + AddQuantity);
+                Quanli.Instance.UpdateStorage(id, name, NewQuantity.ToString(), unit, price, time);
             }
+            else
+            {
+                AddQuantity = Convert.ToInt32(numericUpDown1.Value);
+                Quanli.Instance.AddStorage(id, name, AddQuantity.ToString(), unit, price, time);
+            }
+            LoadComponent();
         }
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -96,6 +113,33 @@ namespace QUANLIQUANCAFE.GUI
                 string time = dateTimePicker1.Value.ToString();
 
                 Quanli.Instance.UpdateStorage(id, name, quantity, unit, price, time);
+            }
+            LoadComponent();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int OldQuantity, SubQuantity, NewQuantity;
+
+            string id = txtID.Text;
+            string datetime = DateTime.Now.ToString();
+            int price = Convert.ToInt32(txtPrice.Text);
+            string unit = cbbUnit.Text;
+            string name = txtName.Text;
+            string time = dateTimePicker1.Value.Date.ToString();
+            MessageBox.Show(time);
+
+            if (!Quanli.Instance.CheckDatetime(id, datetime))
+            {
+                SubQuantity = Convert.ToInt32(numericUpDown1.Value);
+                OldQuantity = Convert.ToInt32(Quanli.Instance.GetQuantityByID(id));
+                NewQuantity = (OldQuantity - SubQuantity);
+                Quanli.Instance.UpdateStorage(id, name, NewQuantity.ToString(), unit, price, time);
+            }
+            else
+            {
+                SubQuantity = Convert.ToInt32(numericUpDown1.Value);
+                Quanli.Instance.AddStorage(id, name, SubQuantity.ToString(), unit, price, time);
             }
             LoadComponent();
         }

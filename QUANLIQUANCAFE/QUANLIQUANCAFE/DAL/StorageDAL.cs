@@ -32,10 +32,31 @@ namespace QUANLIQUANCAFE.DAL
             DBHelper.Instance.ExecuteDB(query);
         }
 
-        public bool CheckDateTime(string id, string datetime)
+        public bool CheckID(string id)
         {
             string query = string.Format("SELECT * FROM [STORAGE] WHERE GrocID = N'{0}'", id);
             return DBHelper.Instance.GetRecords(query).Rows.Count > 0;
+        }
+
+        public bool CheckDateTime(string datetime)
+        {
+            DateTime time = Convert.ToDateTime(datetime);
+            string query = string.Format("SELECT * FROM [STORAGE] WHERE TimeCheckIn = N'{0}'", time.Date);
+            return DBHelper.Instance.GetRecords(query).Rows.Count > 0;
+        }
+
+        public int GetQuantityByID(string id)
+        {
+            int quant;
+            string query = string.Format("Select Quantity from [STORAGE] WHERE GrocID = N'{0}'", id);
+            quant = Convert.ToInt32(DBHelper.Instance.GetRecords(query).Rows[0][0].ToString());
+            return quant;
+        }
+
+        public void AddStorage(string grocID, string grocName, string quantity, string unit, int price, string dateCheckIn)
+        {
+            string query = string.Format("Insert into [STORAGE] values (N'{0}', N'{1}', N'{2}', N'{3}', N'{4}', N'{5}')", grocID, grocName, quantity, unit, price, dateCheckIn);
+            DBHelper.Instance.ExecuteDB(query);
         }
     }
 }
