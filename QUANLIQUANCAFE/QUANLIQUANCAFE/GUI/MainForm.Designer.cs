@@ -121,6 +121,7 @@
             this.khoToolStripMenuItem.Name = "khoToolStripMenuItem";
             this.khoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.khoToolStripMenuItem.Text = "Kho";
+            this.khoToolStripMenuItem.Click += new System.EventHandler(this.khoToolStripMenuItem_Click_1);
             // 
             // thuChiToolStripMenuItem
             // 
@@ -148,17 +149,16 @@
             // ToolStripMenuItemChangeColor
             // 
             this.ToolStripMenuItemChangeColor.Name = "ToolStripMenuItemChangeColor";
-            this.ToolStripMenuItemChangeColor.Size = new System.Drawing.Size(147, 22);
+            this.ToolStripMenuItemChangeColor.Size = new System.Drawing.Size(180, 22);
             this.ToolStripMenuItemChangeColor.Text = "Đổi màu nền";
-            this.ToolStripMenuItemChangeColor.Click += new System.EventHandler(this.ToolStripMenuItemChangeColor_Click);
-            // 
+            //  
             // đổiNgônNgữToolStripMenuItem
             // 
             this.đổiNgônNgữToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuITiengViet,
             this.ToolStripMenuItemenglish});
             this.đổiNgônNgữToolStripMenuItem.Name = "đổiNgônNgữToolStripMenuItem";
-            this.đổiNgônNgữToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.đổiNgônNgữToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.đổiNgônNgữToolStripMenuItem.Text = "Đổi ngôn ngữ";
             // 
             // ToolStripMenuITiengViet
@@ -244,7 +244,7 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Microsoft Uighur", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 10);
@@ -266,8 +266,8 @@
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.panel3);
@@ -414,8 +414,8 @@
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.dataGridView1);
             this.panel4.Controls.Add(this.lbTableName);

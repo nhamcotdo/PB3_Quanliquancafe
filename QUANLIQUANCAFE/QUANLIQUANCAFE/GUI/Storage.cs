@@ -46,7 +46,6 @@ namespace QUANLIQUANCAFE.GUI
             dt = DBHelper.Instance.GetRecords(query);
             dataGridView1.DataSource = dt;
             AddDataheader();
-            AddDataWidth();
         }
         public void AddDataheader()
         {
@@ -57,10 +56,7 @@ namespace QUANLIQUANCAFE.GUI
             dataGridView1.Columns[4].HeaderText = "Giá";
             dataGridView1.Columns[5].HeaderText = "Ngày nhập";
         }
-        public void AddDataWidth()
-        {
-            dataGridView1.Columns[4].Width = 150;
-        }
+
 
         private void butAdd_Click(object sender, EventArgs e)
         {

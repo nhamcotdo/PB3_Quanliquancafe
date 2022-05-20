@@ -727,12 +727,17 @@ namespace QUANLIQUANCAFE.GUI
             f.Show();
         }
 
+        private void thuChiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new BillManagement().Show();
+        }
 
+        private void khoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            new Storage().Show();
+        }
     }
 
-    private void thuChiToolStripMenuItem_Click(object sender, EventArgs e)
-    {
-        new BillManagement().Show();
-    }
+
 }//665
 
