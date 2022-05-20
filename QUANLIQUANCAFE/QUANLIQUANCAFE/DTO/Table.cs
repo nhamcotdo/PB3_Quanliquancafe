@@ -15,6 +15,7 @@ namespace QUANLIQUANCAFE.DTO
         public string TableName { get; set; }
         public bool Status { get; set; }
         public List<string> Merge { get; set; }
+        public string MergeString { get; set; }
 
         public Table(DataRow dr)
         {
@@ -23,6 +24,7 @@ namespace QUANLIQUANCAFE.DTO
             TableName = dr["TableName"].ToString();
             Status = (bool)dr["Status"];
             Merge = dr["MergeList"].ToString().Split(',').ToList();
+            MergeString = dr["MergeList"].ToString();
         }
         public Table(string ID)
         {

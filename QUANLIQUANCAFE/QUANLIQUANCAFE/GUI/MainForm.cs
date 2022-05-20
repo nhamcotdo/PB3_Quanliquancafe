@@ -21,6 +21,8 @@ namespace QUANLIQUANCAFE.GUI
         Color c = Color.FromArgb(0, 255, 255);// Bàn trống
         Color c1 = Color.FromArgb(255, 255, 0);// Bàn đang được đặt
         Staff NV;
+        string langnow = "vi";
+        string lang = "vi";
 
         public MainForm(Staff Role)
         {
@@ -36,13 +38,13 @@ namespace QUANLIQUANCAFE.GUI
         }
         private void LoadComponent()
         {
-            int w = this.flowLayout1.Width;
+            int w = this.flowLayoutTable.Width;
             //add Area to flowLayoutPanel
-            flowLayout1.Controls.Clear();
+            flowLayoutTable.Controls.Clear();
             Quanli.Instance.d = new Quanli.Mydel(btnTable_Click);
             foreach (FlowLayoutPanel i in Quanli.Instance.ListPanelArea(w, c, c1))
             {
-                this.flowLayout1.Controls.Add(i);
+                this.flowLayoutTable.Controls.Add(i);
             }
             cbbTableName.Items.Clear();
             foreach (DTO.Table i in Quanli.Instance.GetListTableByAreaID())
@@ -53,6 +55,80 @@ namespace QUANLIQUANCAFE.GUI
             lbTableName.Text = (cbbTableName.SelectedItem as CBBItem).Text;
             lbTableName.Tag = (cbbTableName.SelectedItem as CBBItem).Value;
             LoadOrder(lbTableName.Tag.ToString());
+            if (langnow == lang)
+                return;
+            langnow = lang;
+            if (lang == "en")
+            {
+
+                foreach (ToolStripMenuItem i in menuStrip1.Items)
+                {
+                    i.Text = Quanli.Instance.TranslateText(i.Text, "vi", "en");
+                    foreach (ToolStripMenuItem j in i.DropDownItems)
+                    {
+                        j.Text = Quanli.Instance.TranslateText(j.Text, "vi", "en");
+                    }
+                }
+
+                // đổi ngôn ngữ button
+                btnOrder.Text = "Order";
+                btnPay.Text = "Pay";
+                btnMove.Text = "Move";
+                btnMerge.Text = "Merge";
+                btnAdd.Text = "Add";
+                btnDel.Text = "Delete";
+
+                //đổi ngôn ngữ Danh sách bàn
+                label1.Text = "List Table";
+                foreach (FlowLayoutPanel i in flowLayoutTable.Controls)
+                {
+
+                    foreach (Control j in i.Controls)
+                    {
+                        j.Text = Quanli.Instance.TranslateText(j.Text, "vi", "en");
+                    }
+
+
+                }
+
+
+
+
+                MessageBox.Show("Language has been changed successfully!");
+            }
+            else
+            {
+                foreach (ToolStripMenuItem i in menuStrip1.Items)
+                {
+                    i.Text = Quanli.Instance.TranslateText(i.Text, "en", "vi");
+                    foreach (ToolStripMenuItem j in i.DropDownItems)
+                    {
+                        j.Text = Quanli.Instance.TranslateText(j.Text, "en", "vi");
+                    }
+                }
+
+                btnOrder.Text = "Gọi món";
+                btnPay.Text = "Thanh toán";
+                btnMove.Text = "Chuyển bàn";
+                btnMerge.Text = "Gộp bàn";
+                btnAdd.Text = "Thêm món";
+                btnDel.Text = "Xóa món";
+
+                label1.Text = "Danh sách bàn";
+                foreach (FlowLayoutPanel i in flowLayoutTable.Controls)
+                {
+
+                    foreach (Control j in i.Controls)
+                    {
+                        j.Text = Quanli.Instance.TranslateText(j.Text, "en", "vi");
+                    }
+
+
+                }
+
+
+                MessageBox.Show("Dổi ngôn ngữ thành công!");
+            }
         }
         void LoadOrder(string tableID)
         {
@@ -79,7 +155,7 @@ namespace QUANLIQUANCAFE.GUI
         }
         private void StatusTable()
         {
-            foreach (Control i in flowLayout1.Controls)
+            foreach (Control i in flowLayoutTable.Controls)
             {
                 if (i is FlowLayoutPanel)
                 {
@@ -126,7 +202,9 @@ namespace QUANLIQUANCAFE.GUI
             Quanli.Instance.MoveTable(((CBBItem)cbbTableName.SelectedItem).Value.ToString(), lbTableName.Tag.ToString(), true);
             StatusTable();
             dataGridView1.DataSource = Quanli.Instance.GetListOrderByTableID(lbTableName.Tag.ToString());
-
+            dataGridView1.Columns[0].HeaderText = "Tên món";
+            dataGridView1.Columns[1].HeaderText = "Số lượng";
+            dataGridView1.Columns[2].HeaderText = "Đơn giá";
         }
 
         private void btnDel_Click(object sender, EventArgs e)
@@ -153,6 +231,19 @@ namespace QUANLIQUANCAFE.GUI
             f.Show();
         }
 
+        // đổi ngôn ngữ
+        private void ToolStripMenuITiengViet_Click(object sender, EventArgs e)
+        {
+            lang = "vi";
+
+            LoadComponent();
+        }
+
+        private void ToolStripMenuItemenglish_Click(object sender, EventArgs e)
+        {
+            lang = "en";
+            LoadComponent();
+        }
 
 
 
@@ -626,6 +717,7 @@ namespace QUANLIQUANCAFE.GUI
         {
             Quanli.Instance.Order(lbTableName.Tag.ToString(), (cbbFoodMenu.SelectedItem as CBBItem).Value, (int)numericUpDown1.Value);
             LoadOrder(lbTableName.Tag.ToString());
+            this.Controls.Find(lbTableName.Tag.ToString(), true)[0].BackColor = c1;
         }
 
         private void khoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -636,5 +728,11 @@ namespace QUANLIQUANCAFE.GUI
         }
 
 
-    }//665
-}
+    }
+
+    private void thuChiToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        new BillManagement().Show();
+    }
+}//665
+

@@ -11,16 +11,21 @@ namespace QUANLIQUANCAFE.DTO
     {
         public string DiscountID { get; set; }
         public string DisCountName { get; set; }
-        public string Value { get; set; }
-
+        public int Value { get; set; }
+        public bool Percent { get; set; }
         public Discount(DataRow dr)
         {
             DiscountID = dr["DiscountID"].ToString();
             DisCountName = dr["DisCountName"].ToString();
-            Value = dr["Value"].ToString();
+            Value = (int)dr["Value"];
+            Percent = Convert.ToBoolean(dr["Percent"].ToString().Trim());
         }
         public Discount()
         {
+        }
+        public override string ToString()
+        {
+            return DisCountName;
         }
     }
 }

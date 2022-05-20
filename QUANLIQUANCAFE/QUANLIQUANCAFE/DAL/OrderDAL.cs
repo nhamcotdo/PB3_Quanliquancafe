@@ -29,18 +29,22 @@ namespace QUANLIQUANCAFE.DAL
         public List<Order> GetListOrderByTableID(string ID)
         {
             List<Order> list = new List<Order>();
-            DataTable data = DBHelper.Instance.GetRecords("SELECT DishName, Quantity, Price " +
-                "FROM [Order] as D inner join" +
-                " [Table] as B" +
-                " on D.TableID = B.TableID inner join " +
-                " [Menu] as A " +
-                " on A.DishID = D.DishID" +
-                " WHERE D.TableID = '" + ID + "'");
-            //MessageBox.Show(data.Rows.Count.ToString());
-            foreach (DataRow item in data.Rows)
+            //select MergeList
+
+            foreach (string id in DBHelper.Instance.GetRecords(String.Format("SELECT MergeList FROM [Table] WHERE TableID = '{0}'", ID)).Rows[0][0].ToString().Split(',').Distinct())
             {
-                Order order = new Order(item);
-                list.Add(order);
+                DataTable data = DBHelper.Instance.GetRecords("SELECT DishName, Quantity, Price " +
+                    "FROM [Order] as D inner join" +
+                    " [Table] as B" +
+                    " on D.TableID = B.TableID inner join " +
+                    " [Menu] as A " +
+                    " on A.DishID = D.DishID" +
+                    " WHERE D.TableID = '" + id + "'");
+                foreach (DataRow item in data.Rows)
+                {
+                    Order order = new Order(item);
+                    list.Add(order);
+                }
             }
             return list;
         }
@@ -59,12 +63,14 @@ namespace QUANLIQUANCAFE.DAL
                     DBHelper.Instance.ExecuteDB("UPDATE [Order] SET Quantity = '" + q + "' WHERE TableID = '" + TableID + "' AND DishID = '" + dishID + "'");
                 else
                     DBHelper.Instance.ExecuteDB("DELETE FROM [Order] WHERE TableID = '" + TableID + "' AND DishID = '" + dishID + "'");
+                DBHelper.Instance.ExecuteDB("UPDATE [Table] SET Status = '" + true + "' WHERE TableID = '" + TableID + "'");
             }
             else
             {
                 if (quantity <= 0)
                     return;
                 DBHelper.Instance.ExecuteDB(string.Format("INSERT INTO [Order] VALUES ('{0}', '{1}', '{2}')", TableID, dishID, quantity));
+                DBHelper.Instance.ExecuteDB("UPDATE [Table] SET Status = '" + true + "' WHERE TableID = '" + TableID + "'");
             }
         }
     }
