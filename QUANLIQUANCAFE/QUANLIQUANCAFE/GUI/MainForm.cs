@@ -720,14 +720,19 @@ namespace QUANLIQUANCAFE.GUI
             this.Controls.Find(lbTableName.Tag.ToString(), true)[0].BackColor = c1;
         }
 
-        private void ToolStripMenuItemChangeColor_Click(object sender, EventArgs e)
+        private void khoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Storage f = new Storage();
+            f.d = new Storage.Mydel(LoadDishGroup);
+            f.Show();
         }
 
-        private void thuChiToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new BillManagement().Show();
-        }
-    }//665
-}
+
+    }
+
+    private void thuChiToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        new BillManagement().Show();
+    }
+}//665
+
