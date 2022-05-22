@@ -64,6 +64,17 @@ namespace QUANLIQUANCAFE.BLL
             return BillDAL.Instance.GetListOrderByBillID(billID);
         }
 
+        public void AddOrUpdateDiscount(Discount discount)
+        {
+            DiscountDAL.Instance.AddOrUpdateDiscount(discount);
+        }
+
+        public void ChangeInfo(Staff staff, AccountDTO accountDTO)
+        {
+            AccountDAL.Instance.ChangeInfo(accountDTO);
+            StaffNham.Instance.ChangeInfo(staff);
+        }
+
         //Table
         private List<Button> ListButtonTable(int w, string AreaID, Color c, Color c1)
         {
@@ -236,9 +247,9 @@ namespace QUANLIQUANCAFE.BLL
             }
             AreaDAL.Instance.AddArea(ID, name);
         }
-        public List<Discount> GetAllDiscount()
+        public List<Discount> GetAllDiscount(bool Active = true)
         {
-            return DiscountDAL.Instance.GetAllDiscount();
+            return DiscountDAL.Instance.GetAllDiscount(Active);
         }
         public string TranslateText(string input, string from, string to)
         {
@@ -259,6 +270,11 @@ namespace QUANLIQUANCAFE.BLL
             }
             if (translation.Length > 1) { translation = translation.Substring(1); };
             return translation;
+        }
+        public string NewDiscountID()
+        {
+            string s = "00" + (Convert.ToInt32(DiscountDAL.Instance.GetLastID()) + 1).ToString();
+            return s.Substring(s.Length - 3, 3);
         }
 
 

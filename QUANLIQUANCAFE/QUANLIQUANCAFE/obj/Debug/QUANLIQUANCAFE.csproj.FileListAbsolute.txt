@@ -32,3 +32,5 @@ C:\Users\nhamq\Desktop\PBL3\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\bin
 C:\Users\nhamq\Desktop\PBL3\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.Storage.resources
 C:\Users\nhamq\Desktop\PBL3\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.exe
 C:\Users\nhamq\Desktop\PBL3\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.pdb
+C:\Users\nhamq\Desktop\PBL3\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.ChangeInfo.resources
+C:\Users\nhamq\Desktop\PBL3\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.DiscountManagement.resources

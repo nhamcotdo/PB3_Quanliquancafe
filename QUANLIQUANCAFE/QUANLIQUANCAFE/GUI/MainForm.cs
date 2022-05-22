@@ -20,21 +20,21 @@ namespace QUANLIQUANCAFE.GUI
         Quanli bll = new Quanli();
         Color c = Color.FromArgb(0, 255, 255);// Bàn trống
         Color c1 = Color.FromArgb(255, 255, 0);// Bàn đang được đặt
-        Staff NV;
+        Staff staff;
         string langnow = "vi";
         string lang = "vi";
 
         public MainForm(Staff Role)
         {
-            NV = Role;
+            staff = Role;
             InitializeComponent();
             LoadComponent();
             LoadDishGroup();
-            if (!Quanli.Instance.GetAccountByStaffID(NV.StaffID).Role)
+            if (!Quanli.Instance.GetAccountByStaffID(staff.StaffID).Role)
             {
                 quảnLíToolStripMenuItem.Enabled = false;
             }
-            lbNameNV.Text = NV.StaffName;
+            lbNameNV.Text = staff.StaffName;
         }
         private void LoadComponent()
         {
@@ -246,60 +246,11 @@ namespace QUANLIQUANCAFE.GUI
         }
 
 
+        private void toolstripChangeInfo_Click(object sender, EventArgs e)
+        {
+            new ChangeInfo(staff).Show(); //Todo: lopws staffDAL, getstaff by ID
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        }
 
 
 
@@ -484,7 +435,7 @@ namespace QUANLIQUANCAFE.GUI
         }
         private void btnPay_Click(object sender, EventArgs e)
         {
-            PaymentForm f = new PaymentForm(lbTableName.Tag.ToString(), NV);
+            PaymentForm f = new PaymentForm(lbTableName.Tag.ToString(), staff);
             f.d = new PaymentForm.Mydel(LoadComponent);
             f.Show();
         }
@@ -731,10 +682,14 @@ namespace QUANLIQUANCAFE.GUI
         {
             new BillManagement().Show();
         }
-
         private void khoToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             new Storage().Show();
+        }
+
+        private void DiscountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new DiscountManagement().Show();
         }
     }
 

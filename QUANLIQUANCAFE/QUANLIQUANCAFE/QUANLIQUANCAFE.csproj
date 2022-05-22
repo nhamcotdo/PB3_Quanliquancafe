@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\StaffNham.cs" />
     <Compile Include="DAL\DiscountDAL.cs" />
     <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\BillDAL.cs" />
@@ -88,6 +89,18 @@
     </Compile>
     <Compile Include="GUI\BillManagement.Designer.cs">
       <DependentUpon>BillManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ChangeInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ChangeInfo.Designer.cs">
+      <DependentUpon>ChangeInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DiscountManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DiscountManagement.Designer.cs">
+      <DependentUpon>DiscountManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\MainForm.cs">
       <SubType>Form</SubType>
@@ -143,6 +156,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\BillManagement.resx">
       <DependentUpon>BillManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChangeInfo.resx">
+      <DependentUpon>ChangeInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DiscountManagement.resx">
+      <DependentUpon>DiscountManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

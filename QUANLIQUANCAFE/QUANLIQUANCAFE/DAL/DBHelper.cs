@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QUANLIQUANCAFE.DAL
 {
@@ -38,7 +39,16 @@ namespace QUANLIQUANCAFE.DAL
             {
                 cmd.Parameters.AddRange(sqlParameter);
             }
-            cmd.ExecuteNonQuery();
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                cnn.Close();
+                //MessageBox.Show(e.Message);
+                throw e;
+            }
             cnn.Close();
         }
 

@@ -41,5 +41,10 @@ namespace QUANLIQUANCAFE.DAL
         {
             return new AccountDTO(DBHelper.Instance.GetRecords("SELECT * FROM dbo.Account WHERE StaffID = '" + StaffID + "'").Rows[0]);
         }
+
+        public void ChangeInfo(AccountDTO accountDTO)
+        {
+            DBHelper.Instance.ExecuteDB("UPDATE dbo.Account SET Account = '" + accountDTO.Account + "', Password = '" + accountDTO.Password + "' WHERE StaffID = '" + accountDTO.StaffID + "'");
+        }
     }
 }
