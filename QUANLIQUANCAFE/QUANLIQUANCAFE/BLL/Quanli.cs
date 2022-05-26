@@ -72,7 +72,7 @@ namespace QUANLIQUANCAFE.BLL
         public void ChangeInfo(Staff staff, AccountDTO accountDTO)
         {
             AccountDAL.Instance.ChangeInfo(accountDTO);
-            StaffNham.Instance.ChangeInfo(staff);
+            StaffDAL.Instance.ChangeInfo(staff);
         }
 
         //Table
@@ -322,11 +322,43 @@ namespace QUANLIQUANCAFE.BLL
         {
             return AccountDAL.Instance.GetAccountByStaffID(id);
         }
+        public void UpdateStaff(string StaffID, string StaffName, int PhoneNumber, string Address, DateTime DateIn, string ShiftID, bool Sex)
+        {
+            StaffDAL.Instance.UpdateStaff(StaffID, StaffName, PhoneNumber, Address, DateIn, ShiftID, Sex);
+        }
+        public void UpdateAccount(string StaffID, string Account, string PassWord)
+        {
+            AccountDAL.Instance.UpdateAccount(StaffID, Account, PassWord);
+        }
+        //public bool CheckAccount(string StaffID)
+        //{
+        //    //return AccountDAL.Instance.CheckAccount(StaffID);
+
+        //}
+
+
+        //public void UpdateStaff(Staff staff, AccountDTO accountDTO)
+        //{
+        //    AccountDAL.Instance.UpdateStaff(accountDTO);
+        //    StaffDAL.Instance.UpdateStaff(staff);
+        //}
 
 
 
-
-
+        public void InsertStaff(string StaffID, string StaffName, int PhoneNumber, string Address, DateTime DateIn, string ShiftID, bool Sex)
+        {
+            StaffDAL.Instance.InsertStaff(StaffID, StaffName, PhoneNumber, Address, DateIn, ShiftID, Sex);
+        }
+        public void InsertAccount(string StaffID, string Account, string PassWord)
+        {
+            AccountDAL.Instance.InsertAccount(StaffID, Account, PassWord);
+        }
+        public void DelStaff(string StaffID)
+        {
+            AccountDAL.Instance.DelStaff(StaffID);
+            StaffDAL.Instance.DelStaff(StaffID);
+            
+        }
 
 
 
