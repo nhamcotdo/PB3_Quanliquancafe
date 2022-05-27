@@ -49,7 +49,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -67,6 +66,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.numericUpDown1);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.cbbUnit);
@@ -204,8 +205,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
             this.panel2.Location = new System.Drawing.Point(938, 13);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(129, 148);
@@ -213,7 +212,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(30, 32);
+            this.button2.Location = new System.Drawing.Point(831, 93);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 1;
@@ -223,7 +222,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(30, 3);
+            this.button1.Location = new System.Drawing.Point(831, 64);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -245,7 +244,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

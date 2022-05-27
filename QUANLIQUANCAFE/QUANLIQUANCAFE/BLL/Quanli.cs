@@ -357,7 +357,7 @@ namespace QUANLIQUANCAFE.BLL
         {
             AccountDAL.Instance.DelStaff(StaffID);
             StaffDAL.Instance.DelStaff(StaffID);
-            
+
         }
 
 
@@ -527,7 +527,13 @@ namespace QUANLIQUANCAFE.BLL
         }
         public void AddStorage(string grocID, string grocName, string quantity, string unit, int price, string dateCheckIn)
         {
-            StorageDAL.Instance.AddStorage(grocID, grocName, quantity, unit, price, dateCheckIn);
+            if (StorageDAL.Instance.CheckID(grocID))
+            {
+                int batch = Convert.ToInt32(dateCheckIn);
+                StorageDAL.Instance.AddStorageWithBatch(grocID, grocName, quantity, unit, price, dateCheckIn, batch);
+            }
+            else
+                StorageDAL.Instance.AddStorage(grocID, grocName, quantity, unit, price, dateCheckIn);
         }
     }
 

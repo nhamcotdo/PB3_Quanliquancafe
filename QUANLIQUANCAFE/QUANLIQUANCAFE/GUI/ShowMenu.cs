@@ -41,13 +41,13 @@ namespace QUANLIQUANCAFE.GUI
         public void addcbbDishGroup()
         {
             cbbDishGroup.Items.Add(new CBBItem { Value = "0", Text = "Tất cả" });
-            cbbDishGroup.Items.Add(new CBBItem { Value = "1", Text = "G001" });
-            cbbDishGroup.Items.Add(new CBBItem { Value = "2", Text = "G002" });
-            cbbDishGroup.Items.Add(new CBBItem { Value = "3", Text = "G003" });
-            cbbDishGroup.Items.Add(new CBBItem { Value = "4", Text = "G004" });
-            cbbDishGroup.Items.Add(new CBBItem { Value = "5", Text = "G005" });
-            cbbDishGroup.Items.Add(new CBBItem { Value = "6", Text = "G006" });
-            cbbDishGroup.Items.Add(new CBBItem { Value = "7", Text = "G007" });
+            cbbDishGroup.Items.Add(new CBBItem { Value = "1", Text = "Cà Phê Phin" });
+            cbbDishGroup.Items.Add(new CBBItem { Value = "2", Text = "Trà" });
+            cbbDishGroup.Items.Add(new CBBItem { Value = "3", Text = "Freeze" });
+            cbbDishGroup.Items.Add(new CBBItem { Value = "4", Text = "Phindi" });
+            cbbDishGroup.Items.Add(new CBBItem { Value = "5", Text = "Cà phê Espresso" });
+            cbbDishGroup.Items.Add(new CBBItem { Value = "6", Text = "Bánh" });
+            cbbDishGroup.Items.Add(new CBBItem { Value = "7", Text = "Thức uống khác" });
             cbbDishGroup.SelectedItem = 0;
         }
         private void butAddDish_Click(object sender, EventArgs e)
@@ -98,7 +98,6 @@ namespace QUANLIQUANCAFE.GUI
             });
             dt = DBHelper.Instance.GetRecords(query);
             dataGridView1.DataSource = dt;
-
         }
     }
 }
