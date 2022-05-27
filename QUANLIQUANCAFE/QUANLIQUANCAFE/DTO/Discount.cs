@@ -13,12 +13,15 @@ namespace QUANLIQUANCAFE.DTO
         public string DisCountName { get; set; }
         public int Value { get; set; }
         public bool Percent { get; set; }
+        public bool Active { get; set; }
+
         public Discount(DataRow dr)
         {
             DiscountID = dr["DiscountID"].ToString();
             DisCountName = dr["DisCountName"].ToString();
             Value = (int)dr["Value"];
             Percent = Convert.ToBoolean(dr["Percent"].ToString().Trim());
+            Active = Convert.ToBoolean(dr["Active"].ToString().Trim());
         }
         public Discount()
         {

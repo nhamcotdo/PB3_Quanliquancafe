@@ -13,7 +13,7 @@ namespace QUANLIQUANCAFE.DTO
         public string StaffName { get; set; }
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
-        public string DateIn { get; set; }
+        public DateTime DateIn { get; set; }
         public string ShiftID { get; set; }
         public bool Sex { get; set; }
 
@@ -23,9 +23,13 @@ namespace QUANLIQUANCAFE.DTO
             StaffName = dr["StaffName"].ToString();
             PhoneNumber = dr["PhoneNumber"].ToString();
             Address = dr["Address"].ToString();
-            DateIn = dr["DateIn"].ToString();
+            DateIn = Convert.ToDateTime(dr["DateIn"]);
             ShiftID = dr["ShiftID"].ToString();
             Sex = Convert.ToBoolean(dr["Sex"].ToString());
+        }
+        public Staff()
+        {
+
         }
     }
 }

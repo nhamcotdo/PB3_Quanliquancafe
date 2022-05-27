@@ -20,5 +20,9 @@ namespace QUANLIQUANCAFE.DTO
             Password = dr["Password"].ToString();
             Role = Convert.ToBoolean(dr["Role"].ToString());
         }
+        public AccountDTO()
+        {
+
+        }
     }
 }
