@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL\StaffNham.cs" />
+    <Compile Include="DAL\StaffDAL.cs" />
     <Compile Include="DAL\DiscountDAL.cs" />
     <Compile Include="DAL\AccountDAL.cs" />
     <Compile Include="DAL\BillDAL.cs" />
@@ -101,6 +101,12 @@
     </Compile>
     <Compile Include="GUI\DiscountManagement.Designer.cs">
       <DependentUpon>DiscountManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\IFStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\IFStaff.Designer.cs">
+      <DependentUpon>IFStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\MainForm.cs">
       <SubType>Form</SubType>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DiscountManagement.resx">
       <DependentUpon>DiscountManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\IFStaff.resx">
+      <DependentUpon>IFStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

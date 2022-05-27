@@ -90,10 +90,6 @@ namespace QUANLIQUANCAFE.GUI
 
 
                 }
-
-
-
-
                 MessageBox.Show("Language has been changed successfully!");
             }
             else
@@ -127,7 +123,7 @@ namespace QUANLIQUANCAFE.GUI
                 }
 
 
-                MessageBox.Show("Dổi ngôn ngữ thành công!");
+                MessageBox.Show("Đổi ngôn ngữ thành công!");
             }
         }
         void LoadOrder(string tableID)
@@ -439,7 +435,10 @@ namespace QUANLIQUANCAFE.GUI
             f.d = new PaymentForm.Mydel(LoadComponent);
             f.Show();
         }
-
+        private void IFStaffToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new IFStaff().Show();
+        }
 
 
 
@@ -691,6 +690,8 @@ namespace QUANLIQUANCAFE.GUI
         {
             new DiscountManagement().Show();
         }
+
+
     }
 
 

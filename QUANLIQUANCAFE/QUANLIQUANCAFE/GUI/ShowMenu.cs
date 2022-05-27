@@ -40,7 +40,7 @@ namespace QUANLIQUANCAFE.GUI
         }
         public void addcbbDishGroup()
         {
-            cbbDishGroup.Items.Add(new CBBItem { Value = "0" , Text = "Tất cả"});
+            cbbDishGroup.Items.Add(new CBBItem { Value = "0", Text = "Tất cả" });
             cbbDishGroup.Items.Add(new CBBItem { Value = "1", Text = "G001" });
             cbbDishGroup.Items.Add(new CBBItem { Value = "2", Text = "G002" });
             cbbDishGroup.Items.Add(new CBBItem { Value = "3", Text = "G003" });
@@ -80,7 +80,7 @@ namespace QUANLIQUANCAFE.GUI
         {
             DataTable dt = new DataTable();
             string query;
-            if(cbbDishGroup.SelectedIndex.Equals(0))
+            if (cbbDishGroup.SelectedIndex.Equals(0))
             {
                 query = string.Format("Select * from [Menu]");
             }
@@ -95,10 +95,10 @@ namespace QUANLIQUANCAFE.GUI
             new DataColumn("Giá"),
             new DataColumn("Nhóm món"),
             new DataColumn("Size"),
-            });          
+            });
             dt = DBHelper.Instance.GetRecords(query);
             dataGridView1.DataSource = dt;
-        
+
         }
     }
 }
