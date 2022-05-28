@@ -24,9 +24,9 @@ namespace QUANLIQUANCAFE.GUI
         string langnow = "vi";
         string lang = "vi";
 
-        public MainForm(Staff Role)
+        public MainForm(Staff staff)
         {
-            staff = Role;
+            this.staff = staff;
             InitializeComponent();
             LoadComponent();
             LoadDishGroup();
@@ -34,8 +34,15 @@ namespace QUANLIQUANCAFE.GUI
             {
                 quảnLíToolStripMenuItem.Enabled = false;
             }
+            LoadInfoStaff();
+        }
+
+        void LoadInfoStaff()
+        {
+            this.staff = Quanli.Instance.GetStaffByID(staff.StaffID);
             lbNameNV.Text = staff.StaffName;
         }
+
         private void LoadComponent()
         {
             int w = this.flowLayoutTable.Width;
@@ -248,8 +255,9 @@ namespace QUANLIQUANCAFE.GUI
 
         private void toolstripChangeInfo_Click(object sender, EventArgs e)
         {
-            new ChangeInfo(staff).Show(); //Todo: lopws staffDAL, getstaff by ID
-
+            ChangeInfo c = new ChangeInfo(staff);
+            c.d = new ChangeInfo.MyDel(LoadInfoStaff);
+            c.Show();
         }
 
 

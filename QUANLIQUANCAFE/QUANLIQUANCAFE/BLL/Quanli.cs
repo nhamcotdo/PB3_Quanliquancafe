@@ -46,6 +46,11 @@ namespace QUANLIQUANCAFE.BLL
 
         }
 
+        public Staff GetStaffByID(string staffID)
+        {
+            return StaffDAL.Instance.GetStaffByID(staffID);
+        }
+
         public List<BillView> SelectBillByDate(DateTime from, DateTime to)
         {
             return BillDAL.Instance.SelectBillByDate(from, to);
@@ -327,6 +332,23 @@ namespace QUANLIQUANCAFE.BLL
 
 
 
+<<<<<<< Updated upstream
+=======
+        public void InsertStaff(string StaffID, string StaffName, int PhoneNumber, string Address, DateTime DateIn, string ShiftID, bool Sex)
+        {
+            StaffDAL.Instance.InsertStaff(StaffID, StaffName, PhoneNumber, Address, DateIn, ShiftID, Sex);
+        }
+        public void InsertAccount(string StaffID, string Account, string PassWord)
+        {
+            AccountDAL.Instance.InsertAccount(StaffID, Account, PassWord);
+        }
+        public void DelStaff(string StaffID)
+        {
+            AccountDAL.Instance.DelStaff(StaffID);
+            StaffDAL.Instance.DelStaff(StaffID);
+
+        }
+>>>>>>> Stashed changes
 
 
 

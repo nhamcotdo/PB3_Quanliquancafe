@@ -240,6 +240,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::QUANLIQUANCAFE.Properties.Resources.istockphoto_874402896_612x612;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
@@ -260,7 +262,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtStaffID);
             this.Name = "ChangeInfo";
-            this.Text = "ChangePassword";
+            this.Text = "Thay đổi thông tin nhân viên";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

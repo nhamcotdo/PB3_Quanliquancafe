@@ -15,6 +15,8 @@ namespace QUANLIQUANCAFE.GUI
     public partial class ChangeInfo : Form
     {
         Staff staff;
+        public delegate void MyDel();
+        public MyDel d;
         public ChangeInfo(Staff staff)
         {
             InitializeComponent();
@@ -35,6 +37,7 @@ namespace QUANLIQUANCAFE.GUI
                 rbFemale.Checked = true;
             txtAccount.Text = Quanli.Instance.GetAccountByStaffID(staff.StaffID).Account;
             txtPassword.Text = Quanli.Instance.GetAccountByStaffID(staff.StaffID).Password;
+            txtPassword.PasswordChar = '*';
             cbHide.Checked = false;
         }
 
@@ -70,6 +73,7 @@ namespace QUANLIQUANCAFE.GUI
                     Role = Quanli.Instance.GetAccountByStaffID(staff.StaffID).Role
                 }
                 );
+            d();
             this.Dispose();
         }
 
