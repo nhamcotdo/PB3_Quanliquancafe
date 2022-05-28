@@ -17,7 +17,7 @@ namespace QUANLIQUANCAFE
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ShowMenu());
+            Application.Run(new Login());
         }
     }
 }

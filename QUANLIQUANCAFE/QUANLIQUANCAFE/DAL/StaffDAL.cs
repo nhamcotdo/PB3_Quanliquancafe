@@ -22,7 +22,10 @@ namespace QUANLIQUANCAFE.DAL
 
         }
         private StaffDAL() { }
-
+        public string GetLastStaffID()
+        {
+            return DBHelper.Instance.GetRecords("SELECT TOP 1 [StaffID] FROM [Staff] ORDER BY [StaffID] DESC").Rows[0][0].ToString();
+        }
         public void ChangeInfo(Staff staff)
         {
             DBHelper.Instance.ExecuteDB(string.Format("Update Staff set StaffName = N'{0}', PhoneNumber = N'{1}', Address = N'{2}', DateIn = N'{3}', Sex = N'{4}' where StaffID = N'{5}'", staff.StaffName, staff.PhoneNumber, staff.Address, staff.DateIn, staff.Sex, staff.StaffID));

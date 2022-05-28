@@ -17,6 +17,7 @@ namespace QUANLIQUANCAFE.GUI
     {
         public delegate void MyDel();
         public MyDel d;
+        private int count = 0;
         public IFStaff()
         {
             InitializeComponent();
@@ -26,6 +27,16 @@ namespace QUANLIQUANCAFE.GUI
         public void GUI()
         {
             AddDatagrid();
+            AddcbbCA();
+        }
+
+        public void AddcbbCA()
+        {
+            cbbCA.Items.Add(new CBBItem { Value = (count++).ToString(), Text = "SA01 " });
+            cbbCA.Items.Add(new CBBItem { Value = (count++).ToString(), Text = "SA02" });
+            cbbCA.Items.Add(new CBBItem { Value = (count++).ToString(), Text = "CH01" });
+            cbbCA.Items.Add(new CBBItem { Value = (count++).ToString(), Text = "CH02 " });
+            cbbCA.Items.Add(new CBBItem { Value = (count++).ToString(), Text = "TO01 " });
         }
         public void AddDatagrid()
         {
@@ -50,11 +61,12 @@ namespace QUANLIQUANCAFE.GUI
         {
             if (dataGridView1.SelectedRows.Count != 0)
             {
+                txtID.ReadOnly = true;
                 txtID.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
                 txtHT.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
                 txtSDT.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
                 txtDC.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
-                txtShift.Text = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
+                cbbCA.Text = dataGridView1.SelectedRows[0].Cells[5].Value.ToString();
                 dateTimePicker1.Value = Convert.ToDateTime(dataGridView1.SelectedRows[0].Cells[4].Value.ToString());
                 if (Convert.ToBoolean(dataGridView1.SelectedRows[0].Cells[6].Value.ToString()))
                     rdbMale.Checked=true;
@@ -72,7 +84,7 @@ namespace QUANLIQUANCAFE.GUI
             int Phone = Convert.ToInt32(txtSDT.Text);
             string Address = txtDC.Text;
             DateTime dateTime = Convert.ToDateTime(dateTimePicker1.Value);
-            string ShiftID = txtShift.Text;
+            string ShiftID = cbbCA.Text;
             bool sex = true;
             if (rdbFeMale.Checked)
             {
@@ -97,7 +109,7 @@ namespace QUANLIQUANCAFE.GUI
                 int Phone = Convert.ToInt32(txtSDT.Text);
                 string Address = txtDC.Text;
                 DateTime dateTime = Convert.ToDateTime(dateTimePicker1.Value);
-                string ShiftID = txtShift.Text;
+                string ShiftID = cbbCA.Text;
                 bool sex = true;
                 if (rdbFeMale.Checked)
                 {
@@ -132,6 +144,16 @@ namespace QUANLIQUANCAFE.GUI
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
+        }
+
+        private void btnNewID_Click(object sender, EventArgs e)
+        {
+            txtID.Text=Quanli.Instance.NewStaffID();
         }
     }
 }

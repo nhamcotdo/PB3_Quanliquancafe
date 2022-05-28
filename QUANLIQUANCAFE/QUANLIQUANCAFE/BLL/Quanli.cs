@@ -236,7 +236,6 @@ namespace QUANLIQUANCAFE.BLL
                     newID = "00" + newID;
                 }
             }
-
             return newID;
         }
         public void AddArea(string name, string ID = "")
@@ -358,6 +357,11 @@ namespace QUANLIQUANCAFE.BLL
             AccountDAL.Instance.DelStaff(StaffID);
             StaffDAL.Instance.DelStaff(StaffID);
 
+        }
+        public string NewStaffID()
+        {
+            string s = "000" + (Convert.ToInt32(StaffDAL.Instance.GetLastStaffID()) + 1).ToString();
+            return s.Substring(s.Length - 4, 4);
         }
 
 
