@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.grbTT = new System.Windows.Forms.GroupBox();
+            this.btnNewID = new System.Windows.Forms.Button();
+            this.cbbCA = new System.Windows.Forms.ComboBox();
             this.lbPassWord = new System.Windows.Forms.Label();
             this.txtPassWord = new System.Windows.Forms.TextBox();
-            this.txtShift = new System.Windows.Forms.TextBox();
             this.lbShift = new System.Windows.Forms.Label();
             this.txtTK = new System.Windows.Forms.TextBox();
             this.lbAccount = new System.Windows.Forms.Label();
@@ -63,9 +64,10 @@
             // 
             // grbTT
             // 
+            this.grbTT.Controls.Add(this.btnNewID);
+            this.grbTT.Controls.Add(this.cbbCA);
             this.grbTT.Controls.Add(this.lbPassWord);
             this.grbTT.Controls.Add(this.txtPassWord);
-            this.grbTT.Controls.Add(this.txtShift);
             this.grbTT.Controls.Add(this.lbShift);
             this.grbTT.Controls.Add(this.txtTK);
             this.grbTT.Controls.Add(this.lbAccount);
@@ -89,6 +91,24 @@
             this.grbTT.TabStop = false;
             this.grbTT.Text = "Thông tin nhân viên";
             // 
+            // btnNewID
+            // 
+            this.btnNewID.Location = new System.Drawing.Point(277, 45);
+            this.btnNewID.Name = "btnNewID";
+            this.btnNewID.Size = new System.Drawing.Size(75, 23);
+            this.btnNewID.TabIndex = 33;
+            this.btnNewID.Text = "New ID";
+            this.btnNewID.UseVisualStyleBackColor = true;
+            this.btnNewID.Click += new System.EventHandler(this.btnNewID_Click);
+            // 
+            // cbbCA
+            // 
+            this.cbbCA.FormattingEnabled = true;
+            this.cbbCA.Location = new System.Drawing.Point(465, 182);
+            this.cbbCA.Name = "cbbCA";
+            this.cbbCA.Size = new System.Drawing.Size(225, 24);
+            this.cbbCA.TabIndex = 32;
+            // 
             // lbPassWord
             // 
             this.lbPassWord.AutoSize = true;
@@ -105,14 +125,6 @@
             this.txtPassWord.Name = "txtPassWord";
             this.txtPassWord.Size = new System.Drawing.Size(225, 22);
             this.txtPassWord.TabIndex = 30;
-            // 
-            // txtShift
-            // 
-            this.txtShift.Location = new System.Drawing.Point(465, 178);
-            this.txtShift.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtShift.Name = "txtShift";
-            this.txtShift.Size = new System.Drawing.Size(225, 22);
-            this.txtShift.TabIndex = 29;
             // 
             // lbShift
             // 
@@ -214,7 +226,7 @@
             this.txtID.Location = new System.Drawing.Point(147, 46);
             this.txtID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(199, 22);
+            this.txtID.Size = new System.Drawing.Size(124, 22);
             this.txtID.TabIndex = 20;
             // 
             // label5
@@ -290,7 +302,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(49, 213);
+            this.btnDelete.Location = new System.Drawing.Point(49, 207);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(117, 38);
@@ -301,7 +313,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(49, 121);
+            this.btnEdit.Location = new System.Drawing.Point(49, 114);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(117, 38);
@@ -312,7 +324,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(49, 21);
+            this.btnAdd.Location = new System.Drawing.Point(49, 38);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(117, 38);
@@ -323,14 +335,18 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 443);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(981, 286);
             this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
             // lbStaff
@@ -369,7 +385,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grbTT;
-        private System.Windows.Forms.TextBox txtShift;
         private System.Windows.Forms.Label lbShift;
         private System.Windows.Forms.TextBox txtTK;
         private System.Windows.Forms.Label lbAccount;
@@ -395,5 +410,7 @@
         private System.Windows.Forms.Label lbStaff;
         private System.Windows.Forms.Label lbPassWord;
         private System.Windows.Forms.TextBox txtPassWord;
+        private System.Windows.Forms.ComboBox cbbCA;
+        private System.Windows.Forms.Button btnNewID;
     }
 }

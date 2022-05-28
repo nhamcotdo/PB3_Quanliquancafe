@@ -17,7 +17,7 @@ namespace QUANLIQUANCAFE.DAL
 
         //String connectionSTR = @"Data Source=DESKTOP-NHL5EFL\SQLEXPRESS;Initial Catalog=PBL3;User ID=nhamcotdo;Password=06042002";//Nhâm
         //String connectionSTR = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=PBL3;Integrated Security=True";//Linh
-        String connectionSTR = @"Data Source=DESKTOP-4BO7E9S\SQLEXPRESS;Initial Catalog=PBL3;Integrated Security = true";
+        String connectionSTR = @"Data Source=DESKTOP-4BO7E9S\SQLEXPRESS;Initial Catalog=PBL3;Integrated Security = true";//duc
 
         SqlConnection cnn;
         private DBHelper()

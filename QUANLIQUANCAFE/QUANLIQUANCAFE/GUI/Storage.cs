@@ -139,5 +139,7 @@ namespace QUANLIQUANCAFE.GUI
             }
             LoadComponent();
         }
+
+        
     }
 }
