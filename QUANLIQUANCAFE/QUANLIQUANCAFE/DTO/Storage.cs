@@ -13,5 +13,6 @@ namespace QUANLIQUANCAFE.DTO
         public int Quantity { get; set; }
         public string Unit { get; set; }
         public int Price { get; set; }
+        public int Batch { get; set; }
     }
 }

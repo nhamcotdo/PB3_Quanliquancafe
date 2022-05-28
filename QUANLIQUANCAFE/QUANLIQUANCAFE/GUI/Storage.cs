@@ -55,6 +55,7 @@ namespace QUANLIQUANCAFE.GUI
             dataGridView1.Columns[3].HeaderText = "Đơn vị";
             dataGridView1.Columns[4].HeaderText = "Giá";
             dataGridView1.Columns[5].HeaderText = "Ngày nhập";
+            dataGridView1.Columns[6].HeaderText = "Lô hàng";
         }
 
 
@@ -130,6 +131,11 @@ namespace QUANLIQUANCAFE.GUI
                 SubQuantity = Convert.ToInt32(numericUpDown1.Value);
                 OldQuantity = Convert.ToInt32(Quanli.Instance.GetQuantityByID(id));
                 NewQuantity = (OldQuantity - SubQuantity);
+                if (NewQuantity < 0)
+                {
+                    string Warning = "Mặt hàng này sẽ âm số lượng!";
+                    MessageBox.Show(Warning);
+                }
                 Quanli.Instance.UpdateStorage(id, name, NewQuantity.ToString(), unit, price, time);
             }
             else
