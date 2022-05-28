@@ -55,7 +55,7 @@ namespace QUANLIQUANCAFE.GUI
             dataGridView1.Columns[3].HeaderText = "Đơn vị";
             dataGridView1.Columns[4].HeaderText = "Giá";
             dataGridView1.Columns[5].HeaderText = "Ngày nhập";
-            dataGridView1.Columns[6].HeaderText = "Lô hàng";
+            //dataGridView1.Columns[6].HeaderText = "Lô hàng";
         }
 
 
