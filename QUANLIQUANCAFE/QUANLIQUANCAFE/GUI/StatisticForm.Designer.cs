@@ -58,6 +58,7 @@
             // 
             // btnYear
             // 
+            this.btnYear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYear.Location = new System.Drawing.Point(93, 45);
             this.btnYear.Name = "btnYear";
             this.btnYear.Size = new System.Drawing.Size(75, 23);
@@ -68,6 +69,7 @@
             // 
             // btnMonth
             // 
+            this.btnMonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMonth.Location = new System.Drawing.Point(248, 42);
             this.btnMonth.Name = "btnMonth";
             this.btnMonth.Size = new System.Drawing.Size(75, 23);

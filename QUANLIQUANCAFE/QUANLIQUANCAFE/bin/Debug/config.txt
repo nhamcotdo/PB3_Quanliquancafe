@@ -1,4 +1,4 @@
-IMG;C:\Users\nhamq\Downloads\bgr.jpg
+Color;#408080
 Fuchsia;#0000A0
 Transparent;White
 #400000;#808040

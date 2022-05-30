@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnHeader = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -47,7 +47,7 @@
             this.UpdateBut = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.pnHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,27 +65,28 @@
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
             // 
-            // panel1
+            // pnHeader
             // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.numericUpDown1);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.cbbUnit);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.txtPrice);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.txtName);
-            this.panel1.Controls.Add(this.txtID);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.UpdateBut);
-            this.panel1.Location = new System.Drawing.Point(14, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(918, 148);
-            this.panel1.TabIndex = 1;
+            this.pnHeader.BackColor = System.Drawing.Color.Transparent;
+            this.pnHeader.Controls.Add(this.button1);
+            this.pnHeader.Controls.Add(this.button2);
+            this.pnHeader.Controls.Add(this.numericUpDown1);
+            this.pnHeader.Controls.Add(this.label6);
+            this.pnHeader.Controls.Add(this.cbbUnit);
+            this.pnHeader.Controls.Add(this.label5);
+            this.pnHeader.Controls.Add(this.txtPrice);
+            this.pnHeader.Controls.Add(this.label4);
+            this.pnHeader.Controls.Add(this.label3);
+            this.pnHeader.Controls.Add(this.dateTimePicker1);
+            this.pnHeader.Controls.Add(this.txtName);
+            this.pnHeader.Controls.Add(this.txtID);
+            this.pnHeader.Controls.Add(this.label2);
+            this.pnHeader.Controls.Add(this.label1);
+            this.pnHeader.Controls.Add(this.UpdateBut);
+            this.pnHeader.Location = new System.Drawing.Point(14, 3);
+            this.pnHeader.Name = "pnHeader";
+            this.pnHeader.Size = new System.Drawing.Size(918, 148);
+            this.pnHeader.TabIndex = 1;
             // 
             // button1
             // 
@@ -226,6 +227,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Location = new System.Drawing.Point(938, 13);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(129, 148);
@@ -237,13 +239,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1079, 625);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnHeader);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Storage";
             this.Text = "StorageGUI";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnHeader.ResumeLayout(false);
+            this.pnHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
@@ -252,7 +254,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnHeader;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button UpdateBut;
         private System.Windows.Forms.Button button2;

@@ -86,6 +86,7 @@
             // 
             // butDN
             // 
+            this.butDN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butDN.Location = new System.Drawing.Point(101, 130);
             this.butDN.Margin = new System.Windows.Forms.Padding(2);
             this.butDN.Name = "butDN";
@@ -108,6 +109,7 @@
             // 
             // butExit
             // 
+            this.butExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butExit.Location = new System.Drawing.Point(223, 130);
             this.butExit.Margin = new System.Windows.Forms.Padding(2);
             this.butExit.Name = "butExit";
