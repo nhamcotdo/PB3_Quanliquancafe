@@ -102,6 +102,12 @@
     <Compile Include="GUI\DiscountManagement.Designer.cs">
       <DependentUpon>DiscountManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\GUICustom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\GUICustom.Designer.cs">
+      <DependentUpon>GUICustom.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\IFStaff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DiscountManagement.resx">
       <DependentUpon>DiscountManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\GUICustom.resx">
+      <DependentUpon>GUICustom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\IFStaff.resx">
       <DependentUpon>IFStaff.cs</DependentUpon>

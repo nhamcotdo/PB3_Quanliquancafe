@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,6 +36,64 @@ namespace QUANLIQUANCAFE.GUI
                 quảnLíToolStripMenuItem.Enabled = false;
             }
             lbNameNV.Text = staff.StaffName;
+            Design();
+        }
+        void Design()
+        {
+            string[] background;
+            string[] button;
+            string[] label;
+            string[] textbox;
+            using (StreamReader sr = new StreamReader("config.txt"))
+            {
+                background = sr.ReadLine().Split(';');
+                button = sr.ReadLine().Split(';');
+                label = sr.ReadLine().Split(';');
+                textbox = sr.ReadLine().Split(';');
+            }
+            if (background[0] == "Color")
+            {
+                this.BackColor = ColorTranslator.FromHtml(background[1]);
+                this.BackgroundImage = null;
+            }
+            else
+            {
+                this.BackgroundImage = Image.FromFile(background[1]);
+            }
+            foreach (Control i in pnHeader.Controls)
+            {
+                if (i is Button)
+                {
+                    i.BackColor = ColorTranslator.FromHtml(button[0]);
+                    i.ForeColor = ColorTranslator.FromHtml(button[1]);
+                }
+                if (i is Label)
+                {
+                    i.ForeColor = ColorTranslator.FromHtml(label[0]);
+                }
+                if (i is ComboBox | i is TextBox | i is NumericUpDown)
+                {
+                    i.BackColor = ColorTranslator.FromHtml(textbox[0]);
+                    i.ForeColor = ColorTranslator.FromHtml(textbox[1]);
+                }
+            }
+            foreach (Control i in pnFooter.Controls)
+            {
+                if (i is Button)
+                {
+                    i.BackColor = ColorTranslator.FromHtml(button[0]);
+                    i.ForeColor = ColorTranslator.FromHtml(button[1]);
+                }
+                if (i is Label)
+                {
+                    i.ForeColor = ColorTranslator.FromHtml(label[0]);
+                }
+                if (i is ComboBox | i is TextBox | i is NumericUpDown)
+                {
+                    i.BackColor = ColorTranslator.FromHtml(textbox[0]);
+                    i.ForeColor = ColorTranslator.FromHtml(textbox[1]);
+                }
+            }
         }
         private void LoadComponent()
         {
@@ -691,7 +750,26 @@ namespace QUANLIQUANCAFE.GUI
             new DiscountManagement().Show();
         }
 
+        private void ToolStripMenuItemChangeColor_Click(object sender, EventArgs e)
+        {
+            new GUICustom().Show();
+        }
 
+        private void btnFree_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0)
+            {
+                MessageBox.Show("Bàn đang có khách chưa thanh toán!!");
+            }
+            else
+            {
+                Quanli.Instance.Free(lbTableName.Tag.ToString());
+                this.Controls.Find(lbTableName.Tag.ToString(), true)[0].BackColor = c;
+
+            }
+
+
+        }
     }
 
 

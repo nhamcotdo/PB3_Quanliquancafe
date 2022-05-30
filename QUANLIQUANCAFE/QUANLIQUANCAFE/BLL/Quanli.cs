@@ -145,6 +145,7 @@ namespace QUANLIQUANCAFE.BLL
                 p.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
                 p.Name = item.AreaID;
                 p.Tag = item;
+                p.BackColor = Color.Transparent;
                 //creat label for each Area
                 Label l = new Label();
                 l.Text = item.AreaName;
@@ -538,6 +539,11 @@ namespace QUANLIQUANCAFE.BLL
             }
             else
                 StorageDAL.Instance.AddStorage(grocID, grocName, quantity, unit, price, dateCheckIn);
+        }
+
+        public void Free(string v)
+        {
+            TableDAL.Instance.Free(v);
         }
     }
 

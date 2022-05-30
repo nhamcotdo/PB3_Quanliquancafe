@@ -91,5 +91,10 @@ namespace QUANLIQUANCAFE.DAL
         {
             DBHelper.Instance.ExecuteDB(string.Format("INSERT INTO [Table] VALUES (N'{0}', N'{1}', N'{2}', N'{3}', '{4}')", ID, areaID, name, "false", ID));
         }
+
+        public void Free(string v)
+        {
+            DBHelper.Instance.ExecuteDB(string.Format("UPDATE [Table] SET Status = N'{0}' WHERE TableID = N'{1}'", "false", v));
+        }
     }
 }
