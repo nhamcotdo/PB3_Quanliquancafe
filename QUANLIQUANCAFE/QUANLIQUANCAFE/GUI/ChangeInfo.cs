@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ namespace QUANLIQUANCAFE.GUI
             InitializeComponent();
             this.staff = staff;
             GUI();
+            Design();
         }
         void GUI()
         {
@@ -37,8 +39,7 @@ namespace QUANLIQUANCAFE.GUI
             txtPassword.Text = Quanli.Instance.GetAccountByStaffID(staff.StaffID).Password;
             cbHide.Checked = false;
         }
-
-        private void cbHide_CheckedChanged(object sender, EventArgs e)
+        private void cbHide_CheckedChanged_1(object sender, EventArgs e)
         {
             if (cbHide.Checked == true)
             {
@@ -50,7 +51,7 @@ namespace QUANLIQUANCAFE.GUI
             }
         }
 
-        private void btnOK_Click(object sender, EventArgs e)
+        private void btnOK_Click_1(object sender, EventArgs e)
         {
             Quanli.Instance.ChangeInfo(
                 new Staff()
@@ -71,11 +72,55 @@ namespace QUANLIQUANCAFE.GUI
                 }
                 );
             this.Dispose();
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
+        void Design()
+        {
+            string[] background;
+            string[] button;
+            string[] label;
+            string[] textbox;
+            using (StreamReader sr = new StreamReader("config.txt"))
+            {
+                background = sr.ReadLine().Split(';');
+                button = sr.ReadLine().Split(';');
+                label = sr.ReadLine().Split(';');
+                textbox = sr.ReadLine().Split(';');
+            }
+            if (background[0] == "Color")
+            {
+                this.BackColor = ColorTranslator.FromHtml(background[1]);
+                this.BackgroundImage = null;
+            }
+            else
+            {
+                this.BackgroundImage = Image.FromFile(background[1]);
+            }
+            foreach (Control i in panel1.Controls)
+            {
+                if (i is Button)
+                {
+                    i.BackColor = ColorTranslator.FromHtml(button[0]);
+                    i.ForeColor = ColorTranslator.FromHtml(button[1]);
+                }
+                else if (i is Label)
+                {
+                    i.ForeColor = ColorTranslator.FromHtml(label[0]);
+                }
+                else if (i is TextBox)
+                {
+                    i.BackColor = ColorTranslator.FromHtml(textbox[0]);
+                    i.ForeColor = ColorTranslator.FromHtml(textbox[1]);
+                }
+            }
+
+
+        }
+        
     }
 }

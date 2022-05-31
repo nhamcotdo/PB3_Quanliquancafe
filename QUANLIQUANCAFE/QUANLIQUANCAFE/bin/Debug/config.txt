@@ -1,4 +1,4 @@
-Color;#804040
-#FF8040;Aqua
+Color;Teal
+#0080FF;Aqua
 Transparent;Yellow
 Aqua;Black

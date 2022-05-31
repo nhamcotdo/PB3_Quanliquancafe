@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,7 @@ namespace QUANLIQUANCAFE.GUI
             {
                 cbbArea.Items.Add(new CBBItem(item.AreaName, item.AreaID));
             }
+            Design();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -71,6 +73,49 @@ namespace QUANLIQUANCAFE.GUI
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        void Design()
+        {
+            string[] background;
+            string[] button;
+            string[] label;
+            string[] textbox;
+            using (StreamReader sr = new StreamReader("config.txt"))
+            {
+                background = sr.ReadLine().Split(';');
+                button = sr.ReadLine().Split(';');
+                label = sr.ReadLine().Split(';');
+                textbox = sr.ReadLine().Split(';');
+            }
+            if (background[0] == "Color")
+            {
+                this.BackColor = ColorTranslator.FromHtml(background[1]);
+                this.BackgroundImage = null;
+            }
+            else
+            {
+                this.BackgroundImage = Image.FromFile(background[1]);
+            }
+            foreach (Control i in this.Controls)
+            {
+                if (i is Button)
+                {
+                    i.BackColor = ColorTranslator.FromHtml(button[0]);
+                    i.ForeColor = ColorTranslator.FromHtml(button[1]);
+                }
+                else if (i is Label)
+                {
+                    i.ForeColor = ColorTranslator.FromHtml(label[0]);
+                }
+                else if (i is ComboBox | i is TextBox)
+                {
+                    i.BackColor = ColorTranslator.FromHtml(textbox[0]);
+                    i.ForeColor = ColorTranslator.FromHtml(textbox[1]);
+                }
+
+            }
+
         }
     }
 }

@@ -130,3 +130,4 @@ D:\University\SinhVien2\Executi\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE
 D:\University\SinhVien2\Executi\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.csproj.CoreCompileInputs.cache
 D:\University\SinhVien2\Executi\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.exe
 D:\University\SinhVien2\Executi\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.pdb
+E:\PB3_Quanliquancafe\QUANLIQUANCAFE\QUANLIQUANCAFE\obj\Debug\QUANLIQUANCAFE.GUI.GUICustom.resources

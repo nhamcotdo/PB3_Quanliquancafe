@@ -60,7 +60,7 @@ namespace QUANLIQUANCAFE.GUI
                 {
                     i.ForeColor = ColorTranslator.FromHtml(label[0]);
                 }
-                else if (i is TextBox | i is NumericUpDown | i is DateTimePicker)
+                else if (i is TextBox | i is NumericUpDown | i is DateTimePicker | i is ComboBox)
                 {
                     i.BackColor = ColorTranslator.FromHtml(textbox[0]);
                     i.ForeColor = ColorTranslator.FromHtml(textbox[1]);
