@@ -1,4 +1,4 @@
 Color;#804040
-#800040;Silver
-Transparent;Silver
-#800040;Silver
+#FF8040;Aqua
+Transparent;Yellow
+Aqua;Black
