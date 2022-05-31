@@ -39,7 +39,7 @@
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(169, 54);
+            this.txtName.Location = new System.Drawing.Point(200, 57);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 29);
             this.txtName.TabIndex = 0;
@@ -48,7 +48,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(67, 57);
+            this.label1.Location = new System.Drawing.Point(75, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 24);
             this.label1.TabIndex = 2;
@@ -58,7 +58,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(358, 57);
+            this.label2.Location = new System.Drawing.Point(396, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 24);
             this.label2.TabIndex = 3;
@@ -68,7 +68,7 @@
             // 
             this.cbbArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbArea.FormattingEnabled = true;
-            this.cbbArea.Location = new System.Drawing.Point(455, 54);
+            this.cbbArea.Location = new System.Drawing.Point(522, 57);
             this.cbbArea.Name = "cbbArea";
             this.cbbArea.Size = new System.Drawing.Size(121, 32);
             this.cbbArea.TabIndex = 4;
@@ -77,9 +77,9 @@
             // 
             this.btnAdd.AutoSize = true;
             this.btnAdd.BackColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(183, 142);
+            this.btnAdd.Location = new System.Drawing.Point(200, 150);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(125, 33);
+            this.btnAdd.Size = new System.Drawing.Size(125, 30);
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Tạo bàn";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -89,9 +89,9 @@
             // 
             this.btnCancel.AutoSize = true;
             this.btnCancel.BackColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(396, 142);
+            this.btnCancel.Location = new System.Drawing.Point(400, 150);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(125, 33);
+            this.btnCancel.Size = new System.Drawing.Size(125, 30);
             this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Hủy";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -101,7 +101,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(690, 238);
+            this.ClientSize = new System.Drawing.Size(734, 211);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.cbbArea);
