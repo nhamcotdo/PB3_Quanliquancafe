@@ -83,9 +83,9 @@
             this.grbTT.Controls.Add(this.lbHT);
             this.grbTT.Controls.Add(this.lbID);
             this.grbTT.Location = new System.Drawing.Point(9, 48);
-            this.grbTT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grbTT.Margin = new System.Windows.Forms.Padding(2);
             this.grbTT.Name = "grbTT";
-            this.grbTT.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grbTT.Padding = new System.Windows.Forms.Padding(2);
             this.grbTT.Size = new System.Drawing.Size(582, 284);
             this.grbTT.TabIndex = 2;
             this.grbTT.TabStop = false;
@@ -94,7 +94,7 @@
             // btnNewID
             // 
             this.btnNewID.Location = new System.Drawing.Point(208, 37);
-            this.btnNewID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNewID.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewID.Name = "btnNewID";
             this.btnNewID.Size = new System.Drawing.Size(56, 19);
             this.btnNewID.TabIndex = 33;
@@ -106,7 +106,7 @@
             // 
             this.cbbCA.FormattingEnabled = true;
             this.cbbCA.Location = new System.Drawing.Point(349, 148);
-            this.cbbCA.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbCA.Margin = new System.Windows.Forms.Padding(2);
             this.cbbCA.Name = "cbbCA";
             this.cbbCA.Size = new System.Drawing.Size(170, 21);
             this.cbbCA.TabIndex = 32;
@@ -124,7 +124,7 @@
             // txtPassWord
             // 
             this.txtPassWord.Location = new System.Drawing.Point(349, 186);
-            this.txtPassWord.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassWord.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassWord.Name = "txtPassWord";
             this.txtPassWord.Size = new System.Drawing.Size(170, 20);
             this.txtPassWord.TabIndex = 30;
@@ -142,7 +142,7 @@
             // txtTK
             // 
             this.txtTK.Location = new System.Drawing.Point(110, 186);
-            this.txtTK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTK.Margin = new System.Windows.Forms.Padding(2);
             this.txtTK.Name = "txtTK";
             this.txtTK.Size = new System.Drawing.Size(150, 20);
             this.txtTK.TabIndex = 27;
@@ -162,9 +162,9 @@
             this.grbGT.Controls.Add(this.rdbFeMale);
             this.grbGT.Controls.Add(this.rdbMale);
             this.grbGT.Location = new System.Drawing.Point(178, 219);
-            this.grbGT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grbGT.Margin = new System.Windows.Forms.Padding(2);
             this.grbGT.Name = "grbGT";
-            this.grbGT.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grbGT.Padding = new System.Windows.Forms.Padding(2);
             this.grbGT.Size = new System.Drawing.Size(224, 51);
             this.grbGT.TabIndex = 25;
             this.grbGT.TabStop = false;
@@ -174,7 +174,7 @@
             // 
             this.rdbFeMale.AutoSize = true;
             this.rdbFeMale.Location = new System.Drawing.Point(147, 23);
-            this.rdbFeMale.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdbFeMale.Margin = new System.Windows.Forms.Padding(2);
             this.rdbFeMale.Name = "rdbFeMale";
             this.rdbFeMale.Size = new System.Drawing.Size(39, 17);
             this.rdbFeMale.TabIndex = 27;
@@ -186,7 +186,7 @@
             // 
             this.rdbMale.AutoSize = true;
             this.rdbMale.Location = new System.Drawing.Point(36, 23);
-            this.rdbMale.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdbMale.Margin = new System.Windows.Forms.Padding(2);
             this.rdbMale.Name = "rdbMale";
             this.rdbMale.Size = new System.Drawing.Size(47, 17);
             this.rdbMale.TabIndex = 26;
@@ -197,7 +197,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(349, 93);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(170, 20);
             this.dateTimePicker1.TabIndex = 24;
@@ -205,7 +205,7 @@
             // txtDC
             // 
             this.txtDC.Location = new System.Drawing.Point(349, 40);
-            this.txtDC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDC.Margin = new System.Windows.Forms.Padding(2);
             this.txtDC.Name = "txtDC";
             this.txtDC.Size = new System.Drawing.Size(170, 20);
             this.txtDC.TabIndex = 23;
@@ -213,7 +213,7 @@
             // txtHT
             // 
             this.txtHT.Location = new System.Drawing.Point(110, 92);
-            this.txtHT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtHT.Margin = new System.Windows.Forms.Padding(2);
             this.txtHT.Name = "txtHT";
             this.txtHT.Size = new System.Drawing.Size(150, 20);
             this.txtHT.TabIndex = 22;
@@ -221,7 +221,7 @@
             // txtSDT
             // 
             this.txtSDT.Location = new System.Drawing.Point(110, 145);
-            this.txtSDT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSDT.Margin = new System.Windows.Forms.Padding(2);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(150, 20);
             this.txtSDT.TabIndex = 21;
@@ -229,7 +229,7 @@
             // txtID
             // 
             this.txtID.Location = new System.Drawing.Point(110, 37);
-            this.txtID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtID.Margin = new System.Windows.Forms.Padding(2);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(94, 20);
             this.txtID.TabIndex = 20;
@@ -291,9 +291,9 @@
             this.grbCN.Controls.Add(this.btnEdit);
             this.grbCN.Controls.Add(this.btnAdd);
             this.grbCN.Location = new System.Drawing.Point(596, 48);
-            this.grbCN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grbCN.Margin = new System.Windows.Forms.Padding(2);
             this.grbCN.Name = "grbCN";
-            this.grbCN.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grbCN.Padding = new System.Windows.Forms.Padding(2);
             this.grbCN.Size = new System.Drawing.Size(150, 284);
             this.grbCN.TabIndex = 3;
             this.grbCN.TabStop = false;
@@ -302,7 +302,7 @@
             // btnExit
             // 
             this.btnExit.Location = new System.Drawing.Point(37, 240);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(88, 31);
             this.btnExit.TabIndex = 6;
@@ -313,7 +313,7 @@
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(37, 168);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(88, 31);
             this.btnDelete.TabIndex = 5;
@@ -324,7 +324,7 @@
             // btnEdit
             // 
             this.btnEdit.Location = new System.Drawing.Point(37, 93);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(88, 31);
             this.btnEdit.TabIndex = 4;
@@ -335,7 +335,7 @@
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(37, 31);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(88, 31);
             this.btnAdd.TabIndex = 3;
@@ -348,7 +348,7 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(9, 360);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -380,8 +380,9 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.grbCN);
             this.Controls.Add(this.grbTT);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "IFStaff";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IFStaff";
             this.grbTT.ResumeLayout(false);
             this.grbTT.PerformLayout();

@@ -159,6 +159,7 @@
             this.Controls.Add(this.txtDiscountName);
             this.Controls.Add(this.dataGridView1);
             this.Name = "DiscountManagement";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DiscountManagement";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

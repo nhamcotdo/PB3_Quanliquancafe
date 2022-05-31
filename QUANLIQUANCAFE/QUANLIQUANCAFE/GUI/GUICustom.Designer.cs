@@ -110,7 +110,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Location = new System.Drawing.Point(423, 160);
+            this.label6.Location = new System.Drawing.Point(423, 147);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 13);
             this.label6.TabIndex = 5;
@@ -120,7 +120,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Location = new System.Drawing.Point(124, 234);
+            this.label7.Location = new System.Drawing.Point(130, 234);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 13);
             this.label7.TabIndex = 8;
@@ -140,7 +140,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Location = new System.Drawing.Point(423, 329);
+            this.label10.Location = new System.Drawing.Point(423, 316);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(85, 13);
             this.label10.TabIndex = 11;
@@ -182,7 +182,7 @@
             // btnButTextColor
             // 
             this.btnButTextColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnButTextColor.Location = new System.Drawing.Point(526, 155);
+            this.btnButTextColor.Location = new System.Drawing.Point(526, 142);
             this.btnButTextColor.Name = "btnButTextColor";
             this.btnButTextColor.Size = new System.Drawing.Size(25, 23);
             this.btnButTextColor.TabIndex = 13;
@@ -203,7 +203,7 @@
             // btnTxtTextColor
             // 
             this.btnTxtTextColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTxtTextColor.Location = new System.Drawing.Point(526, 324);
+            this.btnTxtTextColor.Location = new System.Drawing.Point(526, 311);
             this.btnTxtTextColor.Name = "btnTxtTextColor";
             this.btnTxtTextColor.Size = new System.Drawing.Size(25, 23);
             this.btnTxtTextColor.TabIndex = 15;
@@ -213,7 +213,7 @@
             // btnTxtBackColor
             // 
             this.btnTxtBackColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTxtBackColor.Location = new System.Drawing.Point(216, 306);
+            this.btnTxtBackColor.Location = new System.Drawing.Point(216, 311);
             this.btnTxtBackColor.Name = "btnTxtBackColor";
             this.btnTxtBackColor.Size = new System.Drawing.Size(25, 23);
             this.btnTxtBackColor.TabIndex = 17;
@@ -233,9 +233,9 @@
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(200, 47);
+            this.pictureBox1.Location = new System.Drawing.Point(189, 40);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(126, 79);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
@@ -244,7 +244,7 @@
             // btnExample
             // 
             this.btnExample.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExample.Location = new System.Drawing.Point(653, 160);
+            this.btnExample.Location = new System.Drawing.Point(653, 142);
             this.btnExample.Name = "btnExample";
             this.btnExample.Size = new System.Drawing.Size(73, 23);
             this.btnExample.TabIndex = 20;
@@ -256,7 +256,7 @@
             this.lbExample.AutoSize = true;
             this.lbExample.BackColor = System.Drawing.Color.Transparent;
             this.lbExample.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbExample.Location = new System.Drawing.Point(648, 229);
+            this.lbExample.Location = new System.Drawing.Point(648, 222);
             this.lbExample.Name = "lbExample";
             this.lbExample.Size = new System.Drawing.Size(54, 25);
             this.lbExample.TabIndex = 21;
@@ -264,7 +264,7 @@
             // 
             // txtExample
             // 
-            this.txtExample.Location = new System.Drawing.Point(653, 326);
+            this.txtExample.Location = new System.Drawing.Point(653, 313);
             this.txtExample.Name = "txtExample";
             this.txtExample.Size = new System.Drawing.Size(100, 20);
             this.txtExample.TabIndex = 22;
@@ -276,9 +276,9 @@
             // 
             // btnOK
             // 
-            this.btnOK.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.btnOK.BackColor = System.Drawing.Color.PaleGreen;
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOK.Location = new System.Drawing.Point(263, 380);
+            this.btnOK.Location = new System.Drawing.Point(240, 380);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(105, 40);
             this.btnOK.TabIndex = 23;
@@ -288,9 +288,9 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.Red;
+            this.btnCancel.BackColor = System.Drawing.Color.LightCoral;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Location = new System.Drawing.Point(535, 380);
+            this.btnCancel.Location = new System.Drawing.Point(480, 380);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(105, 40);
             this.btnCancel.TabIndex = 24;
@@ -327,6 +327,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "GUICustom";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GUICustom";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

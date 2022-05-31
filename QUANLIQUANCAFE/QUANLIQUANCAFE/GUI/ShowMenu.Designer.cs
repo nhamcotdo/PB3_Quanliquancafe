@@ -33,7 +33,9 @@
             this.butDelDish = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.cbbDishGroup = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -49,7 +51,7 @@
             // 
             // butAddDish
             // 
-            this.butAddDish.Location = new System.Drawing.Point(564, 48);
+            this.butAddDish.Location = new System.Drawing.Point(549, 33);
             this.butAddDish.Name = "butAddDish";
             this.butAddDish.Size = new System.Drawing.Size(75, 23);
             this.butAddDish.TabIndex = 1;
@@ -59,7 +61,7 @@
             // 
             // butDelDish
             // 
-            this.butDelDish.Location = new System.Drawing.Point(682, 48);
+            this.butDelDish.Location = new System.Drawing.Point(657, 33);
             this.butDelDish.Name = "butDelDish";
             this.butDelDish.Size = new System.Drawing.Size(75, 23);
             this.butDelDish.TabIndex = 2;
@@ -70,7 +72,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(349, 52);
+            this.label1.Location = new System.Drawing.Point(337, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 3;
@@ -79,11 +81,23 @@
             // cbbDishGroup
             // 
             this.cbbDishGroup.FormattingEnabled = true;
-            this.cbbDishGroup.Location = new System.Drawing.Point(391, 48);
+            this.cbbDishGroup.Location = new System.Drawing.Point(378, 35);
             this.cbbDishGroup.Name = "cbbDishGroup";
             this.cbbDishGroup.Size = new System.Drawing.Size(121, 21);
             this.cbbDishGroup.TabIndex = 4;
             this.cbbDishGroup.SelectedIndexChanged += new System.EventHandler(this.cbbDishGroup_SelectedIndexChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.butDelDish);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.butAddDish);
+            this.panel1.Controls.Add(this.cbbDishGroup);
+            this.panel1.Location = new System.Drawing.Point(12, 13);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(745, 71);
+            this.panel1.TabIndex = 5;
             // 
             // ShowMenu
             // 
@@ -92,15 +106,14 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(769, 450);
-            this.Controls.Add(this.cbbDishGroup);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.butDelDish);
-            this.Controls.Add(this.butAddDish);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.panel1);
             this.Name = "ShowMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShowMenu";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,5 +126,6 @@
         private System.Windows.Forms.Button butDelDish;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbbDishGroup;
+        private System.Windows.Forms.Panel panel1;
     }
 }

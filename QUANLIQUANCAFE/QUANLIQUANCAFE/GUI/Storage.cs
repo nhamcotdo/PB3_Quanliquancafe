@@ -20,7 +20,6 @@ namespace QUANLIQUANCAFE.GUI
         public delegate void Mydel();
         public Mydel d;
         private int count = 0;
-        //Quanli bll = new Quanli();
         public Storage()
         {
             InitializeComponent();

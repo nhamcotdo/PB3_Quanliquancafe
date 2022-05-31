@@ -133,6 +133,7 @@
             this.Controls.Add(this.btnYear);
             this.Controls.Add(this.chart1);
             this.Name = "StatisticForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StatisticForm";
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownYear)).EndInit();

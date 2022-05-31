@@ -58,6 +58,7 @@
             this.cbbFoodMenu = new System.Windows.Forms.ComboBox();
             this.cbbDishGroup = new System.Windows.Forms.ComboBox();
             this.pnFooter = new System.Windows.Forms.Panel();
+            this.btnFree = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnMove = new System.Windows.Forms.Button();
@@ -67,7 +68,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lbTableName = new System.Windows.Forms.Label();
-            this.btnFree = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.flowLayoutTable.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -88,7 +88,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(930, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(984, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -218,9 +218,9 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(930, 24);
+            this.panel1.Location = new System.Drawing.Point(984, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(0, 576);
+            this.panel1.Size = new System.Drawing.Size(0, 637);
             this.panel1.TabIndex = 5;
             // 
             // tabPage1
@@ -248,7 +248,7 @@
             this.flowLayoutTable.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutTable.Location = new System.Drawing.Point(0, 24);
             this.flowLayoutTable.Name = "flowLayoutTable";
-            this.flowLayoutTable.Size = new System.Drawing.Size(330, 576);
+            this.flowLayoutTable.Size = new System.Drawing.Size(330, 637);
             this.flowLayoutTable.TabIndex = 10;
             // 
             // label1
@@ -284,7 +284,7 @@
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Location = new System.Drawing.Point(338, 27);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(580, 573);
+            this.panel2.Size = new System.Drawing.Size(634, 634);
             this.panel2.TabIndex = 9;
             // 
             // pnHeader
@@ -297,7 +297,7 @@
             this.pnHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnHeader.Location = new System.Drawing.Point(0, 0);
             this.pnHeader.Name = "pnHeader";
-            this.pnHeader.Size = new System.Drawing.Size(580, 57);
+            this.pnHeader.Size = new System.Drawing.Size(634, 57);
             this.pnHeader.TabIndex = 7;
             // 
             // numericUpDown1
@@ -351,10 +351,22 @@
             this.pnFooter.Controls.Add(this.btnMerge);
             this.pnFooter.Controls.Add(this.cbbTableName);
             this.pnFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnFooter.Location = new System.Drawing.Point(0, 488);
+            this.pnFooter.Location = new System.Drawing.Point(0, 549);
             this.pnFooter.Name = "pnFooter";
-            this.pnFooter.Size = new System.Drawing.Size(580, 85);
+            this.pnFooter.Size = new System.Drawing.Size(634, 85);
             this.pnFooter.TabIndex = 5;
+            // 
+            // btnFree
+            // 
+            this.btnFree.AutoSize = true;
+            this.btnFree.BackColor = System.Drawing.Color.White;
+            this.btnFree.Location = new System.Drawing.Point(6, 47);
+            this.btnFree.Name = "btnFree";
+            this.btnFree.Size = new System.Drawing.Size(125, 33);
+            this.btnFree.TabIndex = 8;
+            this.btnFree.Text = "Làm trống bàn";
+            this.btnFree.UseVisualStyleBackColor = false;
+            this.btnFree.Click += new System.EventHandler(this.btnFree_Click);
             // 
             // btnDel
             // 
@@ -433,7 +445,7 @@
             this.panel4.Controls.Add(this.lbTableName);
             this.panel4.Location = new System.Drawing.Point(6, 63);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(568, 419);
+            this.panel4.Size = new System.Drawing.Size(622, 480);
             this.panel4.TabIndex = 6;
             // 
             // dataGridView1
@@ -446,7 +458,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 75);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(568, 344);
+            this.dataGridView1.Size = new System.Drawing.Size(622, 405);
             this.dataGridView1.TabIndex = 1;
             // 
             // lbTableName
@@ -456,28 +468,16 @@
             this.lbTableName.Font = new System.Drawing.Font("Mistral", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTableName.Location = new System.Drawing.Point(0, 0);
             this.lbTableName.Name = "lbTableName";
-            this.lbTableName.Size = new System.Drawing.Size(568, 75);
+            this.lbTableName.Size = new System.Drawing.Size(622, 75);
             this.lbTableName.TabIndex = 3;
             this.lbTableName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnFree
-            // 
-            this.btnFree.AutoSize = true;
-            this.btnFree.BackColor = System.Drawing.Color.White;
-            this.btnFree.Location = new System.Drawing.Point(6, 47);
-            this.btnFree.Name = "btnFree";
-            this.btnFree.Size = new System.Drawing.Size(125, 33);
-            this.btnFree.TabIndex = 8;
-            this.btnFree.Text = "Làm trống bàn";
-            this.btnFree.UseVisualStyleBackColor = false;
-            this.btnFree.Click += new System.EventHandler(this.btnFree_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(930, 600);
+            this.ClientSize = new System.Drawing.Size(984, 661);
             this.Controls.Add(this.flowLayoutTable);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lbNameNV);
@@ -487,6 +487,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(900, 599);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QUẢN LÍ BÁN HÀNG";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

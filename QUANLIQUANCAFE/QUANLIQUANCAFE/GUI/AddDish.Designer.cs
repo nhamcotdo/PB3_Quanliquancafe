@@ -171,6 +171,7 @@
             this.ClientSize = new System.Drawing.Size(396, 318);
             this.Controls.Add(this.panel1);
             this.Name = "AddDish";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddDish";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

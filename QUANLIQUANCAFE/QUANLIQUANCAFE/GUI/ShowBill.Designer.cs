@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelBill = new System.Windows.Forms.Panel();
+            this.lbKM = new System.Windows.Forms.Label();
             this.lbOther = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.lbTotalPrice = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lbKM = new System.Windows.Forms.Label();
             this.panelBill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -70,6 +70,16 @@
             this.panelBill.Name = "panelBill";
             this.panelBill.Size = new System.Drawing.Size(420, 594);
             this.panelBill.TabIndex = 11;
+            // 
+            // lbKM
+            // 
+            this.lbKM.AutoSize = true;
+            this.lbKM.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbKM.Location = new System.Drawing.Point(50, 488);
+            this.lbKM.Name = "lbKM";
+            this.lbKM.Size = new System.Drawing.Size(100, 18);
+            this.lbKM.TabIndex = 17;
+            this.lbKM.Text = "Khuyến mại:";
             // 
             // lbOther
             // 
@@ -217,16 +227,6 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Tổng :";
             // 
-            // lbKM
-            // 
-            this.lbKM.AutoSize = true;
-            this.lbKM.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbKM.Location = new System.Drawing.Point(50, 488);
-            this.lbKM.Name = "lbKM";
-            this.lbKM.Size = new System.Drawing.Size(100, 18);
-            this.lbKM.TabIndex = 17;
-            this.lbKM.Text = "Khuyến mại:";
-            // 
             // ShowBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,6 +234,7 @@
             this.ClientSize = new System.Drawing.Size(419, 594);
             this.Controls.Add(this.panelBill);
             this.Name = "ShowBill";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShowBill";
             this.panelBill.ResumeLayout(false);
             this.panelBill.PerformLayout();

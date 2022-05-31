@@ -1,4 +1,4 @@
-Color;#408080
-Fuchsia;#0000A0
-Transparent;White
-#400000;#808040
+Color;#804040
+#800040;Silver
+Transparent;Silver
+#800040;Silver

@@ -260,6 +260,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtStaffID);
             this.Name = "ChangeInfo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChangePassword";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

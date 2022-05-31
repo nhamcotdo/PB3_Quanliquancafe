@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using QUANLIQUANCAFE.BLL;
 using QUANLIQUANCAFE.DTO;
 using QUANLIQUANCAFE.DAL;
+using System.IO;
 
 namespace QUANLIQUANCAFE.GUI
 {
@@ -17,12 +18,13 @@ namespace QUANLIQUANCAFE.GUI
     {
         public delegate void Mydel();
         public Mydel d;
-        Quanli bll = new Quanli();
+        private int count = 0;
         public ShowMenu()
         {
             InitializeComponent();
             addDatagrid();
             addcbbDishGroup();
+            Design();
         }
         public void addDatagrid()
         {
@@ -98,6 +100,48 @@ namespace QUANLIQUANCAFE.GUI
             });
             dt = DBHelper.Instance.GetRecords(query);
             dataGridView1.DataSource = dt;
+        }
+        void Design()
+        {
+            string[] background;
+            string[] button;
+            string[] label;
+            string[] textbox;
+            using (StreamReader sr = new StreamReader("config.txt"))
+            {
+                background = sr.ReadLine().Split(';');
+                button = sr.ReadLine().Split(';');
+                label = sr.ReadLine().Split(';');
+                textbox = sr.ReadLine().Split(';');
+            }
+            if (background[0] == "Color")
+            {
+                this.BackColor = ColorTranslator.FromHtml(background[1]);
+                this.BackgroundImage = null;
+            }
+            else
+            {
+                this.BackgroundImage = Image.FromFile(background[1]);
+            }
+            foreach (Control i in panel1.Controls)
+            {
+                if (i is Button)
+                {
+                    i.BackColor = ColorTranslator.FromHtml(button[0]);
+                    i.ForeColor = ColorTranslator.FromHtml(button[1]);
+                }
+                else if (i is Label)
+                {
+                    i.ForeColor = ColorTranslator.FromHtml(label[0]);
+                }
+                else if (i is TextBox)
+                {
+                    i.BackColor = ColorTranslator.FromHtml(textbox[0]);
+                    i.ForeColor = ColorTranslator.FromHtml(textbox[1]);
+                }
+
+            }
+
         }
     }
 }
