@@ -1,4 +1,32 @@
 lbOther;0;0
 label10;Chi phí khác;Other costs
-lbTotalPrice;0;0
+lbTotalPrice;29000;29000
 lbPromotion;0;0
+lbNV;0001      ;0001
+lbTime;01/06/2022 22:35:56;01/06/2022 22:35:56
+label111;Thu ngân: ;Cashier:
+lbTotal;29000;29000
+lbtable;Bàn 1     ;Table 1
+label7;Tổng tiền: ;Total amount:
+label6;Khuyến mại:;Promotion:
+label3;Ngày;Day
+label5;Tổng :;Total :
+label4;Cảm ơn quý khách và hẹn gặp lại!!!!;Thank you and see you again!!!!
+label2;Địa chỉ: abc, xyz;Address: abc, xyz
+label1;ABC CAFE;ABC CAFE
+lbOther;0;0
+label10;Chi phí khác;Other costs
+lbTotalPrice;29000;29000
+lbPromotion;0;0
+lbNV;0001      ;0001
+lbTime;01/06/2022 22:35:56;01/06/2022 22:35:56
+label111;Thu ngân: ;Cashier:
+lbTotal;29000;29000
+lbtable;Bàn 1     ;Table 1
+label7;Tổng tiền: ;Total amount:
+label6;Khuyến mại:;Promotion:
+label3;Ngày;Day
+label5;Tổng :;Total :
+label4;Cảm ơn quý khách và hẹn gặp lại!!!!;Thank you and see you again!!!!
+label2;Địa chỉ: abc, xyz;Address: abc, xyz
+label1;ABC CAFE;ABC CAFE

@@ -1,4 +1,4 @@
-ManaLoolStripMenuItem;Quản lí;Manager
+ManaToolStripMenuItem;Quản lí;Manager
 ScheduleToolStripMenuItem;Lịch trực nhân viên;Staff schedule
 IFStaffToolStripMenuItem;Tài khoản nhân viên;Employee account
 khoToolStripMenuItem;Kho;Warehouse

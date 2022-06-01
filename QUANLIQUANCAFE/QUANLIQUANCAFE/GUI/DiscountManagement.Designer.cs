@@ -30,6 +30,8 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtDiscountNameEn = new System.Windows.Forms.TextBox();
             this.btnNewID = new System.Windows.Forms.Button();
             this.cbActive = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,9 +48,10 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(53, 134);
+            this.dataGridView1.Location = new System.Drawing.Point(53, 167);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -59,6 +62,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.txtDiscountNameEn);
             this.panel1.Controls.Add(this.btnNewID);
             this.panel1.Controls.Add(this.cbActive);
             this.panel1.Controls.Add(this.label3);
@@ -70,10 +75,26 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtDiscountName);
             this.panel1.Location = new System.Drawing.Point(53, 32);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(694, 97);
+            this.panel1.Size = new System.Drawing.Size(694, 130);
             this.panel1.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(27, 102);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(98, 13);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Tên theo tiếng Anh";
+            // 
+            // txtDiscountNameEn
+            // 
+            this.txtDiscountNameEn.Location = new System.Drawing.Point(131, 97);
+            this.txtDiscountNameEn.Name = "txtDiscountNameEn";
+            this.txtDiscountNameEn.Size = new System.Drawing.Size(100, 20);
+            this.txtDiscountNameEn.TabIndex = 21;
             // 
             // btnNewID
             // 
@@ -88,7 +109,7 @@
             // cbActive
             // 
             this.cbActive.AutoSize = true;
-            this.cbActive.Location = new System.Drawing.Point(418, 62);
+            this.cbActive.Location = new System.Drawing.Point(292, 99);
             this.cbActive.Name = "cbActive";
             this.cbActive.Size = new System.Drawing.Size(79, 17);
             this.cbActive.TabIndex = 19;
@@ -113,7 +134,7 @@
             // 
             // addorupdate
             // 
-            this.addorupdate.Location = new System.Drawing.Point(546, 41);
+            this.addorupdate.Location = new System.Drawing.Point(514, 62);
             this.addorupdate.Name = "addorupdate";
             this.addorupdate.Size = new System.Drawing.Size(121, 23);
             this.addorupdate.TabIndex = 16;
@@ -194,5 +215,7 @@
         private System.Windows.Forms.TextBox txtValue;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDiscountName;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtDiscountNameEn;
     }
 }

@@ -12,6 +12,8 @@ using System.Data;
 using System.Net.Http;
 using System.Web.Script.Serialization;
 using System.Collections;
+using System.IO;
+using QUANLIQUANCAFE.GUI;
 
 namespace QUANLIQUANCAFE.BLL
 {
@@ -21,7 +23,7 @@ namespace QUANLIQUANCAFE.BLL
         public delegate void Mydel(object sender, EventArgs e);
         public Mydel d;
         private static Quanli instance;
-
+        public string langnow;
         public static Quanli Instance
         {
             get
@@ -34,6 +36,14 @@ namespace QUANLIQUANCAFE.BLL
             }
             set => instance = value;
         }
+        private Quanli()
+        {
+            using (StreamReader sr = new StreamReader("lang.txt"))
+            {
+                langnow = sr.ReadLine();
+            }
+        }
+
 
         public Bill GetBillByID(string billID)
         {
@@ -275,6 +285,31 @@ namespace QUANLIQUANCAFE.BLL
         {
             string s = "00" + (Convert.ToInt32(DiscountDAL.Instance.GetLastID()) + 1).ToString();
             return s.Substring(s.Length - 3, 3);
+        }
+
+        public void LoadLang(Form f)
+        {
+            int lang = 1;
+            if (Quanli.Instance.langnow == "en")
+            {
+                lang = 2;
+            }
+            using (StreamReader sr = new StreamReader(f.Name + ".txt"))
+            {
+                while (!sr.EndOfStream)
+                {
+                    string[] s = sr.ReadLine().Split(';');
+                    try
+                    {
+                        f.Controls.Find(s[0], true).First().Text = s[lang];
+                    }
+                    catch
+                    {
+                        ((MainForm)f).menuStrip1.Items.Find(s[0], true).First().Text = s[lang];
+                    }
+                }
+            }
+
         }
 
 

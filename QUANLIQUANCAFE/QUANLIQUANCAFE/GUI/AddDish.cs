@@ -17,15 +17,16 @@ namespace QUANLIQUANCAFE.GUI
     {
         public delegate void Mydel();
         public Mydel d;
-        Quanli bll = new Quanli();
         public AddDish()
         {
             InitializeComponent();
             AddcbbGroup();
             AddcbbSize();
             Design();
-            GenLang();
+            Quanli.Instance.LoadLang(this);
         }
+
+
 
         private void GenLang()
         {

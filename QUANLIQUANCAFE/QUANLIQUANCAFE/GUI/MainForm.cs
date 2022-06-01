@@ -18,7 +18,7 @@ namespace QUANLIQUANCAFE.GUI
     public partial class MainForm : Form
     {
         //Nhâm
-        Quanli bll = new Quanli();
+
         Color c = Color.FromArgb(0, 255, 255);// Bàn trống
         Color c1 = Color.FromArgb(255, 255, 0);// Bàn đang được đặt
         Staff staff;
@@ -28,15 +28,15 @@ namespace QUANLIQUANCAFE.GUI
         {
             staff = Role;
             InitializeComponent();
-            LoadComponent();
-            LoadDishGroup();
             if (!Quanli.Instance.GetAccountByStaffID(staff.StaffID).Role)
             {
-                ManaLoolStripMenuItem.Enabled = false;
+                ManaToolStripMenuItem.Enabled = false;
             }
-            lbNameNV.Text = staff.StaffName;
-            Design();
-            GenLang();
+            LoadComponent();
+            LoadDishGroup();
+
+
+
         }
 
         private void GenLang()
@@ -145,6 +145,13 @@ namespace QUANLIQUANCAFE.GUI
             lbTableName.Text = (cbbTableName.SelectedItem as CBBItem).Text;
             lbTableName.Tag = (cbbTableName.SelectedItem as CBBItem).Value;
             LoadOrder(lbTableName.Tag.ToString());
+            if (Quanli.Instance.langnow == "vi")
+                ToolStripMenuITiengViet.Enabled = false;
+            else
+                ToolStripMenuItemenglish.Enabled = false;
+            Design();
+            Quanli.Instance.LoadLang(this);
+            lbNameNV.Text = staff.StaffName;
         }
         void LoadOrder(string tableID)
         {
@@ -250,12 +257,38 @@ namespace QUANLIQUANCAFE.GUI
         // đổi ngôn ngữ
         private void ToolStripMenuITiengViet_Click(object sender, EventArgs e)
         {
-            LoadComponent();
+
+            if (MessageBox.Show("Bạn có chắc chắn muốn đổi ngôn ngữ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                using (StreamWriter sw = new StreamWriter("lang.txt"))
+                {
+                    sw.WriteLine("vi");
+                }
+                Quanli.Instance.langnow = "vi";
+                this.Controls.Clear();
+                this.InitializeComponent();
+                LoadComponent();
+                ToolStripMenuITiengViet.Enabled = false;
+                ToolStripMenuItemenglish.Enabled = true;
+            }
+
         }
 
         private void ToolStripMenuItemenglish_Click(object sender, EventArgs e)
         {
-            LoadComponent();
+            if (MessageBox.Show("Do you want to change language?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                using (StreamWriter sw = new StreamWriter("lang.txt"))
+                {
+                    sw.WriteLine("en");
+                }
+                Quanli.Instance.langnow = "en";
+                this.Controls.Clear();
+                this.InitializeComponent();
+                LoadComponent();
+                ToolStripMenuITiengViet.Enabled = true;
+                ToolStripMenuItemenglish.Enabled = false;
+            }
         }
 
 

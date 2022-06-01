@@ -19,7 +19,7 @@ namespace QUANLIQUANCAFE.GUI
         {
             InitializeComponent();
             Design();
-            GenLang();
+            Quanli.Instance.LoadLang(this);
         }
         private void GenLang()
         {

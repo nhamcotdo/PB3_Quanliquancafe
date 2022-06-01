@@ -22,7 +22,8 @@ namespace QUANLIQUANCAFE.GUI
             this.staff = staff;
             GUI();
             Design();
-            GenLang();
+            Quanli.Instance.LoadLang(this);
+
         }
         private void GenLang()
         {

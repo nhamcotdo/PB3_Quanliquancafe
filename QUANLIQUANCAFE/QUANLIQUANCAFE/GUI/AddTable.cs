@@ -17,7 +17,6 @@ namespace QUANLIQUANCAFE.GUI
     {
         public delegate void Mydel();
         public Mydel d;
-        Quanli bll = new Quanli();
         public AddTable()
         {
             InitializeComponent();
@@ -26,7 +25,7 @@ namespace QUANLIQUANCAFE.GUI
                 cbbArea.Items.Add(new CBBItem(item.AreaName, item.AreaID));
             }
             Design();
-            GenLang();
+            Quanli.Instance.LoadLang(this);
         }
         private void GenLang()
         {

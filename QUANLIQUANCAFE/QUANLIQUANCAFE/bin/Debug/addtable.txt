@@ -1,4 +1,4 @@
-btnCancel;Hủy;CancelCancel
-btnAdd;Tạo bàn;Create a tableCreate a table
-label2;Khu vực;AreaArea
-label1;Tên bàn;Table nameTable name
+btnCancel;Hủy;Cancel
+btnAdd;Tạo bàn;Create a table
+label2;Khu vực;Area
+label1;Tên bàn;Table name

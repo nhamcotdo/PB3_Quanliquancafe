@@ -18,11 +18,30 @@ namespace QUANLIQUANCAFE.GUI
     {
         public delegate void MyDel();
         public MyDel d;
-        private int count = 0;
         public IFStaff()
         {
             InitializeComponent();
             GUI();
+            Quanli.Instance.LoadLang(this);
+
+        }
+
+        private void GenLang()
+        {
+            using (StreamWriter sw = new StreamWriter("ifstaff.txt"))
+            {
+                foreach (Control i in grbTT.Controls)
+                {
+                    if (!(i is TextBox || i is ComboBox || i is NumericUpDown || i is DataGridView || i is DateTimePicker))
+                        sw.WriteLine(i.Name + ";" + i.Text + ";" + Quanli.Instance.TranslateText(i.Text, "vi", "en"));
+                }
+                foreach (Control i in grbCN.Controls)
+                {
+                    if (!(i is TextBox || i is ComboBox || i is NumericUpDown || i is DataGridView || i is DateTimePicker))
+                        sw.WriteLine(i.Name + ";" + i.Text + ";" + Quanli.Instance.TranslateText(i.Text, "vi", "en"));
+
+                }
+            }
         }
 
         public void GUI()
@@ -40,12 +59,12 @@ namespace QUANLIQUANCAFE.GUI
         }
         public void AddDataHeader()
         {
-            dataGridView1.Columns[0].HeaderText="ID";
-            dataGridView1.Columns[1].HeaderText="Họ Tên";
-            dataGridView1.Columns[2].HeaderText="Số điện thoại";
-            dataGridView1.Columns[3].HeaderText="Địa chỉ";
-            dataGridView1.Columns[4].HeaderText="Ngày Sinh";
-            dataGridView1.Columns[5].HeaderText="Giới tính";
+            dataGridView1.Columns[0].HeaderText = "ID";
+            dataGridView1.Columns[1].HeaderText = "Họ Tên";
+            dataGridView1.Columns[2].HeaderText = "Số điện thoại";
+            dataGridView1.Columns[3].HeaderText = "Địa chỉ";
+            dataGridView1.Columns[4].HeaderText = "Ngày Sinh";
+            dataGridView1.Columns[5].HeaderText = "Giới tính";
         }
 
         private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -59,11 +78,11 @@ namespace QUANLIQUANCAFE.GUI
                 txtDC.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
                 dateTimePicker1.Value = Convert.ToDateTime(dataGridView1.SelectedRows[0].Cells[4].Value.ToString());
                 if (Convert.ToBoolean(dataGridView1.SelectedRows[0].Cells[5].Value.ToString()))
-                    rdbMale.Checked=true;
+                    rdbMale.Checked = true;
                 else
-                    rdbFeMale.Checked=true;
-                txtTK.Text=dataGridView1.SelectedRows[0].Cells[6].Value.ToString();
-                txtPassWord.Text=dataGridView1.SelectedRows[0].Cells[7].Value.ToString();
+                    rdbFeMale.Checked = true;
+                txtTK.Text = dataGridView1.SelectedRows[0].Cells[6].Value.ToString();
+                txtPassWord.Text = dataGridView1.SelectedRows[0].Cells[7].Value.ToString();
             }
         }
 
@@ -77,7 +96,7 @@ namespace QUANLIQUANCAFE.GUI
             bool sex = true;
             if (rdbFeMale.Checked)
             {
-                sex=false;
+                sex = false;
             }
 
             string account = txtTK.Text;
@@ -101,7 +120,7 @@ namespace QUANLIQUANCAFE.GUI
                 bool sex = true;
                 if (rdbFeMale.Checked)
                 {
-                    sex=false;
+                    sex = false;
                 }
                 string account = txtTK.Text;
                 string password = txtPassWord.Text;
@@ -141,7 +160,7 @@ namespace QUANLIQUANCAFE.GUI
 
         private void btnNewID_Click(object sender, EventArgs e)
         {
-            txtID.Text=Quanli.Instance.NewStaffID();
+            txtID.Text = Quanli.Instance.NewStaffID();
         }
         void Design()
         {

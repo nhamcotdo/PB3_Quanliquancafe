@@ -20,11 +20,12 @@ namespace QUANLIQUANCAFE.GUI
             InitializeComponent();
             GUI();
             Design();
-            GenLang();
+
+            Quanli.Instance.LoadLang(this);
         }
         private void GenLang()
         {
-            using (StreamWriter sw = new StreamWriter("billmanagement.txt"))
+            using (StreamWriter sw = new StreamWriter(this.Name + ".txt"))
             {
                 foreach (Control i in panel1.Controls)
                 {
@@ -37,17 +38,52 @@ namespace QUANLIQUANCAFE.GUI
         void GUI()
         {
             txtID.Enabled = false;
-            dataGridView1.DataSource = Quanli.Instance.GetAllDiscount(false);
+            DataTable dt = new DataTable();
+            if (Quanli.Instance.langnow == "en")
+                dt.Columns.AddRange(
+                new DataColumn[]
+                {
+                new DataColumn("DiscountID", typeof(string)),
+                new DataColumn("DiscountName", typeof(string)),
+                new DataColumn("Value", typeof(int)),
+                new DataColumn("Percent", typeof(bool)),
+                new DataColumn("Active", typeof(bool))
+                });
+            else
+            {
+                dt.Columns.AddRange(
+                    new DataColumn[]
+                    {
+                new DataColumn("ID Mã giảm giá", typeof(string)),
+                new DataColumn("Tên mã giảm giá", typeof(string)),
+                new DataColumn("Giá trị", typeof(int)),
+                new DataColumn("Theo phần trăm", typeof(bool)),
+                new DataColumn("Kích hoạt", typeof(bool))
+                });
+            }
+            foreach (Discount i in Quanli.Instance.GetAllDiscount(false))
+            {
+                dt.Rows.Add(i.DiscountID, i.DisCountName, i.Value, i.Percent, i.Active);
+            }
+
+            dataGridView1.DataSource = dt;
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtID.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            txtDiscountName.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            txtValue.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            cbPercent.Checked = dataGridView1.CurrentRow.Cells[3].Value.ToString() == "True" ? true : false;
-            cbActive.Checked = dataGridView1.CurrentRow.Cells[4].Value.ToString() == "True" ? true : false;
-
+            Discount d = Quanli.Instance.GetDiscountByID(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            txtID.Text = d.DiscountID;
+            txtDiscountName.Text = d.DisCountName;
+            txtDiscountNameEn.Text = d.DisCountNameEn;
+            txtValue.Text = d.Value.ToString();
+            if (d.Percent)
+                cbPercent.Checked = true;
+            else
+                cbPercent.Checked = false;
+            if (d.Active)
+                cbActive.Checked = true;
+            else
+                cbActive.Checked = false;
         }
         private void btnNewID_Click(object sender, EventArgs e)
         {
@@ -66,6 +102,7 @@ namespace QUANLIQUANCAFE.GUI
                  {
                      DiscountID = txtID.Text,
                      DisCountName = txtDiscountName.Text,
+                     DisCountNameEn = txtDiscountNameEn.Text,
                      Value = Convert.ToInt32(txtValue.Text),
                      Percent = cbPercent.Checked,
                      Active = cbActive.Checked

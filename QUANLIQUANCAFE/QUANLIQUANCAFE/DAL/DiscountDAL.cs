@@ -47,7 +47,7 @@ namespace QUANLIQUANCAFE.BLL
 
         public Discount GetDiscountByID(string discountID)
         {
-            return new Discount(DBHelper.Instance.GetRecords("SELECT * FROM Discount WHERE DiscountID = '" + discountID + "'").Rows[0]);
+            return new Discount(DBHelper.Instance.GetRecords("SELECT * FROM Discount WHERE DiscountID = '" + discountID + "'").Rows[0], true);
         }
         public string GetLastID()
         {
@@ -58,8 +58,8 @@ namespace QUANLIQUANCAFE.BLL
         {
             try
             {
-                DBHelper.Instance.ExecuteDB(string.Format("INSERT INTO Discount VALUES (N'{0}', N'{1}', N'{2}', N'{3}', N'{4}')",
-                    discount.DiscountID, discount.DisCountName, discount.Value, discount.Percent, discount.Active));
+                DBHelper.Instance.ExecuteDB(string.Format("INSERT INTO Discount VALUES (N'{0}', N'{1}', N'{2}', N'{3}', N'{4}', N'{5}')",
+                    discount.DiscountID, discount.DisCountName, discount.Value, discount.DisCountNameEn, discount.Percent, discount.Active));
             }
             catch (Exception e)
             {

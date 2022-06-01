@@ -21,7 +21,7 @@ namespace QUANLIQUANCAFE.GUI
         {
             InitializeComponent();
             Design();
-            GenLang();
+            Quanli.Instance.LoadLang(this);
 
         }
 
@@ -31,8 +31,8 @@ namespace QUANLIQUANCAFE.GUI
             {
                 foreach (Control i in this.Controls)
                 {
-                    if(i.Text != "")
-                    sw.WriteLine(i.Name + ";" + i.Text + ";" + Quanli.Instance.TranslateText(i.Text, "vi", "en"));
+                    if (i.Text != "")
+                        sw.WriteLine(i.Name + ";" + i.Text + ";" + Quanli.Instance.TranslateText(i.Text, "vi", "en"));
                 }
             }
         }

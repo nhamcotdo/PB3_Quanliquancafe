@@ -25,12 +25,14 @@ namespace QUANLIQUANCAFE.GUI
             InitializeComponent();
             LoadComponent();
             Design();
-            GenLang();
+            //GenLang();
+            Quanli.Instance.LoadLang(this);
+
         }
 
         private void GenLang()
         {
-            using (StreamWriter sw = new StreamWriter("showmenu.txt"))
+            using (StreamWriter sw = new StreamWriter(this.Name + ".txt"))
             {
                 foreach (Control i in pnHeader.Controls)
                 {

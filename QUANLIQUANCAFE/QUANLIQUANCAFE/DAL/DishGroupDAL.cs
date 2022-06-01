@@ -32,8 +32,7 @@ namespace QUANLIQUANCAFE.DAL
             DataTable data = DBHelper.Instance.GetRecords(query);
             foreach (DataRow item in data.Rows)
             {
-                DishGroup dishGroup = new DishGroup(item);
-                list.Add(dishGroup);
+                list.Add(new DishGroup(item));
             }
 
             return list;

@@ -25,7 +25,7 @@ namespace QUANLIQUANCAFE.GUI
             addDatagrid();
             addcbbDishGroup();
             Design();
-            GenLang();
+            Quanli.Instance.LoadLang(this);
         }
 
         private void GenLang()

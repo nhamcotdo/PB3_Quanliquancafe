@@ -1,0 +1,8 @@
+label4;Tên theo tiếng Anh;Name in English
+btnNewID;Mã mới;New code
+cbActive;Có hiệu lực;Effective
+label3;ID;ID
+addorupdate;Thêm hoặc sửa;Add or edit
+cbPercent;Theo phần trăm;In percent
+label2;Giá trị;Value
+label1;Tên mã giảm giá;Name of discount code

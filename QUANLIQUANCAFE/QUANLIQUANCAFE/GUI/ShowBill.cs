@@ -23,7 +23,7 @@ namespace QUANLIQUANCAFE.GUI
             this.BillID = BillID;
             this.StaffName = StaffName;
             GUI();
-            GenLang();
+            Quanli.Instance.LoadLang(this);
         }
         private void GenLang()
         {

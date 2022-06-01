@@ -29,7 +29,7 @@ namespace QUANLIQUANCAFE.GUI
             staff = NV;
             lbNV.Text = NV.StaffID;
             GUI();
-            GenLang();
+            Quanli.Instance.LoadLang(this);
         }
 
         private void GenLang()
