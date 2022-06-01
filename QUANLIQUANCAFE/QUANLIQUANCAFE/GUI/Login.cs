@@ -19,6 +19,18 @@ namespace QUANLIQUANCAFE.GUI
         {
             InitializeComponent();
             Design();
+            GenLang();
+        }
+        private void GenLang()
+        {
+            using (StreamWriter sw = new StreamWriter("login.txt"))
+            {
+                foreach (Control i in panel1.Controls)
+                {
+                    if (!(i is TextBox || i is ComboBox || i is NumericUpDown || i is DataGridView || i is DateTimePicker))
+                        sw.WriteLine(i.Name + ":" + i.Text + ";" + Quanli.Instance.TranslateText(i.Text, "vi", "en"));
+                }
+            }
         }
         void Design()
         {

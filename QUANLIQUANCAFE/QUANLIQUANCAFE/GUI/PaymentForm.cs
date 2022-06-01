@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +29,32 @@ namespace QUANLIQUANCAFE.GUI
             staff = NV;
             lbNV.Text = NV.StaffID;
             GUI();
+            GenLang();
         }
+
+        private void GenLang()
+        {
+            using (StreamWriter sw = new StreamWriter("paymentform.txt"))
+            {
+                foreach (Control i in panelBill.Controls)
+                {
+                    if (!(i is TextBox | i is ComboBox | i is Panel) & i.Text != "")
+
+                        sw.WriteLine(i.Name + ";" + i.Text + ";" + Quanli.Instance.TranslateText(i.Text, "vi", "en"));
+                }
+                foreach (Control i in panelBill.Controls)
+                {
+                    if (!(i is DataGridView) & i.Text != "")
+
+                        sw.WriteLine(i.Name + ";" + i.Text + ";" + Quanli.Instance.TranslateText(i.Text, "vi", "en"));
+                }
+            }
+
+        }
+
+
+
+
         void GUI()
         {
             lbTime.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");

@@ -1,0 +1,16 @@
+btnCancel;Hủy;Cancel
+btnOK;OK;OK
+txtExample;Mãu;Code
+lbExample;Mẫu;Sample
+btnExample;Mẫu;Sample
+label10;Màu chữ trong ô;Text color in cell
+label11;Màu ô;Umbrella color
+label12;Các ô chữ;Crosswords
+label7;Màu chữ nhãn;Label font color
+label9;Các nhãn;Labels
+label6;Màu chữ nút;Button font color
+label5;Màu nút;Button color
+label4;Chọn màu;Choose color
+label3;Các nút;Buttons
+label2;Chọn ảnh;Choose a photo
+label1;Ảnh nền;Background

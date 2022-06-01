@@ -1,0 +1,7 @@
+label5;Size;Size
+label4;Nhóm đồ ăn;Food group
+butCC;Hủy;Cancel
+butOK;OK;OK
+label3;Giá;Price
+label2;Tên Món;Dish Name
+label1;ID Món;Dish ID

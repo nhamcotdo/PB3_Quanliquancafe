@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,8 +23,22 @@ namespace QUANLIQUANCAFE.GUI
             this.BillID = BillID;
             this.StaffName = StaffName;
             GUI();
+            GenLang();
         }
+        private void GenLang()
+        {
+            using (StreamWriter sw = new StreamWriter("showbill.txt"))
+            {
+                foreach (Control i in panelBill.Controls)
+                {
+                    if (!(i is DataGridView))
 
+                        sw.WriteLine(i.Name + ";" + i.Text + ";" + Quanli.Instance.TranslateText(i.Text, "vi", "en"));
+                }
+
+            }
+
+        }
         private void GUI()
         {
             Bill b = Quanli.Instance.GetBillByID(BillID);

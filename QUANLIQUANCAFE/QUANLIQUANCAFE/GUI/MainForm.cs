@@ -22,8 +22,7 @@ namespace QUANLIQUANCAFE.GUI
         Color c = Color.FromArgb(0, 255, 255);// Bàn trống
         Color c1 = Color.FromArgb(255, 255, 0);// Bàn đang được đặt
         Staff staff;
-        string langnow = "vi";
-        string lang = "vi";
+
 
         public MainForm(Staff Role)
         {
@@ -33,11 +32,43 @@ namespace QUANLIQUANCAFE.GUI
             LoadDishGroup();
             if (!Quanli.Instance.GetAccountByStaffID(staff.StaffID).Role)
             {
-                quảnLíToolStripMenuItem.Enabled = false;
+                ManaLoolStripMenuItem.Enabled = false;
             }
             lbNameNV.Text = staff.StaffName;
             Design();
+            GenLang();
         }
+
+        private void GenLang()
+        {
+            using (StreamWriter sw = new StreamWriter("mainform.txt"))
+            {
+                foreach (ToolStripMenuItem i in menuStrip1.Items)
+                {
+                    sw.WriteLine(i.Name + ";" + i.Text + ";" + Quanli.Instance.TranslateText(i.Text, "vi", "en"));
+                    foreach (ToolStripMenuItem j in i.DropDownItems)
+                    {
+                        sw.WriteLine(j.Name + ";" + j.Text + ";" + Quanli.Instance.TranslateText(j.Text, "vi", "en"));
+                    }
+                }
+                foreach (Control i in pnHeader.Controls)
+                {
+                    if (i is Button)
+                    {
+                        sw.WriteLine(i.Name + ";" + i.Text + ";" + Quanli.Instance.TranslateText(i.Text, "vi", "en"));
+                    }
+                }
+                foreach (Control i in pnFooter.Controls)
+                {
+                    if (i is Button)
+                    {
+                        sw.WriteLine(i.Name + ";" + i.Text + ";" + Quanli.Instance.TranslateText(i.Text, "vi", "en"));
+                    }
+                }
+
+            }
+        }
+
         void Design()
         {
             string[] background;
@@ -114,76 +145,6 @@ namespace QUANLIQUANCAFE.GUI
             lbTableName.Text = (cbbTableName.SelectedItem as CBBItem).Text;
             lbTableName.Tag = (cbbTableName.SelectedItem as CBBItem).Value;
             LoadOrder(lbTableName.Tag.ToString());
-            if (langnow == lang)
-                return;
-            langnow = lang;
-            if (lang == "en")
-            {
-
-                foreach (ToolStripMenuItem i in menuStrip1.Items)
-                {
-                    i.Text = Quanli.Instance.TranslateText(i.Text, "vi", "en");
-                    foreach (ToolStripMenuItem j in i.DropDownItems)
-                    {
-                        j.Text = Quanli.Instance.TranslateText(j.Text, "vi", "en");
-                    }
-                }
-
-                // đổi ngôn ngữ button
-                btnOrder.Text = "Order";
-                btnPay.Text = "Pay";
-                btnMove.Text = "Move";
-                btnMerge.Text = "Merge";
-                btnAdd.Text = "Add";
-                btnDel.Text = "Delete";
-
-                //đổi ngôn ngữ Danh sách bàn
-                label1.Text = "List Table";
-                foreach (FlowLayoutPanel i in flowLayoutTable.Controls)
-                {
-
-                    foreach (Control j in i.Controls)
-                    {
-                        j.Text = Quanli.Instance.TranslateText(j.Text, "vi", "en");
-                    }
-
-
-                }
-                MessageBox.Show("Language has been changed successfully!");
-            }
-            else
-            {
-                foreach (ToolStripMenuItem i in menuStrip1.Items)
-                {
-                    i.Text = Quanli.Instance.TranslateText(i.Text, "en", "vi");
-                    foreach (ToolStripMenuItem j in i.DropDownItems)
-                    {
-                        j.Text = Quanli.Instance.TranslateText(j.Text, "en", "vi");
-                    }
-                }
-
-                btnOrder.Text = "Gọi món";
-                btnPay.Text = "Thanh toán";
-                btnMove.Text = "Chuyển bàn";
-                btnMerge.Text = "Gộp bàn";
-                btnAdd.Text = "Thêm món";
-                btnDel.Text = "Xóa món";
-
-                label1.Text = "Danh sách bàn";
-                foreach (FlowLayoutPanel i in flowLayoutTable.Controls)
-                {
-
-                    foreach (Control j in i.Controls)
-                    {
-                        j.Text = Quanli.Instance.TranslateText(j.Text, "en", "vi");
-                    }
-
-
-                }
-
-
-                MessageBox.Show("Đổi ngôn ngữ thành công!");
-            }
         }
         void LoadOrder(string tableID)
         {
@@ -289,14 +250,11 @@ namespace QUANLIQUANCAFE.GUI
         // đổi ngôn ngữ
         private void ToolStripMenuITiengViet_Click(object sender, EventArgs e)
         {
-            lang = "vi";
-
             LoadComponent();
         }
 
         private void ToolStripMenuItemenglish_Click(object sender, EventArgs e)
         {
-            lang = "en";
             LoadComponent();
         }
 

@@ -1,0 +1,2 @@
+btnMonth;Theo tháng;Monthly
+btnYear;Theo Năm;By year

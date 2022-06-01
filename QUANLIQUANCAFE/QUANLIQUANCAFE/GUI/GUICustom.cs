@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QUANLIQUANCAFE.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,22 @@ namespace QUANLIQUANCAFE.GUI
         {
             InitializeComponent();
             Design();
+            GenLang();
+
         }
+
+        private void GenLang()
+        {
+            using (StreamWriter sw = new StreamWriter("guicustom.txt"))
+            {
+                foreach (Control i in this.Controls)
+                {
+                    if(i.Text != "")
+                    sw.WriteLine(i.Name + ";" + i.Text + ";" + Quanli.Instance.TranslateText(i.Text, "vi", "en"));
+                }
+            }
+        }
+
         void Design()
         {
             string[] background;

@@ -1,0 +1,4 @@
+lbTDN:Tên đăng nhập;user name
+butDN:Đăng nhập;Log in
+lbMK:Mật khẩu;Password
+butExit:Thoát;Exit

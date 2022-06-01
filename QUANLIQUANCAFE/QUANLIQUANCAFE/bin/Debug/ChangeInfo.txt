@@ -1,0 +1,13 @@
+rbFemale;Nữ;Female
+label7;Giới tính;Sex
+rbMale;Nam;male
+btnCancel;Cancel;Cancel
+btnOK;OK;OK
+cbHide;Hiện mật khẩu;Show password
+label5;Mật khẩu;Password
+lbAccount;Tài khoản;Account
+label2;Tên;Name
+label8;Ngày vào;Day in
+label9;Địa chỉ;Address
+label3;Số điện thoại;Phone number
+label1;Mã số;Code

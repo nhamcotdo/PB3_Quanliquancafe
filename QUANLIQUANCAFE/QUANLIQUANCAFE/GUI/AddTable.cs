@@ -26,8 +26,19 @@ namespace QUANLIQUANCAFE.GUI
                 cbbArea.Items.Add(new CBBItem(item.AreaName, item.AreaID));
             }
             Design();
+            GenLang();
         }
-
+        private void GenLang()
+        {
+            using (StreamWriter sw = new StreamWriter("addtable.txt"))
+            {
+                foreach (Control i in this.Controls)
+                {
+                    if (!(i is TextBox || i is ComboBox || i is NumericUpDown || i is DataGridView))
+                        sw.WriteLine(i.Name + ";" + i.Text + ";" + Quanli.Instance.TranslateText(i.Text, "vi", "en"));
+                }
+            }
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
 

@@ -1,0 +1,20 @@
+ManaLoolStripMenuItem;Quản lí;Manager
+ScheduleToolStripMenuItem;Lịch trực nhân viên;Staff schedule
+IFStaffToolStripMenuItem;Tài khoản nhân viên;Employee account
+khoToolStripMenuItem;Kho;Warehouse
+thuChiToolStripMenuItem;Thu chi;Revenue and expenditure
+editMenu;Điều chỉnh Menu;Menu Adjustment
+DiscountToolStripMenuItem;Mã giảm giá;Discount code
+settingToolStripMenuItem;Cài đặt;Setting
+ToolStripMenuItemChangeColor;Đổi màu nền;Change background color
+LangToolStripMenuItem;Đổi ngôn ngữ;Change language
+accountToolStripMenuItem;Tài khoản;Account
+toolstripChangeInfo;Đổi mật khẩu;Change Password
+LogoutToolStripMenuItem;Đăng xuất;Log out
+btnOrder;Gọi món;Order
+btnFree;Làm trống bàn;Empty the table
+btnDel;Xóa Bàn;Delete Tables
+btnAdd;Tạo bàn;Create a table
+btnMove;Chuyển bàn;Move table
+btnPay;THANH TOÁN;PAY
+btnMerge;GỘP BÀN;MEMBERS TABLES

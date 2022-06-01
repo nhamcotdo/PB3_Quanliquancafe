@@ -1,0 +1,4 @@
+lbOther;0;0
+label10;Chi phí khác;Other costs
+lbTotalPrice;0;0
+lbPromotion;0;0

@@ -1,0 +1,14 @@
+btnNewID:ID mới;New ID
+lbPassWord:Mật khẩu;Password
+lbShift:Ca làm;Shifts
+lbAccount:Tài khoản;Account
+grbGT:Giới tính;Sex
+label5:Ngày Sinh;Date of birth
+label4:Địa Chỉ;Address
+label3:Số Điện Thoại;Phone number
+lbHT:Họ và Tên;First and last name
+lbID:ID;ID
+btnExit:Thoát;Exit
+btnDelete:Xóa;Erase
+btnEdit:Sửa;Fix
+btnAdd:Thêm;More

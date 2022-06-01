@@ -24,7 +24,21 @@ namespace QUANLIQUANCAFE.GUI
             AddcbbGroup();
             AddcbbSize();
             Design();
+            GenLang();
         }
+
+        private void GenLang()
+        {
+            using (StreamWriter sw = new StreamWriter("adddish.txt"))
+            {
+                foreach (Control i in panel1.Controls)
+                {
+                    if (!(i is TextBox || i is ComboBox || i is NumericUpDown || i is DataGridView))
+                        sw.WriteLine(i.Name + ";" + i.Text + ";" + Quanli.Instance.TranslateText(i.Text, "vi", "en"));
+                }
+            }
+        }
+
         public void AddcbbGroup()
         {
             cbbGroup.Items.Add(new CBBItem { Value = "0", Text = "G001" });

@@ -1,0 +1,9 @@
+button1;Nhập kho;Import
+button2;Xuất kho;Export
+label6;Số lượng;Amount
+label5;/;/
+label4;GIá;Price
+label3;Ngày nhập;Date Added
+label2;Tên;Name
+label1;ID;ID
+UpdateBut;Lưu;Save

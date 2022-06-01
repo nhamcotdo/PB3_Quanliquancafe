@@ -25,7 +25,21 @@ namespace QUANLIQUANCAFE.GUI
             addDatagrid();
             addcbbDishGroup();
             Design();
+            GenLang();
         }
+
+        private void GenLang()
+        {
+            using (StreamWriter sw = new StreamWriter("showmenu.txt"))
+            {
+                foreach (Control i in panel1.Controls)
+                {
+                    if (!(i is ComboBox))
+                        sw.WriteLine(i.Name + ";" + i.Text + ";" + Quanli.Instance.TranslateText(i.Text, "vi", "en"));
+                }
+            }
+        }
+
         public void addDatagrid()
         {
             DataTable dt = new DataTable();

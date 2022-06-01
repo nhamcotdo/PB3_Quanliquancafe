@@ -1,0 +1,3 @@
+label2;Đến ngày;To date
+label1;Từ ngày;Since
+btnStatistic;Thống kê;Statistical

@@ -19,7 +19,19 @@ namespace QUANLIQUANCAFE.GUI
         {
             InitializeComponent();
             GUI();
+            GenLang();
         }
+
+        private void GenLang()
+        {
+            using (StreamWriter sw = new StreamWriter("statisticform.txt"))
+            {
+                sw.WriteLine(btnMonth.Name + ";" + btnMonth.Text + ";" + Quanli.Instance.TranslateText(btnMonth.Text, "vi", "en"));
+                sw.WriteLine(btnYear.Name + ";" + btnYear.Text + ";" + Quanli.Instance.TranslateText(btnYear.Text, "vi", "en"));
+
+            }
+        }
+
         void GUI()
         {
             chart1.Series.Add("Doanh thu");

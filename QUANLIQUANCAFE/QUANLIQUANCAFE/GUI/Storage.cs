@@ -25,8 +25,21 @@ namespace QUANLIQUANCAFE.GUI
             InitializeComponent();
             LoadComponent();
             Design();
-
+            GenLang();
         }
+
+        private void GenLang()
+        {
+            using (StreamWriter sw = new StreamWriter("showmenu.txt"))
+            {
+                foreach (Control i in pnHeader.Controls)
+                {
+                    if (!(i is DateTimePicker | i is TextBox | i is NumericUpDown) && i.Text != "")
+                        sw.WriteLine(i.Name + ";" + i.Text + ";" + Quanli.Instance.TranslateText(i.Text, "vi", "en"));
+                }
+            }
+        }
+
         void Design()
         {
             string[] background;
