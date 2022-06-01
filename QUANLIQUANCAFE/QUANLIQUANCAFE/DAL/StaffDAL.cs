@@ -35,15 +35,15 @@ namespace QUANLIQUANCAFE.DAL
         //    DBHelper.Instance.ExecuteDB(string.Format("UPDATE [Staff] SET STAFFID=N'{0}',STAFFNAME=N'{1}',PHONE=N'{2}',ADDRESS=N'{3}',DATE=N'{4}',SHIFTID=N'{5}',SEX=N'{6}'", staff.StaffID, staff.StaffName, staff.PhoneNumber, staff.Address, staff.DateIn, staff.ShiftID, staff.Sex));
         //}
 
-        public void UpdateStaff(string StaffID, string StaffName, int PhoneNumber, string Address, DateTime DateIn, string ShiftID, bool Sex)
+        public void UpdateStaff(string StaffID, string StaffName, int PhoneNumber, string Address, DateTime DateIn, bool Sex)
         {
-            string query = string.Format("UPDATE [Staff] SET STAFFNAME=N'{0}',PHONENUMBER=N'{1}',ADDRESS=N'{2}',DateIn=N'{3}',SHIFTID=N'{4}',SEX=N'{5}' WHERE StaffID=N'{6}'", StaffName, PhoneNumber, Address, DateIn, ShiftID, Sex, StaffID);
+            string query = string.Format("UPDATE [Staff] SET STAFFNAME=N'{0}',PHONENUMBER=N'{1}',ADDRESS=N'{2}',DateIn=N'{3}',SEX=N'{4}' WHERE StaffID=N'{5}'", StaffName, PhoneNumber, Address, DateIn, Sex, StaffID);
             DBHelper.Instance.ExecuteDB(query);
         }
 
-        public void InsertStaff(string StaffID, string StaffName, int PhoneNumber, string Address, DateTime DateIn, string ShiftID, bool Sex)
+        public void InsertStaff(string StaffID, string StaffName, int PhoneNumber, string Address, DateTime DateIn, bool Sex)
         {
-            string query = string.Format("Insert into Staff values('{0}',N'{1}','{2}',N'{3}',CONVERT(date, '{4}'),'{5}',{6})", StaffID, StaffName, PhoneNumber, Address, DateIn.ToString("yyyyMMdd"), ShiftID, Sex ? 1 : 0);
+            string query = string.Format("Insert into Staff values('{0}',N'{1}','{2}',N'{3}',CONVERT(date, '{4}'),{5})", StaffID, StaffName, PhoneNumber, Address, DateIn.ToString("yyyyMMdd"), Sex ? 1 : 0);
             DBHelper.Instance.ExecuteDB(query);
 
         }

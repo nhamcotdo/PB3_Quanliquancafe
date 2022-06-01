@@ -322,9 +322,9 @@ namespace QUANLIQUANCAFE.BLL
         {
             return AccountDAL.Instance.GetAccountByStaffID(id);
         }
-        public void UpdateStaff(string StaffID, string StaffName, int PhoneNumber, string Address, DateTime DateIn, string ShiftID, bool Sex)
+        public void UpdateStaff(string StaffID, string StaffName, int PhoneNumber, string Address, DateTime DateIn, bool Sex)
         {
-            StaffDAL.Instance.UpdateStaff(StaffID, StaffName, PhoneNumber, Address, DateIn, ShiftID, Sex);
+            StaffDAL.Instance.UpdateStaff(StaffID, StaffName, PhoneNumber, Address, DateIn, Sex);
         }
         public void UpdateAccount(string StaffID, string Account, string PassWord)
         {
@@ -345,9 +345,9 @@ namespace QUANLIQUANCAFE.BLL
 
 
 
-        public void InsertStaff(string StaffID, string StaffName, int PhoneNumber, string Address, DateTime DateIn, string ShiftID, bool Sex)
+        public void InsertStaff(string StaffID, string StaffName, int PhoneNumber, string Address, DateTime DateIn, bool Sex)
         {
-            StaffDAL.Instance.InsertStaff(StaffID, StaffName, PhoneNumber, Address, DateIn, ShiftID, Sex);
+            StaffDAL.Instance.InsertStaff(StaffID, StaffName, PhoneNumber, Address, DateIn, Sex);
         }
         public void InsertAccount(string StaffID, string Account, string PassWord)
         {

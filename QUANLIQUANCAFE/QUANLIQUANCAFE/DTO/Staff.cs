@@ -14,7 +14,6 @@ namespace QUANLIQUANCAFE.DTO
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
         public DateTime DateIn { get; set; }
-        public string ShiftID { get; set; }
         public bool Sex { get; set; }
 
         public Staff(DataRow dr)
@@ -24,7 +23,6 @@ namespace QUANLIQUANCAFE.DTO
             PhoneNumber = dr["PhoneNumber"].ToString();
             Address = dr["Address"].ToString();
             DateIn = Convert.ToDateTime(dr["DateIn"]);
-            ShiftID = dr["ShiftID"].ToString();
             Sex = Convert.ToBoolean(dr["Sex"].ToString());
         }
         public Staff()
