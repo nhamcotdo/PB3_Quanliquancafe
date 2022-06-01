@@ -30,10 +30,8 @@
         {
             this.grbTT = new System.Windows.Forms.GroupBox();
             this.btnNewID = new System.Windows.Forms.Button();
-            this.cbbCA = new System.Windows.Forms.ComboBox();
             this.lbPassWord = new System.Windows.Forms.Label();
             this.txtPassWord = new System.Windows.Forms.TextBox();
-            this.lbShift = new System.Windows.Forms.Label();
             this.txtTK = new System.Windows.Forms.TextBox();
             this.lbAccount = new System.Windows.Forms.Label();
             this.grbGT = new System.Windows.Forms.GroupBox();
@@ -65,10 +63,8 @@
             // grbTT
             // 
             this.grbTT.Controls.Add(this.btnNewID);
-            this.grbTT.Controls.Add(this.cbbCA);
             this.grbTT.Controls.Add(this.lbPassWord);
             this.grbTT.Controls.Add(this.txtPassWord);
-            this.grbTT.Controls.Add(this.lbShift);
             this.grbTT.Controls.Add(this.txtTK);
             this.grbTT.Controls.Add(this.lbAccount);
             this.grbTT.Controls.Add(this.grbGT);
@@ -102,19 +98,10 @@
             this.btnNewID.UseVisualStyleBackColor = true;
             this.btnNewID.Click += new System.EventHandler(this.btnNewID_Click);
             // 
-            // cbbCA
-            // 
-            this.cbbCA.FormattingEnabled = true;
-            this.cbbCA.Location = new System.Drawing.Point(465, 182);
-            this.cbbCA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbbCA.Name = "cbbCA";
-            this.cbbCA.Size = new System.Drawing.Size(225, 24);
-            this.cbbCA.TabIndex = 32;
-            // 
             // lbPassWord
             // 
             this.lbPassWord.AutoSize = true;
-            this.lbPassWord.Location = new System.Drawing.Point(383, 229);
+            this.lbPassWord.Location = new System.Drawing.Point(381, 276);
             this.lbPassWord.Name = "lbPassWord";
             this.lbPassWord.Size = new System.Drawing.Size(61, 16);
             this.lbPassWord.TabIndex = 31;
@@ -122,24 +109,15 @@
             // 
             // txtPassWord
             // 
-            this.txtPassWord.Location = new System.Drawing.Point(465, 229);
+            this.txtPassWord.Location = new System.Drawing.Point(456, 276);
             this.txtPassWord.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassWord.Name = "txtPassWord";
             this.txtPassWord.Size = new System.Drawing.Size(225, 22);
             this.txtPassWord.TabIndex = 30;
             // 
-            // lbShift
-            // 
-            this.lbShift.AutoSize = true;
-            this.lbShift.Location = new System.Drawing.Point(389, 182);
-            this.lbShift.Name = "lbShift";
-            this.lbShift.Size = new System.Drawing.Size(49, 16);
-            this.lbShift.TabIndex = 28;
-            this.lbShift.Text = "Ca làm";
-            // 
             // txtTK
             // 
-            this.txtTK.Location = new System.Drawing.Point(147, 229);
+            this.txtTK.Location = new System.Drawing.Point(147, 279);
             this.txtTK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTK.Name = "txtTK";
             this.txtTK.Size = new System.Drawing.Size(199, 22);
@@ -148,7 +126,7 @@
             // lbAccount
             // 
             this.lbAccount.AutoSize = true;
-            this.lbAccount.Location = new System.Drawing.Point(71, 229);
+            this.lbAccount.Location = new System.Drawing.Point(71, 279);
             this.lbAccount.Name = "lbAccount";
             this.lbAccount.Size = new System.Drawing.Size(67, 16);
             this.lbAccount.TabIndex = 26;
@@ -158,7 +136,7 @@
             // 
             this.grbGT.Controls.Add(this.rdbFeMale);
             this.grbGT.Controls.Add(this.rdbMale);
-            this.grbGT.Location = new System.Drawing.Point(237, 270);
+            this.grbGT.Location = new System.Drawing.Point(393, 182);
             this.grbGT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grbGT.Name = "grbGT";
             this.grbGT.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -193,7 +171,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(465, 114);
+            this.dateTimePicker1.Location = new System.Drawing.Point(465, 121);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(225, 22);
@@ -209,7 +187,7 @@
             // 
             // txtHT
             // 
-            this.txtHT.Location = new System.Drawing.Point(147, 113);
+            this.txtHT.Location = new System.Drawing.Point(147, 121);
             this.txtHT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtHT.Name = "txtHT";
             this.txtHT.Size = new System.Drawing.Size(199, 22);
@@ -217,7 +195,7 @@
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(147, 178);
+            this.txtSDT.Location = new System.Drawing.Point(147, 207);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(199, 22);
@@ -225,6 +203,7 @@
             // 
             // txtID
             // 
+            this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(147, 46);
             this.txtID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtID.Name = "txtID";
@@ -234,7 +213,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(389, 121);
+            this.label5.Location = new System.Drawing.Point(381, 120);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 16);
             this.label5.TabIndex = 18;
@@ -252,7 +231,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(49, 178);
+            this.label3.Location = new System.Drawing.Point(46, 207);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 16);
             this.label3.TabIndex = 16;
@@ -261,7 +240,7 @@
             // lbHT
             // 
             this.lbHT.AutoSize = true;
-            this.lbHT.Location = new System.Drawing.Point(71, 114);
+            this.lbHT.Location = new System.Drawing.Point(59, 120);
             this.lbHT.Name = "lbHT";
             this.lbHT.Size = new System.Drawing.Size(70, 16);
             this.lbHT.TabIndex = 15;
@@ -389,7 +368,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grbTT;
-        private System.Windows.Forms.Label lbShift;
         private System.Windows.Forms.TextBox txtTK;
         private System.Windows.Forms.Label lbAccount;
         private System.Windows.Forms.GroupBox grbGT;
@@ -414,7 +392,6 @@
         private System.Windows.Forms.Label lbStaff;
         private System.Windows.Forms.Label lbPassWord;
         private System.Windows.Forms.TextBox txtPassWord;
-        private System.Windows.Forms.ComboBox cbbCA;
         private System.Windows.Forms.Button btnNewID;
     }
 }
