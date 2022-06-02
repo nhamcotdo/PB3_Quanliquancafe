@@ -75,5 +75,15 @@ namespace QUANLIQUANCAFE.DAL
             }
             return ans;
         }
+        public DataTable GetData()
+        {
+            string query = string.Format("SELECT * [except GrocNameInEng] FROM [Storage]");
+            return DBHelper.Instance.GetRecords(query);
+        }
+        public DataTable GetDataInEng()
+        {
+            string query = string.Format("SELECT * [except GrocName] FROM [Storage]");
+            return DBHelper.Instance.GetRecords(query);
+        }
     }
 }

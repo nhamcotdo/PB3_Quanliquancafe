@@ -610,6 +610,12 @@ namespace QUANLIQUANCAFE.BLL
             else
                 StorageDAL.Instance.AddStorage(grocID, grocName, quantity, unit, price, dateCheckIn);
         }
+        public DataTable GetDataStorage()
+        {
+            if (langnow == "en")
+                return StorageDAL.Instance.GetDataInEng();
+            return StorageDAL.Instance.GetData();
+        }
 
         public void Free(string v)
         {

@@ -94,24 +94,33 @@ namespace QUANLIQUANCAFE.GUI
         }
         public void AddDatagrid()
         {
-            DataTable dt = new DataTable();
-            string query = "SELECT * FROM [Storage]";
-            dt = DBHelper.Instance.GetRecords(query);
+            DataTable dt = Quanli.Instance.GetDataStorage();
             dataGridView1.DataSource = dt;
             AddDataheader();
         }
         public void AddDataheader()
         {
-            dataGridView1.Columns[0].HeaderText = "ID";
-            dataGridView1.Columns[1].HeaderText = "Tên";
-            dataGridView1.Columns[2].HeaderText = "Số lượng";
-            dataGridView1.Columns[3].HeaderText = "Đơn vị";
-            dataGridView1.Columns[4].HeaderText = "Giá";
-            dataGridView1.Columns[5].HeaderText = "Ngày nhập";
-            //dataGridView1.Columns[6].HeaderText = "Lô hàng";
+            if (Quanli.Instance.langnow == "vi")
+            {
+                dataGridView1.Columns[0].HeaderText = "ID";
+                dataGridView1.Columns[1].HeaderText = "Tên";
+                dataGridView1.Columns[2].HeaderText = "Số lượng";
+                dataGridView1.Columns[3].HeaderText = "Đơn vị";
+                dataGridView1.Columns[4].HeaderText = "Giá";
+                dataGridView1.Columns[5].HeaderText = "Ngày nhập";
+                //dataGridView1.Columns[6].HeaderText = "Lô hàng";
+            }
+            else
+            {
+                dataGridView1.Columns[0].HeaderText = "ID";
+                dataGridView1.Columns[1].HeaderText = "Name";
+                dataGridView1.Columns[2].HeaderText = "Quantity";
+                dataGridView1.Columns[3].HeaderText = "Unit";
+                dataGridView1.Columns[4].HeaderText = "Price";
+                dataGridView1.Columns[5].HeaderText = "Date Check In";
+                //dataGridView1.Columns[6].HeaderText = "Batch";
+            }
         }
-
-
         private void butAdd_Click(object sender, EventArgs e)
         {
             int OldQuantity, AddQuantity, NewQuantity;
@@ -219,8 +228,11 @@ namespace QUANLIQUANCAFE.GUI
             {
                 OtherUnit.Visible = true;
             }
+            else
+            {
+                OtherUnit.Visible = false;
+            }
         }
-
         private void OtherUnit_TextChanged(object sender, EventArgs e)
         {
             int value = Quanli.Instance.GetUnitValue();

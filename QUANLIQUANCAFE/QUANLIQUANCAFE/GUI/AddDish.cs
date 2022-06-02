@@ -57,7 +57,7 @@ namespace QUANLIQUANCAFE.GUI
             {
                 foreach (DataRow i in Quanli.Instance.GetGroupNameInEng().Rows)
                 {
-                    cbbGroup.Items.Add(new CBBItem { Value = (value++).ToString(), Text = i["GroupNameInEng"].ToString( });
+                    cbbGroup.Items.Add(new CBBItem { Value = (value++).ToString(), Text = i["GroupNameInEng"].ToString() });
                 }
             }
         }
