@@ -13,7 +13,7 @@ using System.Net.Http;
 using System.Web.Script.Serialization;
 using System.Collections;
 using System.IO;
-using QUANLIQUANCAFE.GUI;
+//using QUANLIQUANCAFE.GUI;
 
 namespace QUANLIQUANCAFE.BLL
 {
@@ -340,7 +340,7 @@ namespace QUANLIQUANCAFE.BLL
                     }
                     catch
                     {
-                        ((MainForm)f).menuStrip1.Items.Find(s[0], true).First().Text = s[lang];
+                        ((GUI.MainForm)f).menuStrip1.Items.Find(s[0], true).First().Text = s[lang];
                     }
                 }
             }
@@ -610,11 +610,9 @@ namespace QUANLIQUANCAFE.BLL
             else
                 StorageDAL.Instance.AddStorage(grocID, grocName, quantity, unit, price, dateCheckIn);
         }
-        public DataTable GetDataStorage()
+        public List<Storage> GetDataStorage()
         {
-            if (langnow == "en")
-                return StorageDAL.Instance.GetDataInEng();
-            return StorageDAL.Instance.GetData();
+            return StorageDAL.Instance.GetDataStorage();
         }
 
         public void Free(string v)

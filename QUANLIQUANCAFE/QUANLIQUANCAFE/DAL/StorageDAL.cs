@@ -75,15 +75,17 @@ namespace QUANLIQUANCAFE.DAL
             }
             return ans;
         }
-        public DataTable GetData()
+
+        public List<Storage> GetDataStorage()
         {
-            string query = string.Format("SELECT * [except GrocNameInEng] FROM [Storage]");
-            return DBHelper.Instance.GetRecords(query);
-        }
-        public DataTable GetDataInEng()
-        {
-            string query = string.Format("SELECT * [except GrocName] FROM [Storage]");
-            return DBHelper.Instance.GetRecords(query);
+            List<Storage> list = new List<Storage>();
+            string query = string.Format("Select * from [STORAGE]");
+            foreach (DataRow i in DBHelper.Instance.GetRecords(query).Rows)
+            {
+                Storage st = new Storage(i);
+                list.Add(st);
+            }
+            return list;
         }
     }
 }

@@ -94,8 +94,7 @@ namespace QUANLIQUANCAFE.GUI
         }
         public void AddDatagrid()
         {
-            DataTable dt = Quanli.Instance.GetDataStorage();
-            dataGridView1.DataSource = dt;
+            dataGridView1.DataSource = Quanli.Instance.GetDataStorage();
             AddDataheader();
         }
         public void AddDataheader()
