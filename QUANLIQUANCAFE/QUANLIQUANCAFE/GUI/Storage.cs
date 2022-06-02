@@ -19,29 +19,14 @@ namespace QUANLIQUANCAFE.GUI
 
         public delegate void Mydel();
         public Mydel d;
-        private int count = 0;
         public Storage()
         {
             InitializeComponent();
             LoadComponent();
             Design();
-            //GenLang();
             Quanli.Instance.LoadLang(this);
 
         }
-
-        private void GenLang()
-        {
-            using (StreamWriter sw = new StreamWriter(this.Name + ".txt"))
-            {
-                foreach (Control i in pnHeader.Controls)
-                {
-                    if (!(i is DateTimePicker | i is TextBox | i is NumericUpDown) && i.Text != "")
-                        sw.WriteLine(i.Name + ";" + i.Text + ";" + Quanli.Instance.TranslateText(i.Text, "vi", "en"));
-                }
-            }
-        }
-
         void Design()
         {
             string[] background;
@@ -91,32 +76,51 @@ namespace QUANLIQUANCAFE.GUI
         }
         public void AddcbbUnit()
         {
-            cbbUnit.Items.Add(new CBBItem { Value = (count++).ToString(), Text = "Kg" });
-            cbbUnit.Items.Add(new CBBItem { Value = (count++).ToString(), Text = "Bịch" });
-            cbbUnit.Items.Add(new CBBItem { Value = (count++).ToString(), Text = "Thùng" });
-            cbbUnit.Items.Add(new CBBItem { Value = (count++).ToString(), Text = "Hộp" });
-            cbbUnit.Items.Add(new CBBItem { Value = (count++).ToString(), Text = "Quả" });
+            int count = 0;
+            if (Quanli.Instance.langnow == "en")
+            {
+                cbbUnit.Items.Add(new CBBItem { Value = (count++).ToString(), Text = "Kg" });
+                cbbUnit.Items.Add(new CBBItem { Value = (count++).ToString(), Text = "Thùng" });
+                cbbUnit.Items.Add(new CBBItem { Value = (count++).ToString(), Text = "Bao" });
+                cbbUnit.Items.Add(new CBBItem { Value = (count++).ToString(), Text = "Khác" });
+            }
+            else
+            {
+                cbbUnit.Items.Add(new CBBItem { Value = (count++).ToString(), Text = "Kg" });
+                cbbUnit.Items.Add(new CBBItem { Value = (count++).ToString(), Text = "Box" });
+                cbbUnit.Items.Add(new CBBItem { Value = (count++).ToString(), Text = "Bag" });
+                cbbUnit.Items.Add(new CBBItem { Value = (count++).ToString(), Text = "Other" });
+            }
         }
         public void AddDatagrid()
         {
-            DataTable dt = new DataTable();
-            string query = "SELECT * FROM [Storage]";
-            dt = DBHelper.Instance.GetRecords(query);
+            DataTable dt = Quanli.Instance.GetDataStorage();
             dataGridView1.DataSource = dt;
             AddDataheader();
         }
         public void AddDataheader()
         {
-            dataGridView1.Columns[0].HeaderText = "ID";
-            dataGridView1.Columns[1].HeaderText = "Tên";
-            dataGridView1.Columns[2].HeaderText = "Số lượng";
-            dataGridView1.Columns[3].HeaderText = "Đơn vị";
-            dataGridView1.Columns[4].HeaderText = "Giá";
-            dataGridView1.Columns[5].HeaderText = "Ngày nhập";
-            //dataGridView1.Columns[6].HeaderText = "Lô hàng";
+            if (Quanli.Instance.langnow == "vi")
+            {
+                dataGridView1.Columns[0].HeaderText = "ID";
+                dataGridView1.Columns[1].HeaderText = "Tên";
+                dataGridView1.Columns[2].HeaderText = "Số lượng";
+                dataGridView1.Columns[3].HeaderText = "Đơn vị";
+                dataGridView1.Columns[4].HeaderText = "Giá";
+                dataGridView1.Columns[5].HeaderText = "Ngày nhập";
+                //dataGridView1.Columns[6].HeaderText = "Lô hàng";
+            }
+            else
+            {
+                dataGridView1.Columns[0].HeaderText = "ID";
+                dataGridView1.Columns[1].HeaderText = "Name";
+                dataGridView1.Columns[2].HeaderText = "Quantity";
+                dataGridView1.Columns[3].HeaderText = "Unit";
+                dataGridView1.Columns[4].HeaderText = "Price";
+                dataGridView1.Columns[5].HeaderText = "Date Check In";
+                //dataGridView1.Columns[6].HeaderText = "Batch";
+            }
         }
-
-
         private void butAdd_Click(object sender, EventArgs e)
         {
             int OldQuantity, AddQuantity, NewQuantity;
@@ -157,7 +161,15 @@ namespace QUANLIQUANCAFE.GUI
         }
         private void UpdateBut_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn lưu lại mặt hàng này", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result;
+            if (Quanli.Instance.langnow == "vi")
+            {
+                result = MessageBox.Show("Bạn có muốn lưu lại mặt hàng này", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            }
+            else
+            {
+                result = MessageBox.Show("Do you want to save this item", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            }
             if (result == DialogResult.Yes)
             {
                 int price = Convert.ToInt32(txtPrice.Text);
@@ -191,8 +203,14 @@ namespace QUANLIQUANCAFE.GUI
                 NewQuantity = (OldQuantity - SubQuantity);
                 if (NewQuantity < 0)
                 {
-                    string Warning = "Mặt hàng này sẽ âm số lượng!";
-                    MessageBox.Show(Warning);
+                    if (Quanli.Instance.langnow == "en")
+                    {
+                        MessageBox.Show("Quantity is not enough");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Số lượng không đủ");
+                    }
                 }
                 Quanli.Instance.UpdateStorage(id, name, NewQuantity.ToString(), unit, price, time);
             }
@@ -204,6 +222,21 @@ namespace QUANLIQUANCAFE.GUI
             LoadComponent();
         }
 
-
+        private void cbbUnit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbUnit.SelectedIndex == 3)
+            {
+                OtherUnit.Visible = true;
+            }
+            else
+            {
+                OtherUnit.Visible = false;
+            }
+        }
+        private void OtherUnit_TextChanged(object sender, EventArgs e)
+        {
+            int value = Quanli.Instance.GetUnitValue();
+            cbbUnit.Items.Add(new CBBItem { Value = value.ToString(), Text = OtherUnit.Text });
+        }
     }
 }

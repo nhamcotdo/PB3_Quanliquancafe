@@ -46,6 +46,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.UpdateBut = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.OtherUnit = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -68,6 +69,7 @@
             // pnHeader
             // 
             this.pnHeader.BackColor = System.Drawing.Color.Transparent;
+            this.pnHeader.Controls.Add(this.OtherUnit);
             this.pnHeader.Controls.Add(this.button1);
             this.pnHeader.Controls.Add(this.button2);
             this.pnHeader.Controls.Add(this.numericUpDown1);
@@ -141,6 +143,7 @@
             this.cbbUnit.Name = "cbbUnit";
             this.cbbUnit.Size = new System.Drawing.Size(121, 21);
             this.cbbUnit.TabIndex = 10;
+            this.cbbUnit.SelectedIndexChanged += new System.EventHandler(this.cbbUnit_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -233,6 +236,15 @@
             this.panel2.Size = new System.Drawing.Size(129, 148);
             this.panel2.TabIndex = 2;
             // 
+            // OtherUnit
+            // 
+            this.OtherUnit.Location = new System.Drawing.Point(561, 81);
+            this.OtherUnit.Name = "OtherUnit";
+            this.OtherUnit.Size = new System.Drawing.Size(100, 20);
+            this.OtherUnit.TabIndex = 16;
+            this.OtherUnit.Visible = false;
+            this.OtherUnit.TextChanged += new System.EventHandler(this.OtherUnit_TextChanged);
+            // 
             // Storage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,5 +283,6 @@
         private System.Windows.Forms.ComboBox cbbUnit;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.TextBox OtherUnit;
     }
 }
