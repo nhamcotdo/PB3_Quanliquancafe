@@ -20,9 +20,7 @@ namespace QUANLIQUANCAFE.GUI
         public AddDish()
         {
             InitializeComponent();
-            AddcbbGroup();
-            AddcbbSize();
-            Design();
+            LoadComponent();
             Quanli.Instance.LoadLang(this);
         }
 
@@ -39,45 +37,93 @@ namespace QUANLIQUANCAFE.GUI
                 }
             }
         }
-
+        public void LoadComponent()
+        {
+            AddcbbGroup();
+            AddcbbSize();
+            Design();
+        }
         public void AddcbbGroup()
         {
-            cbbGroup.Items.Add(new CBBItem { Value = "0", Text = "G001" });
-            cbbGroup.Items.Add(new CBBItem { Value = "1", Text = "G002" });
-            cbbGroup.Items.Add(new CBBItem { Value = "2", Text = "G003" });
-            cbbGroup.Items.Add(new CBBItem { Value = "3", Text = "G004" });
-            cbbGroup.Items.Add(new CBBItem { Value = "4", Text = "G005" });
-            cbbGroup.Items.Add(new CBBItem { Value = "5", Text = "G006" });
+            int value = 0;
+            if (Quanli.Instance.langnow == "vi")
+            {
+                foreach (DishGroup i in Quanli.Instance.GetGroupName())
+                {
+                    cbbGroup.Items.Add(new CBBItem { Value = (value++).ToString(), Text = i.GroupName });
+                }
+            }
+            else
+            {
+                foreach (DataRow i in Quanli.Instance.GetGroupNameInEng().Rows)
+                {
+                    cbbGroup.Items.Add(new CBBItem { Value = (value++).ToString(), Text = i["GroupNameInEng"].ToString( });
+                }
+            }
         }
         public void AddcbbSize()
         {
-            cbbSize.Items.Add(new CBBItem { Value = "0", Text = "S1" });
-            cbbSize.Items.Add(new CBBItem { Value = "1", Text = "S2" });
-            cbbSize.Items.Add(new CBBItem { Value = "2", Text = "S3" });
+            int value = 0;
+            if (Quanli.Instance.langnow == "vi")
+            {
+                cbbSize.Items.Add(new CBBItem { Value = (value++).ToString(), Text = "Cỡ 1" });
+                cbbSize.Items.Add(new CBBItem { Value = (value++).ToString(), Text = "Cỡ 2" });
+                cbbSize.Items.Add(new CBBItem { Value = (value++).ToString(), Text = "Cỡ 3" });
+            }
+            else
+            {
+                cbbSize.Items.Add(new CBBItem { Value = (value++).ToString(), Text = "Small size" });
+                cbbSize.Items.Add(new CBBItem { Value = (value++).ToString(), Text = "Normal size" });
+                cbbSize.Items.Add(new CBBItem { Value = (value++).ToString(), Text = "Big size" });
+            }
         }
 
         private void butOK_Click(object sender, EventArgs e)
         {
+            if (Quanli.Instance.langnow == "vi")
+            {
+                if (txtDishID.Text == "")
+                {
+                    MessageBox.Show("Bạn chưa nhập ID món");
+                    return;
+                }
 
-            if (txtDishID.Text == "")
-            {
-                MessageBox.Show("Bạn chưa nhập ID món");
-                return;
+                if (txtDishName.Text == "")
+                {
+                    MessageBox.Show("Bạn chưa nhập tên món");
+                    return;
+                }
+                if (txtPrice.Text == "")
+                {
+                    MessageBox.Show("Bạn chưa nhập giá");
+                    return;
+                }
+                Quanli.Instance.AddDish(txtDishName.Text, txtDishID.Text, Convert.ToInt32(txtPrice.Text), cbbGroup.SelectedItem.ToString(), cbbSize.SelectedItem.ToString());
+                d();
+                this.Dispose();
             }
+            else
+            {
+                if (txtDishID.Text == "")
+                {
+                    MessageBox.Show("You haven't enter ID of dish");
+                    return;
+                }
 
-            if (txtDishName.Text == "")
-            {
-                MessageBox.Show("Bạn chưa nhập tên món");
-                return;
+                if (txtDishName.Text == "")
+                {
+                    MessageBox.Show("You haven't enter name of dish");
+                    return;
+                }
+                if (txtPrice.Text == "")
+                {
+                    MessageBox.Show("You haven't enter price of dish");
+                    return;
+                }
+                Quanli.Instance.AddDish(txtDishName.Text, txtDishID.Text, Convert.ToInt32(txtPrice.Text), cbbGroup.SelectedItem.ToString(), cbbSize.SelectedItem.ToString());
+                d();
+                this.Dispose();
             }
-            if (txtPrice.Text == "")
-            {
-                MessageBox.Show("Bạn chưa nhập giá");
-                return;
-            }
-            Quanli.Instance.AddDish(txtDishName.Text, txtDishID.Text, Convert.ToInt32(txtPrice.Text), cbbGroup.SelectedItem.ToString(), cbbSize.SelectedItem.ToString());
-            d();
-            this.Dispose();
         }
         void Design()
         {

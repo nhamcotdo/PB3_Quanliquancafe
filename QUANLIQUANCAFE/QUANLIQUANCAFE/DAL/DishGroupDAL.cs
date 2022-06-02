@@ -37,5 +37,10 @@ namespace QUANLIQUANCAFE.DAL
 
             return list;
         }
+        public DataTable GetDishGroupNameInEng()
+        {
+            string query = "select * from DishGroup";
+            return DBHelper.Instance.GetRecords(query);
+        }
     }
 }

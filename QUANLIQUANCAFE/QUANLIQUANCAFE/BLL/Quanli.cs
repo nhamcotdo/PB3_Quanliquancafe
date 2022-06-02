@@ -615,6 +615,14 @@ namespace QUANLIQUANCAFE.BLL
         {
             TableDAL.Instance.Free(v);
         }
+        public List<DishGroup> GetGroupName()
+        {
+            return DishGroupDAL.Instance.GetListDishGroup();
+        }
+        public DataTable GetGroupNameInEng()
+        {
+            return DishGroupDAL.Instance.GetDishGroupNameInEng();
+        }
     }
 
 
