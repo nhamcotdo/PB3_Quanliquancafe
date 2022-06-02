@@ -623,6 +623,10 @@ namespace QUANLIQUANCAFE.BLL
         {
             return DishGroupDAL.Instance.GetDishGroupNameInEng();
         }
+        public int GetUnitValue()
+        {
+            return StorageDAL.Instance.GetUnitValue();
+        }
     }
 
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -62,6 +63,17 @@ namespace QUANLIQUANCAFE.DAL
         {
             string query = string.Format("Insert into [STORAGE] values (N'{0}', N'{1}', N'{2}', N'{3}', N'{4}', N'{5}', N'{6}')", grocID, grocName, quantity, unit, price, dateCheckIn, batch);
             DBHelper.Instance.ExecuteDB(query);
+        }
+
+        public int GetUnitValue()
+        {
+            int ans = 0;
+            string query = string.Format("Select Distinct Unit from [STORAGE]");
+            foreach (DataRow i in DBHelper.Instance.GetRecords(query).Rows)
+            {
+                ans++;
+            }
+            return ans;
         }
     }
 }
