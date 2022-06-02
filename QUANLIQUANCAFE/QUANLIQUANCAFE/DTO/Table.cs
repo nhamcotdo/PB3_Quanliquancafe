@@ -13,15 +13,18 @@ namespace QUANLIQUANCAFE.DTO
         public string TableID { get; set; }
         public string AreaID { get; set; }
         public string TableName { get; set; }
+        public string TableNameInEng { get; set; }
         public bool Status { get; set; }
         public List<string> Merge { get; set; }
         public string MergeString { get; set; }
+
 
         public Table(DataRow dr)
         {
             TableID = dr["TableID"].ToString();
             AreaID = dr["AreaID"].ToString();
             TableName = dr["TableName"].ToString();
+            TableNameInEng = dr["TableNameInEng"].ToString();
             Status = (bool)dr["Status"];
             Merge = dr["MergeList"].ToString().Split(',').ToList();
             MergeString = dr["MergeList"].ToString();

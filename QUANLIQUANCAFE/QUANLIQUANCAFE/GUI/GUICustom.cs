@@ -27,7 +27,7 @@ namespace QUANLIQUANCAFE.GUI
 
         private void GenLang()
         {
-            using (StreamWriter sw = new StreamWriter("guicustom.txt"))
+            using (StreamWriter sw = new StreamWriter(Name + ".txt"))
             {
                 foreach (Control i in this.Controls)
                 {

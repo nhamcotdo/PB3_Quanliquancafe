@@ -96,7 +96,15 @@ namespace QUANLIQUANCAFE.BLL
                 if (listTable[i].AreaID == AreaID)
                 {
                     Button b = new Button();
-                    b.Text = listTable[i].TableName;
+                    if (Quanli.Instance.langnow == "vi")
+                    {
+                        b.Text = listTable[i].TableName;
+                    }
+                    else
+                    {
+                        b.Text = listTable[i].TableNameInEng;
+                    }
+
                     b.Width = w / 3 - 10;
                     b.Height = 50;
                     int mg = (int)(w - b.Width * 3) / 6;
@@ -224,7 +232,17 @@ namespace QUANLIQUANCAFE.BLL
         public void AddTable(string name, string areaID)
         {
             string ID = NewTableID();
-            TableDAL.Instance.AddTable(ID, name, areaID);
+            string nameEn;
+            if (Quanli.Instance.langnow == "en")
+            {
+                nameEn = name;
+                name = Quanli.Instance.TranslateText(name, "en", "vi");
+            }
+            else
+            {
+                nameEn = Quanli.Instance.TranslateText(name, "vi", "en");
+            }
+            TableDAL.Instance.AddTable(ID, name, nameEn, areaID);
         }
         public string NewAreaID()
         {
@@ -255,7 +273,17 @@ namespace QUANLIQUANCAFE.BLL
             {
                 ID = NewAreaID();
             }
-            AreaDAL.Instance.AddArea(ID, name);
+            string nameEn;
+            if (Quanli.Instance.langnow == "en")
+            {
+                nameEn = name;
+                name = Quanli.Instance.TranslateText(name, "en", "vi");
+            }
+            else
+            {
+                nameEn = Quanli.Instance.TranslateText(name, "vi", "en");
+            }
+            AreaDAL.Instance.AddArea(ID, name, nameEn);
         }
         public List<Discount> GetAllDiscount(bool Active = true)
         {
@@ -263,23 +291,30 @@ namespace QUANLIQUANCAFE.BLL
         }
         public string TranslateText(string input, string from, string to)
         {
-            string url = String.Format
-            ("https://translate.googleapis.com/translate_a/single?client=gtx&sl={0}&tl={1}&dt=t&q={2}",
-            from, to, Uri.EscapeUriString(input));
-            HttpClient httpClient = new HttpClient();
-            string result = httpClient.GetStringAsync(url).Result;
-            var jsonData = new JavaScriptSerializer().Deserialize<List<dynamic>>(result);
-            var translationItems = jsonData[0];
-            string translation = "";
-            foreach (object item in translationItems)
+            try
             {
-                IEnumerable translationLineObject = item as IEnumerable;
-                IEnumerator translationLineString = translationLineObject.GetEnumerator();
-                translationLineString.MoveNext();
-                translation += string.Format(" {0}", Convert.ToString(translationLineString.Current));
+                string url = String.Format
+                ("https://translate.googleapis.com/translate_a/single?client=gtx&sl={0}&tl={1}&dt=t&q={2}",
+                from, to, Uri.EscapeUriString(input));
+                HttpClient httpClient = new HttpClient();
+                string result = httpClient.GetStringAsync(url).Result;
+                var jsonData = new JavaScriptSerializer().Deserialize<List<dynamic>>(result);
+                var translationItems = jsonData[0];
+                string translation = "";
+                foreach (object item in translationItems)
+                {
+                    IEnumerable translationLineObject = item as IEnumerable;
+                    IEnumerator translationLineString = translationLineObject.GetEnumerator();
+                    translationLineString.MoveNext();
+                    translation += string.Format(" {0}", Convert.ToString(translationLineString.Current));
+                }
+                if (translation.Length > 1) { translation = translation.Substring(1); };
+                return translation;
             }
-            if (translation.Length > 1) { translation = translation.Substring(1); };
-            return translation;
+            catch
+            {
+                return input;
+            }
         }
         public string NewDiscountID()
         {

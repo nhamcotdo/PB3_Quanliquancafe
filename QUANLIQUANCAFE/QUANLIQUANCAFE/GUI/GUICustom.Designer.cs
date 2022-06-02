@@ -268,7 +268,7 @@
             this.txtExample.Name = "txtExample";
             this.txtExample.Size = new System.Drawing.Size(100, 20);
             this.txtExample.TabIndex = 22;
-            this.txtExample.Text = "Mãu";
+            this.txtExample.Text = "Mẫu";
             // 
             // openFileDialog1
             // 

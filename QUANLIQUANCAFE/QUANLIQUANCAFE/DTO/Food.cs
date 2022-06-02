@@ -19,7 +19,10 @@ namespace QUANLIQUANCAFE.DTO
         public Food(DataRow row)
         {
             this.DishID = row["DishID"].ToString();
-            this.DishName = row["DishName"].ToString();
+            if (BLL.Quanli.Instance.langnow == "vi")
+                this.DishName = row["DishName"].ToString();
+            else
+                this.DishName = row["DishNameEng"].ToString();
             this.Price = (int)row["Price"];
             this.GroupID = row["GroupID"].ToString();
         }

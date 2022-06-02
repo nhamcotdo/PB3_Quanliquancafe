@@ -27,7 +27,7 @@ namespace QUANLIQUANCAFE.GUI
         }
         private void GenLang()
         {
-            using (StreamWriter sw = new StreamWriter("ChangeInfo.txt"))
+            using (StreamWriter sw = new StreamWriter(Name + ".txt"))
             {
                 foreach (Control i in panel1.Controls)
                 {
@@ -124,7 +124,7 @@ namespace QUANLIQUANCAFE.GUI
                 }
                 else if (i is Label)
                 {
-                    i.ForeColor = ColorTranslator.FromHtml(label[0]);
+                    i.ForeColor = ColorTranslator.FromHtml(label[1]);
                 }
                 else if (i is TextBox)
                 {

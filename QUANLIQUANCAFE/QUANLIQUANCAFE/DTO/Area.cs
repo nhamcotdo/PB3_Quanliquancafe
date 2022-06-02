@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QUANLIQUANCAFE.BLL;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -15,7 +16,10 @@ namespace QUANLIQUANCAFE.DTO
         public Area(DataRow dr)
         {
             AreaID = dr["AreaID"].ToString();
-            AreaName = dr["AreaName"].ToString();
+            if (Quanli.Instance.langnow == "vi")
+                AreaName = dr["AreaName"].ToString();
+            else
+                AreaName = dr["AreaNameInEng"].ToString();
         }
     }
 }

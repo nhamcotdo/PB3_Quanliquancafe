@@ -24,7 +24,7 @@ namespace QUANLIQUANCAFE.GUI
         }
         private void GenLang()
         {
-            using (StreamWriter sw = new StreamWriter("billmanagement.txt"))
+            using (StreamWriter sw = new StreamWriter(Name + ".txt"))
             {
                 foreach (Control i in panel1.Controls)
                 {
@@ -38,21 +38,35 @@ namespace QUANLIQUANCAFE.GUI
                 }
             }
         }
+        void LoadDGT()
+        {
+            dataGridView1.DataSource = Quanli.Instance.SelectBillByDate(dateTimePickerFrom.Value, dateTimePickerTo.Value);
+            if (Quanli.Instance.langnow == "vi")
+            {
+                dataGridView1.Columns[0].HeaderText = "Mã hóa đơn";
+                dataGridView1.Columns[1].HeaderText = "Thời gian";
+                dataGridView1.Columns[2].HeaderText = "Tổng tiền";
+                dataGridView1.Columns[3].HeaderText = "Tên nhân viên";
+            }
+            else
+            {
+                dataGridView1.Columns[0].HeaderText = "Bill ID";
+                dataGridView1.Columns[1].HeaderText = "Time";
+                dataGridView1.Columns[2].HeaderText = "Total";
+                dataGridView1.Columns[3].HeaderText = "Staff Name";
+            }
+        }
+
         private void GUI()
         {
             dateTimePickerFrom.Value = DateTime.Now - TimeSpan.FromDays(7);
             dateTimePickerTo.Value = DateTime.Now;
-            dataGridView1.DataSource = Quanli.Instance.SelectBillByDate(dateTimePickerFrom.Value, dateTimePickerTo.Value);
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = Quanli.Instance.SelectBillByDate(dateTimePickerFrom.Value, dateTimePickerTo.Value);
-        }
 
         private void dateTimePickerTo_ValueChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = Quanli.Instance.SelectBillByDate(dateTimePickerFrom.Value, dateTimePickerTo.Value);
+            LoadDGT();
         }
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -89,7 +103,7 @@ namespace QUANLIQUANCAFE.GUI
             {
                 if (i is Label)
                 {
-                    i.ForeColor = ColorTranslator.FromHtml(label[0]);
+                    i.ForeColor = ColorTranslator.FromHtml(label[1]);
                 }
             }
             foreach (Control i in panel2.Controls)

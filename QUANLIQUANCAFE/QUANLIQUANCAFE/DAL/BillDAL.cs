@@ -31,9 +31,9 @@ namespace QUANLIQUANCAFE.DAL
             foreach (string id in DBHelper.Instance.GetRecords(String.Format("SELECT MergeList FROM [Table] WHERE TableID = '{0}'", bill.TableID)).Rows[0][0].ToString().Split(','))
             {
                 DBHelper.Instance.ExecuteDB(String.Format("Delete from [Order] where TableID = '{0}'", id));
+                DBHelper.Instance.ExecuteDB(string.Format("Update [Table] set Status = 'false', MergeList = N'{0}' where TableID = '{0}'", id));
             }
 
-            DBHelper.Instance.ExecuteDB(string.Format("Update [Table] set Status = 'false' where TableID = '{0}'", bill.TableID));
         }
 
         public List<Bill> GetListBillByYearMonth(int year, int month = 0)

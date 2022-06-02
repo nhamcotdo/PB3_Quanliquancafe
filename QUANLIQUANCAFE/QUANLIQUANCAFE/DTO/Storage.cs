@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QUANLIQUANCAFE.BLL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,5 +15,8 @@ namespace QUANLIQUANCAFE.DTO
         public string Unit { get; set; }
         public int Price { get; set; }
         public int Batch { get; set; }
+
     }
+
+
 }

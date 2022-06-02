@@ -33,7 +33,7 @@ namespace QUANLIQUANCAFE.GUI
                 ManaToolStripMenuItem.Enabled = false;
             }
             LoadComponent();
-            LoadDishGroup();
+
 
 
 
@@ -41,7 +41,7 @@ namespace QUANLIQUANCAFE.GUI
 
         private void GenLang()
         {
-            using (StreamWriter sw = new StreamWriter("mainform.txt"))
+            using (StreamWriter sw = new StreamWriter(Name + ".txt"))
             {
                 foreach (ToolStripMenuItem i in menuStrip1.Items)
                 {
@@ -100,7 +100,7 @@ namespace QUANLIQUANCAFE.GUI
                 }
                 if (i is Label)
                 {
-                    i.ForeColor = ColorTranslator.FromHtml(label[0]);
+                    i.ForeColor = ColorTranslator.FromHtml(label[1]);
                 }
                 if (i is ComboBox | i is TextBox | i is NumericUpDown)
                 {
@@ -117,7 +117,7 @@ namespace QUANLIQUANCAFE.GUI
                 }
                 if (i is Label)
                 {
-                    i.ForeColor = ColorTranslator.FromHtml(label[0]);
+                    i.ForeColor = ColorTranslator.FromHtml(label[1]);
                 }
                 if (i is ComboBox | i is TextBox | i is NumericUpDown)
                 {
@@ -137,9 +137,13 @@ namespace QUANLIQUANCAFE.GUI
                 this.flowLayoutTable.Controls.Add(i);
             }
             cbbTableName.Items.Clear();
+
             foreach (DTO.Table i in Quanli.Instance.GetListTableByAreaID())
             {
-                cbbTableName.Items.Add(new CBBItem(i.TableName, i.TableID));
+                if (Quanli.Instance.langnow == "vi")
+                    cbbTableName.Items.Add(new CBBItem(i.TableName, i.TableID));
+                else
+                    cbbTableName.Items.Add(new CBBItem(i.TableNameInEng, i.TableID));
             }
             cbbTableName.SelectedIndex = 0;
             lbTableName.Text = (cbbTableName.SelectedItem as CBBItem).Text;
@@ -152,16 +156,25 @@ namespace QUANLIQUANCAFE.GUI
             Design();
             Quanli.Instance.LoadLang(this);
             lbNameNV.Text = staff.StaffName;
+            LoadDishGroup();
         }
         void LoadOrder(string tableID)
         {
             DataTable data = new DataTable();
-            data.Columns.AddRange(new DataColumn[] {
+            if (Quanli.Instance.langnow == "vi")
+                data.Columns.AddRange(new DataColumn[] {
                 new DataColumn("Tên món", typeof(string)),
                 new DataColumn("Số lượng", typeof(string)),
                 new DataColumn("Đơn giá", typeof(string)),
                 new DataColumn("Thành tiền", typeof(int))
             });
+            else
+                data.Columns.AddRange(new DataColumn[] {
+                    new DataColumn("Dish Name", typeof(string)),
+                    new DataColumn("Quantity", typeof(string)),
+                    new DataColumn("Price", typeof(string)),
+                    new DataColumn("Total", typeof(int))
+                    });
 
             foreach (Order i in Quanli.Instance.GetListOrderByTableID(tableID))
             {
@@ -224,10 +237,7 @@ namespace QUANLIQUANCAFE.GUI
             //chuyển dữ liệu
             Quanli.Instance.MoveTable(((CBBItem)cbbTableName.SelectedItem).Value.ToString(), lbTableName.Tag.ToString(), true);
             StatusTable();
-            dataGridView1.DataSource = Quanli.Instance.GetListOrderByTableID(lbTableName.Tag.ToString());
-            dataGridView1.Columns[0].HeaderText = "Tên món";
-            dataGridView1.Columns[1].HeaderText = "Số lượng";
-            dataGridView1.Columns[2].HeaderText = "Đơn giá";
+            LoadOrder(lbTableName.Tag.ToString());
         }
 
         private void btnDel_Click(object sender, EventArgs e)

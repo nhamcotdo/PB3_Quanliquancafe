@@ -17,8 +17,10 @@ namespace QUANLIQUANCAFE.DTO
         public DishGroup(DataRow row)
         {
             this.GroupID = row["GroupID"].ToString();
-            this.GroupName = row["GroupName"].ToString();
-
+            if (BLL.Quanli.Instance.langnow == "vi")
+                this.GroupName = row["GroupName"].ToString();
+            else
+                this.GroupName = row["GroupNameInEng"].ToString();
         }
 
         private string groupID;

@@ -34,7 +34,7 @@ namespace QUANLIQUANCAFE.GUI
 
         private void GenLang()
         {
-            using (StreamWriter sw = new StreamWriter("paymentform.txt"))
+            using (StreamWriter sw = new StreamWriter(Name + ".txt"))
             {
                 foreach (Control i in panelBill.Controls)
                 {

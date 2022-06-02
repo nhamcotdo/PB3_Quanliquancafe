@@ -39,10 +39,11 @@ namespace QUANLIQUANCAFE.DAL
         }
         public void MoveTable(string oldTable, string newTable, bool isMergered = false)
         {
-            DBHelper.Instance.ExecuteDB(string.Format("UPDATE [Order] SET TableID = N'{0}' WHERE TableID = N'{1}'", newTable, oldTable));
+
             DBHelper.Instance.ExecuteDB(string.Format("UPDATE [Table] SET Status = N'{0}' WHERE TableID = N'{1}'", "true", newTable));
             if (!isMergered)
             {
+                DBHelper.Instance.ExecuteDB(string.Format("UPDATE [Order] SET TableID = N'{0}' WHERE TableID = N'{1}'", newTable, oldTable));
                 DBHelper.Instance.ExecuteDB(string.Format("UPDATE [Table] SET Status = N'{0}' WHERE TableID = N'{1}'", "false", oldTable));
                 DBHelper.Instance.ExecuteDB(string.Format("UPDATE [Table] SET MergeList = N'{0}' WHERE TableID = N'{1}'", newTable + "," + GetTableByID(oldTable).MergeString, newTable));
                 DBHelper.Instance.ExecuteDB(string.Format("UPDATE [Table] SET MergeList = N'{0}' WHERE TableID = N'{1}'", oldTable, oldTable));
@@ -87,9 +88,9 @@ namespace QUANLIQUANCAFE.DAL
             }
             return "";
         }
-        public void AddTable(string ID, string name, string areaID)
+        public void AddTable(string ID, string name, string nameEn, string areaID)
         {
-            DBHelper.Instance.ExecuteDB(string.Format("INSERT INTO [Table] VALUES (N'{0}', N'{1}', N'{2}', N'{3}', '{4}')", ID, areaID, name, "false", ID));
+            DBHelper.Instance.ExecuteDB(string.Format("INSERT INTO [Table] VALUES (N'{0}', N'{1}', N'{2}', N'{3}', N'{4}', N'{5}')", ID, areaID, name, "false", ID, nameEn));
         }
 
         public void Free(string v)

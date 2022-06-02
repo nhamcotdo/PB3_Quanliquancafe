@@ -33,7 +33,7 @@ namespace QUANLIQUANCAFE.DAL
 
             foreach (string id in DBHelper.Instance.GetRecords(String.Format("SELECT MergeList FROM [Table] WHERE TableID = '{0}'", ID)).Rows[0][0].ToString().Split(',').Distinct())
             {
-                DataTable data = DBHelper.Instance.GetRecords("SELECT DishName, Quantity, Price " +
+                DataTable data = DBHelper.Instance.GetRecords("SELECT DishName, DishNameEng,Quantity, Price " +
                     "FROM [Order] as D inner join" +
                     " [Table] as B" +
                     " on D.TableID = B.TableID inner join " +

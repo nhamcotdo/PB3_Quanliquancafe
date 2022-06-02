@@ -1,0 +1,9 @@
+lbKM;Khuyến mãi 10%;10% discount
+lbOther;0;0
+label10;Chi phí khác;Other costs
+lbTime;6/1/2022 11:37:00 PM;January 6, 2022 11:37:00 PM
+label111;Thu ngân: ;Cashier:
+label7;Tổng tiền: ;Total amount:
+label6;Khuyến mại:;Promotion:
+label3;Ngày;Day
+label5;Tổng :;Total :

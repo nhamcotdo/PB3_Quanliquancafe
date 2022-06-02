@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QUANLIQUANCAFE.BLL;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -15,7 +16,10 @@ namespace QUANLIQUANCAFE.DTO
         public int Price { get; set; }
         public Order(DataRow dr)
         {
-            DishName = dr["DishName"].ToString();
+            if (Quanli.Instance.langnow == "vi")
+                DishName = dr["DishName"].ToString();
+            else
+                DishName = dr["DishNameEng"].ToString();
             Quantity = (int)dr["Quantity"];
             Price = (int)dr["Price"];
         }

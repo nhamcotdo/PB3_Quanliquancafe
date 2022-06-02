@@ -38,9 +38,9 @@ namespace QUANLIQUANCAFE.DAL
         {
             return DBHelper.Instance.GetRecords("SELECT TOP 1 [AreaID] FROM [Area] ORDER BY [AreaID] DESC").Rows[0][0].ToString();
         }
-        public void AddArea(string AreaID, string AreaName)
+        public void AddArea(string AreaID, string AreaName, string NameEn)
         {
-            string query = string.Format("INSERT INTO [Area] VALUES (N'{0}', N'{1}', N'{2}')", AreaID, AreaName, false);
+            string query = string.Format("INSERT INTO [Area] VALUES (N'{0}', N'{1}', N'{2}',N'{3}')", AreaID, AreaName, false, NameEn);
             DBHelper.Instance.ExecuteDB(query);
         }
 
