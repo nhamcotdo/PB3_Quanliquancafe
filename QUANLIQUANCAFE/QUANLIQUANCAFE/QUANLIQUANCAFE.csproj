@@ -63,9 +63,8 @@
     <Compile Include="DTO\Bill.cs" />
     <Compile Include="DTO\BillView.cs" />
     <Compile Include="DTO\Discount.cs" />
-    <Compile Include="DTO\Dish.cs" />
     <Compile Include="DTO\DishGroup.cs" />
-    <Compile Include="DTO\Food.cs" />
+    <Compile Include="DTO\Dish.cs" />
     <Compile Include="DTO\Staff.cs" />
     <Compile Include="DTO\Storage.cs" />
     <Compile Include="DTO\Table.cs" />

@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QUANLIQUANCAFE.BLL;
 using QUANLIQUANCAFE.DTO;
-using QUANLIQUANCAFE.DAL;
 using System.IO;
 
 namespace QUANLIQUANCAFE.GUI
@@ -22,48 +21,61 @@ namespace QUANLIQUANCAFE.GUI
         public ShowMenu()
         {
             InitializeComponent();
+            Quanli.Instance.LoadLang(this);
+            LoadComponent();
+        }
+        public void LoadComponent()
+        {
             addDatagrid();
             addcbbDishGroup();
             Design();
-            Quanli.Instance.LoadLang(this);
         }
-
-        private void GenLang()
-        {
-            using (StreamWriter sw = new StreamWriter(Name + ".txt"))
-            {
-                foreach (Control i in panel1.Controls)
-                {
-                    if (!(i is ComboBox))
-                        sw.WriteLine(i.Name + ";" + i.Text + ";" + Quanli.Instance.TranslateText(i.Text, "vi", "en"));
-                }
-            }
-        }
-
         public void addDatagrid()
         {
             DataTable dt = new DataTable();
-            dt.Columns.AddRange(new DataColumn[] {
-            new DataColumn("ID món"),
-            new DataColumn("Tên món"),
-            new DataColumn("Giá"),
-            new DataColumn("Nhóm món"),
-            new DataColumn("Size"),
-            });
-            string query = "SELECT * FROM [Menu]";
-            dt = DBHelper.Instance.GetRecords(query);
-            dataGridView1.DataSource = dt;
+            if (Quanli.Instance.langnow == "vi")
+            {
+
+                dt.Columns.AddRange(new DataColumn[] {
+                new DataColumn("ID món"),
+                new DataColumn("Tên món"),
+                new DataColumn("Giá"),
+                new DataColumn("Nhóm món"),
+                new DataColumn("Size"),
+                });
+            }
+            else
+            {
+                dt.Columns.AddRange(new DataColumn[] {
+                new DataColumn("Dish ID"),
+                new DataColumn("Dish Name"),
+                new DataColumn("Dish Price"),
+                new DataColumn("Dish Group"),
+                new DataColumn("Size"),
+                });
+            }
+            dataGridView1.DataSource = Quanli.Instance.GetDataDish();
         }
         public void addcbbDishGroup()
         {
-            cbbDishGroup.Items.Add(new CBBItem { Value = "0", Text = "Tất cả" });
-            cbbDishGroup.Items.Add(new CBBItem { Value = "1", Text = "Cà Phê Phin" });
-            cbbDishGroup.Items.Add(new CBBItem { Value = "2", Text = "Trà" });
-            cbbDishGroup.Items.Add(new CBBItem { Value = "3", Text = "Freeze" });
-            cbbDishGroup.Items.Add(new CBBItem { Value = "4", Text = "Phindi" });
-            cbbDishGroup.Items.Add(new CBBItem { Value = "5", Text = "Cà phê Espresso" });
-            cbbDishGroup.Items.Add(new CBBItem { Value = "6", Text = "Bánh" });
-            cbbDishGroup.Items.Add(new CBBItem { Value = "7", Text = "Thức uống khác" });
+            int value = 0;
+            if (Quanli.Instance.langnow == "vi")
+            {
+                cbbDishGroup.Items.Add(new CBBItem { Value = (value++).ToString(), Text = "Tất cả" });
+                foreach (DishGroup item in Quanli.Instance.GetGroupName())
+                {
+                    cbbDishGroup.Items.Add(new CBBItem { Value = (value++).ToString(), Text = item.GroupName });
+                }
+            }
+            else
+            {
+                cbbDishGroup.Items.Add(new CBBItem { Value = (value++).ToString(), Text = "All" });
+                foreach (DataRow item in Quanli.Instance.GetGroupNameInEng().Rows)
+                {
+                    cbbDishGroup.Items.Add(new CBBItem { Value = (value++).ToString(), Text = item[""] });
+                }
+            }
+
             cbbDishGroup.SelectedItem = 0;
         }
         private void butAddDish_Click(object sender, EventArgs e)
@@ -76,19 +88,39 @@ namespace QUANLIQUANCAFE.GUI
 
         private void butDelDish_Click(object sender, EventArgs e)
         {
-            string Warning = "Bạn chưa chọn món để xóa";
-            if (dataGridView1.SelectedRows.Count == 0) MessageBox.Show(Warning);
+            if (Quanli.Instance.langnow == "vi")
+            {
+                string Warning = "Bạn chưa chọn món để xóa";
+                if (dataGridView1.SelectedRows.Count == 0) MessageBox.Show(Warning);
+                else
+                {
+                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa món này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                        {
+                            Quanli.Instance.DelDish(row.Cells[0].Value.ToString());
+                        }
+                    }
+                    addDatagrid();
+                }
+            }
             else
             {
-                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa món này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
+                string Warning = "You have not selected a dish to delete";
+                if (dataGridView1.SelectedRows.Count == 0) MessageBox.Show(Warning);
+                else
                 {
-                    foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete this dish?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
                     {
-                        Quanli.Instance.DelDish(row.Cells[0].Value.ToString());
+                        foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                        {
+                            Quanli.Instance.DelDish(row.Cells[0].Value.ToString());
+                        }
                     }
+                    addDatagrid();
                 }
-                addDatagrid();
             }
         }
 

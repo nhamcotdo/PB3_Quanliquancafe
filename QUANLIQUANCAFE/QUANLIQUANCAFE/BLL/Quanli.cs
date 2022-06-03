@@ -633,6 +633,10 @@ namespace QUANLIQUANCAFE.BLL
         {
             return StorageDAL.Instance.GetUnitValue();
         }
+        public DataTable GetDataDish()
+        {
+            return DishDAL.Instance.GetDataDish();
+        }
     }
 
 

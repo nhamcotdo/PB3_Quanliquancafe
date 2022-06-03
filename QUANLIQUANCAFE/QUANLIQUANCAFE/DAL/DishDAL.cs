@@ -44,5 +44,9 @@ namespace QUANLIQUANCAFE.DAL
         {
             DBHelper.Instance.ExecuteDB(string.Format("DELETE FROM [Menu] WHERE [DishID] = N'{0}'", data));
         }
+        public DataTable GetDataDish()
+        {
+            return DBHelper.Instance.GetRecords("SELECT * FROM [Menu]");
+        }
     }
 }
