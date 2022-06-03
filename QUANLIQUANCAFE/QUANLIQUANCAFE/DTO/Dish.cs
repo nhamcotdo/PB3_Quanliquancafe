@@ -9,21 +9,54 @@ namespace QUANLIQUANCAFE.DTO
 {
     public class Dish
     {
-        public string DishID { get; set; }
-        public string DishName { get; set; }
-        public int Price { get; set; }
-        public string GroupID { get; set; }
-        public string SizeID { get; set; }
-        public Dish(DataRow dr)
+        public Dish(string dishID, string dishName, int price, string groupID, string sizeID)
         {
-            DishID = dr["DishID"].ToString();
+            this.DishID = dishID;
+            this.DishName = dishName;
+            this.Price = price;
+            this.GroupID = groupID;
+        }
+        public Dish(DataRow row)
+        {
+            this.DishID = row["DishID"].ToString();
             if (BLL.Quanli.Instance.langnow == "vi")
-                DishName = dr["DishName"].ToString();
+                this.DishName = row["DishName"].ToString();
             else
-                DishName = dr["DishNameEng"].ToString();
-            Price = Convert.ToInt32(dr["Price"]);
-            GroupID = dr["GroupID"].ToString();
-            SizeID = dr["SizeID"].ToString();
+                this.DishName = row["DishNameEng"].ToString();
+            this.Price = (int)row["Price"];
+            this.GroupID = row["GroupID"].ToString();
+        }
+
+        private string dishID;
+        public string DishID
+        {
+            get { return dishID; }
+            set { dishID = value; }
+        }
+        private string dishName;
+        public string DishName
+        {
+            get { return dishName; }
+            set { dishName = value; }
+
+        }
+        private int price;
+        public int Price
+        {
+            get { return price; }
+            set { price = value; }
+        }
+        private string groupID;
+        public string GroupID
+        {
+            get { return groupID; }
+            set { groupID = value; }
+        }
+        private string sizeID;
+        public string SizeID
+        {
+            get { return sizeID; }
+            set { sizeID = value; }
         }
     }
 }

@@ -18,28 +18,19 @@ namespace QUANLIQUANCAFE.GUI
     {
         public delegate void Mydel();
         public Mydel d;
-        private int count = 0;
         public ShowMenu()
         {
             InitializeComponent();
+            LoadComponent();
+
+            Quanli.Instance.LoadLang(this);
+        }
+        public void LoadComponent()
+        {
             addDatagrid();
             addcbbDishGroup();
             Design();
-            Quanli.Instance.LoadLang(this);
         }
-
-        private void GenLang()
-        {
-            using (StreamWriter sw = new StreamWriter(Name + ".txt"))
-            {
-                foreach (Control i in panel1.Controls)
-                {
-                    if (!(i is ComboBox))
-                        sw.WriteLine(i.Name + ";" + i.Text + ";" + Quanli.Instance.TranslateText(i.Text, "vi", "en"));
-                }
-            }
-        }
-
         public void addDatagrid()
         {
             DataTable dt = new DataTable();
