@@ -17,4 +17,4 @@ btnDel;Xóa Bàn;Delete Tables
 btnAdd;Tạo bàn;Create a table
 btnMove;Chuyển bàn;Move table
 btnPay;THANH TOÁN;PAY
-btnMerge;GỘP BÀN;MEMBERS TABLES
+btnMerge;GỘP BÀN;MERGE TABLES

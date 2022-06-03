@@ -1,4 +1,4 @@
-lbTDN;Tên đăng nhập;user name
+lbTDN;Tên đăng nhập;User name
 butDN;Đăng nhập;Log in
 lbMK;Mật khẩu;Password
 butExit;Thoát;Exit
