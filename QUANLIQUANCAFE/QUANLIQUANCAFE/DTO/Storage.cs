@@ -16,7 +16,6 @@ namespace QUANLIQUANCAFE.DTO
         public string Unit { get; set; }
         public int Price { get; set; }
         public DateTime DateCheckIn { get; set; }
-        //public int Batch { get; set; }
 
         public Storage(DataRow dr)
         {
@@ -29,7 +28,6 @@ namespace QUANLIQUANCAFE.DTO
             Unit = dr["Unit"].ToString();
             Price = Convert.ToInt32(dr["Price"].ToString());
             DateCheckIn = Convert.ToDateTime(dr["TimeCheckIn"].ToString());
-            //Batch = Convert.ToInt32(dr["Batch"].ToString());
         }
     }
 

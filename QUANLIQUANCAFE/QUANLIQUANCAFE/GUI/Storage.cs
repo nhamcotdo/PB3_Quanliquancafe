@@ -65,7 +65,6 @@ namespace QUANLIQUANCAFE.GUI
                     i.BackColor = ColorTranslator.FromHtml(textbox[0]);
                     i.ForeColor = ColorTranslator.FromHtml(textbox[1]);
                 }
-
             }
 
         }
@@ -73,11 +72,12 @@ namespace QUANLIQUANCAFE.GUI
         {
             AddDatagrid();
             AddcbbUnit();
+            AddHeading();
         }
         public void AddcbbUnit()
         {
             int count = 0;
-            if (Quanli.Instance.langnow == "en")
+            if (Quanli.Instance.langnow == "vi")
             {
                 cbbUnit.Items.Add(new CBBItem { Value = (count++).ToString(), Text = "Kg" });
                 cbbUnit.Items.Add(new CBBItem { Value = (count++).ToString(), Text = "Thùng" });
@@ -91,6 +91,30 @@ namespace QUANLIQUANCAFE.GUI
                 cbbUnit.Items.Add(new CBBItem { Value = (count++).ToString(), Text = "Bag" });
                 cbbUnit.Items.Add(new CBBItem { Value = (count++).ToString(), Text = "Other" });
             }
+        }
+        public void AddHeading()
+        {
+            if (Quanli.Instance.langnow == "vi")
+            {
+                Infotxt.Text = "Thông tin nguyên liệu";
+            }
+            else
+            {
+                Infotxt.Text = "Grocery Information";
+            }
+            if (txtID.Text != "")
+            {
+                if (Quanli.Instance.langnow == "vi")
+                {
+                    Infotxt.Text = "Nhập/ Xuất kho";
+                }
+                else
+                {
+                    Infotxt.Text = "Check in/ Check out";
+                }
+            }
+
+
         }
         public void AddDatagrid()
         {
@@ -107,7 +131,6 @@ namespace QUANLIQUANCAFE.GUI
                 dataGridView1.Columns[3].HeaderText = "Đơn vị";
                 dataGridView1.Columns[4].HeaderText = "Giá";
                 dataGridView1.Columns[5].HeaderText = "Ngày nhập";
-                //dataGridView1.Columns[6].HeaderText = "Lô hàng";
             }
             else
             {
@@ -117,7 +140,6 @@ namespace QUANLIQUANCAFE.GUI
                 dataGridView1.Columns[3].HeaderText = "Unit";
                 dataGridView1.Columns[4].HeaderText = "Price";
                 dataGridView1.Columns[5].HeaderText = "Date Check In";
-                //dataGridView1.Columns[6].HeaderText = "Batch";
             }
         }
         private void butAdd_Click(object sender, EventArgs e)

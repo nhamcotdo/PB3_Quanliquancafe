@@ -30,6 +30,7 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pnHeader = new System.Windows.Forms.Panel();
+            this.OtherUnit = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -46,7 +47,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.UpdateBut = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.OtherUnit = new System.Windows.Forms.TextBox();
+            this.Infotxt = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -69,6 +70,7 @@
             // pnHeader
             // 
             this.pnHeader.BackColor = System.Drawing.Color.Transparent;
+            this.pnHeader.Controls.Add(this.Infotxt);
             this.pnHeader.Controls.Add(this.OtherUnit);
             this.pnHeader.Controls.Add(this.button1);
             this.pnHeader.Controls.Add(this.button2);
@@ -89,6 +91,15 @@
             this.pnHeader.Name = "pnHeader";
             this.pnHeader.Size = new System.Drawing.Size(918, 148);
             this.pnHeader.TabIndex = 1;
+            // 
+            // OtherUnit
+            // 
+            this.OtherUnit.Location = new System.Drawing.Point(561, 81);
+            this.OtherUnit.Name = "OtherUnit";
+            this.OtherUnit.Size = new System.Drawing.Size(100, 20);
+            this.OtherUnit.TabIndex = 16;
+            this.OtherUnit.Visible = false;
+            this.OtherUnit.TextChanged += new System.EventHandler(this.OtherUnit_TextChanged);
             // 
             // button1
             // 
@@ -236,14 +247,14 @@
             this.panel2.Size = new System.Drawing.Size(129, 148);
             this.panel2.TabIndex = 2;
             // 
-            // OtherUnit
+            // Infotxt
             // 
-            this.OtherUnit.Location = new System.Drawing.Point(561, 81);
-            this.OtherUnit.Name = "OtherUnit";
-            this.OtherUnit.Size = new System.Drawing.Size(100, 20);
-            this.OtherUnit.TabIndex = 16;
-            this.OtherUnit.Visible = false;
-            this.OtherUnit.TextChanged += new System.EventHandler(this.OtherUnit_TextChanged);
+            this.Infotxt.AutoSize = true;
+            this.Infotxt.Location = new System.Drawing.Point(456, 6);
+            this.Infotxt.Name = "Infotxt";
+            this.Infotxt.Size = new System.Drawing.Size(35, 13);
+            this.Infotxt.TabIndex = 17;
+            this.Infotxt.Text = "label7";
             // 
             // Storage
             // 
@@ -284,5 +295,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.TextBox OtherUnit;
+        private System.Windows.Forms.Label Infotxt;
     }
 }
