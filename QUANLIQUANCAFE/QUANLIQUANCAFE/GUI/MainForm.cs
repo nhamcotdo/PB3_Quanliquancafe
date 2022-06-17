@@ -473,8 +473,8 @@ namespace QUANLIQUANCAFE.GUI
         void LoadFoodListByDishGroupID(string id)
         {
             cbbFoodMenu.Items.Clear();
-            List<Food> listFood = FoodDAL.Instance.GetFoodByGroupID(id);
-            foreach (Food i in listFood)
+            List<Dish> listFood = FoodDAL.Instance.GetFoodByGroupID(id);
+            foreach (Dish i in listFood)
             {
                 Console.WriteLine(i.DishName);
                 cbbFoodMenu.Items.Add(new CBBItem(i.DishName, i.DishID));

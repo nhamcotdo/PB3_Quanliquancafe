@@ -25,14 +25,14 @@ namespace QUANLIQUANCAFE.DAL
         {
 
         }
-        public List<Food> GetFoodByGroupID(string id)
+        public List<Dish> GetFoodByGroupID(string id)
         {
-            List<Food> list = new List<Food>();
+            List<Dish> list = new List<Dish>();
             string query = "select * from Menu where GroupID='" + id + "'";
             DataTable data = DBHelper.Instance.GetRecords(query);
             foreach (DataRow item in data.Rows)
             {
-                Food food = new Food(item);
+                Dish food = new Dish(item);
                 list.Add(food);
             }
             return list;
