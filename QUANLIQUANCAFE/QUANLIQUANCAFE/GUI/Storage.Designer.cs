@@ -30,6 +30,7 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pnHeader = new System.Windows.Forms.Panel();
+            this.Infotxt = new System.Windows.Forms.Label();
             this.OtherUnit = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.UpdateBut = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Infotxt = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -91,6 +91,15 @@
             this.pnHeader.Name = "pnHeader";
             this.pnHeader.Size = new System.Drawing.Size(918, 148);
             this.pnHeader.TabIndex = 1;
+            // 
+            // Infotxt
+            // 
+            this.Infotxt.AutoSize = true;
+            this.Infotxt.Location = new System.Drawing.Point(456, 6);
+            this.Infotxt.Name = "Infotxt";
+            this.Infotxt.Size = new System.Drawing.Size(35, 13);
+            this.Infotxt.TabIndex = 17;
+            this.Infotxt.Text = "label7";
             // 
             // OtherUnit
             // 
@@ -247,15 +256,6 @@
             this.panel2.Size = new System.Drawing.Size(129, 148);
             this.panel2.TabIndex = 2;
             // 
-            // Infotxt
-            // 
-            this.Infotxt.AutoSize = true;
-            this.Infotxt.Location = new System.Drawing.Point(456, 6);
-            this.Infotxt.Name = "Infotxt";
-            this.Infotxt.Size = new System.Drawing.Size(35, 13);
-            this.Infotxt.TabIndex = 17;
-            this.Infotxt.Text = "label7";
-            // 
             // Storage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,6 +265,7 @@
             this.Controls.Add(this.pnHeader);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Storage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StorageGUI";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.pnHeader.ResumeLayout(false);

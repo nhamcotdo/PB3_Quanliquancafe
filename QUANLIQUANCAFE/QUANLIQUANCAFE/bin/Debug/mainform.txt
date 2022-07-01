@@ -1,5 +1,4 @@
 ManaToolStripMenuItem;Quản lí;Manager
-ScheduleToolStripMenuItem;Lịch trực nhân viên;Staff schedule
 IFStaffToolStripMenuItem;Tài khoản nhân viên;Employee account
 khoToolStripMenuItem;Kho;Warehouse
 thuChiToolStripMenuItem;Thu chi;Revenue and expenditure
