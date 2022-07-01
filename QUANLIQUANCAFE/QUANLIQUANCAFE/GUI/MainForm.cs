@@ -128,6 +128,7 @@ namespace QUANLIQUANCAFE.GUI
         }
         private void LoadComponent()
         {
+            numericUpDown1.Value = 1;
             int w = this.flowLayoutTable.Width;
             //add Area to flowLayoutPanel
             flowLayoutTable.Controls.Clear();
