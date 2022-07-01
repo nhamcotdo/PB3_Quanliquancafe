@@ -76,6 +76,7 @@ namespace QUANLIQUANCAFE.GUI
         }
         public void AddcbbUnit()
         {
+            cbbUnit.Items.Clear();
             int count = 0;
             if (Quanli.Instance.langnow == "vi")
             {
@@ -113,8 +114,6 @@ namespace QUANLIQUANCAFE.GUI
                     Infotxt.Text = "Check in/ Check out";
                 }
             }
-
-
         }
         public void AddDatagrid()
         {
@@ -152,7 +151,6 @@ namespace QUANLIQUANCAFE.GUI
             string unit = cbbUnit.Text;
             string name = txtName.Text;
             string time = dateTimePicker1.Value.Date.ToString();
-            MessageBox.Show(time);
 
             if (!Quanli.Instance.CheckDatetime(id, datetime))
             {
@@ -215,7 +213,6 @@ namespace QUANLIQUANCAFE.GUI
             string unit = cbbUnit.Text;
             string name = txtName.Text;
             string time = dateTimePicker1.Value.Date.ToString();
-            MessageBox.Show(time);
 
             if (!Quanli.Instance.CheckDatetime(id, datetime))
             {
