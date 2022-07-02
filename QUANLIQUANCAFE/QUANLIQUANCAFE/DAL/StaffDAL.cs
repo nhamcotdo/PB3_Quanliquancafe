@@ -41,7 +41,7 @@ namespace QUANLIQUANCAFE.DAL
             DBHelper.Instance.ExecuteDB(query);
         }
 
-        public void InsertStaff(string StaffID, string StaffName, int PhoneNumber, string Address, DateTime DateIn, bool Sex)
+        public void InsertStaff(string StaffID, string StaffName, string PhoneNumber, string Address, DateTime DateIn, bool Sex)
         {
             string query = string.Format("Insert into Staff values('{0}',N'{1}','{2}',N'{3}',CONVERT(date, '{4}'),{5})", StaffID, StaffName, PhoneNumber, Address, DateIn.ToString("yyyyMMdd"), Sex ? 1 : 0);
             DBHelper.Instance.ExecuteDB(query);

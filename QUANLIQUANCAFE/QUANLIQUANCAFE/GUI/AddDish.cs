@@ -84,7 +84,7 @@ namespace QUANLIQUANCAFE.GUI
                     MessageBox.Show("Bạn chưa nhập giá");
                     return;
                 }
-                Quanli.Instance.AddDish(txtDishName.Text, txtDishID.Text, Convert.ToInt32(txtPrice.Text), cbbGroup.SelectedItem.ToString(), cbbSize.SelectedItem.ToString());
+                Quanli.Instance.AddDish(txtDishName.Text, txtDishID.Text, Convert.ToInt32(txtPrice.Text), String.Format("G00" + cbbGroup.SelectedIndex.ToString()), cbbSize.SelectedItem.ToString());
                 d();
                 this.Dispose();
             }

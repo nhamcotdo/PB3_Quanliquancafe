@@ -90,7 +90,7 @@ namespace QUANLIQUANCAFE.GUI
         {
             string id = txtID.Text;
             string Name = txtHT.Text;
-            int Phone = Convert.ToInt32(txtSDT.Text);
+            String Phone = txtSDT.Text;
             string Address = txtDC.Text;
             DateTime dateTime = Convert.ToDateTime(dateTimePicker1.Value);
             bool sex = true;

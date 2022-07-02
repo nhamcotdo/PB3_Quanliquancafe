@@ -415,7 +415,7 @@ namespace QUANLIQUANCAFE.BLL
 
 
 
-        public void InsertStaff(string StaffID, string StaffName, int PhoneNumber, string Address, DateTime DateIn, bool Sex)
+        public void InsertStaff(string StaffID, string StaffName, string PhoneNumber, string Address, DateTime DateIn, bool Sex)
         {
             StaffDAL.Instance.InsertStaff(StaffID, StaffName, PhoneNumber, Address, DateIn, Sex);
         }

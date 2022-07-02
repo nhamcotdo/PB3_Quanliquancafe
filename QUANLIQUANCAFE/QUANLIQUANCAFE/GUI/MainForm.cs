@@ -772,6 +772,11 @@ namespace QUANLIQUANCAFE.GUI
 
 
         }
+
+        private void LogoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 
 
