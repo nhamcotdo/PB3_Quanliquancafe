@@ -1,4 +1,4 @@
-Color;#5AB8EB
+Color;#8080C0
 White;Black
 Transparent;Black
-#0080C0;Black
+White;Black

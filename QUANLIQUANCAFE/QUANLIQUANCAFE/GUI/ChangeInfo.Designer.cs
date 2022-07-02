@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.rbFemale = new System.Windows.Forms.RadioButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.rbMale = new System.Windows.Forms.RadioButton();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
             this.cbHide = new System.Windows.Forms.CheckBox();
@@ -38,9 +41,6 @@
             this.txtAccount = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtStaffName = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.rbFemale = new System.Windows.Forms.RadioButton();
-            this.rbMale = new System.Windows.Forms.RadioButton();
             this.dtpDatein = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -75,10 +75,41 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtStaffID);
             this.panel1.Location = new System.Drawing.Point(48, 34);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(710, 399);
             this.panel1.TabIndex = 0;
+            // 
+            // rbFemale
+            // 
+            this.rbFemale.AutoSize = true;
+            this.rbFemale.Location = new System.Drawing.Point(548, 185);
+            this.rbFemale.Name = "rbFemale";
+            this.rbFemale.Size = new System.Drawing.Size(39, 17);
+            this.rbFemale.TabIndex = 20;
+            this.rbFemale.TabStop = true;
+            this.rbFemale.Text = "Nữ";
+            this.rbFemale.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(359, 185);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 13);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Giới tính";
+            // 
+            // rbMale
+            // 
+            this.rbMale.AutoSize = true;
+            this.rbMale.Location = new System.Drawing.Point(440, 185);
+            this.rbMale.Name = "rbMale";
+            this.rbMale.Size = new System.Drawing.Size(47, 17);
+            this.rbMale.TabIndex = 19;
+            this.rbMale.TabStop = true;
+            this.rbMale.Text = "Nam";
+            this.rbMale.UseVisualStyleBackColor = true;
             // 
             // btnCancel
             // 
@@ -124,6 +155,8 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(446, 282);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtPassword.Size = new System.Drawing.Size(101, 20);
             this.txtPassword.TabIndex = 44;
             // 
@@ -158,37 +191,6 @@
             this.txtStaffName.Name = "txtStaffName";
             this.txtStaffName.Size = new System.Drawing.Size(100, 20);
             this.txtStaffName.TabIndex = 40;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(359, 185);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 13);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Giới tính";
-            // 
-            // rbFemale
-            // 
-            this.rbFemale.AutoSize = true;
-            this.rbFemale.Location = new System.Drawing.Point(548, 185);
-            this.rbFemale.Name = "rbFemale";
-            this.rbFemale.Size = new System.Drawing.Size(39, 17);
-            this.rbFemale.TabIndex = 20;
-            this.rbFemale.TabStop = true;
-            this.rbFemale.Text = "Nữ";
-            this.rbFemale.UseVisualStyleBackColor = true;
-            // 
-            // rbMale
-            // 
-            this.rbMale.AutoSize = true;
-            this.rbMale.Location = new System.Drawing.Point(440, 185);
-            this.rbMale.Name = "rbMale";
-            this.rbMale.Size = new System.Drawing.Size(47, 17);
-            this.rbMale.TabIndex = 19;
-            this.rbMale.TabStop = true;
-            this.rbMale.Text = "Nam";
-            this.rbMale.UseVisualStyleBackColor = true;
             // 
             // dtpDatein
             // 

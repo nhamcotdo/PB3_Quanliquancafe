@@ -15,7 +15,8 @@ namespace QUANLIQUANCAFE.GUI
     public partial class GUICustom : Form
     {
         string backnow;
-
+        public delegate void Mydel();
+        public Mydel d;
 
         public GUICustom()
         {
@@ -169,6 +170,7 @@ namespace QUANLIQUANCAFE.GUI
                 sw.WriteLine(ColorTranslator.ToHtml(lbExample.BackColor) + ";" + ColorTranslator.ToHtml(lbExample.ForeColor));
                 sw.WriteLine(ColorTranslator.ToHtml(txtExample.BackColor) + ";" + ColorTranslator.ToHtml(txtExample.ForeColor));
             }
+            d();
             this.Dispose();
         }
 

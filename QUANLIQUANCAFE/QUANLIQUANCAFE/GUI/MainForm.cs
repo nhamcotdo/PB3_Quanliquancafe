@@ -754,7 +754,9 @@ namespace QUANLIQUANCAFE.GUI
 
         private void ToolStripMenuItemChangeColor_Click(object sender, EventArgs e)
         {
-            new GUICustom().Show();
+            GUICustom f = new GUICustom();
+            f.d = new GUICustom.Mydel(LoadDishGroup);
+            f.Show();
         }
 
         private void btnFree_Click(object sender, EventArgs e)
