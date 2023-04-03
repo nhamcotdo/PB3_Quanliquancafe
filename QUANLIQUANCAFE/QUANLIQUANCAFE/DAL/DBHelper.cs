@@ -16,8 +16,8 @@ namespace QUANLIQUANCAFE.DAL
         private static DBHelper instance;
 
         //String connectionSTR = @"Data Source=NHAMCOTDO\SQLEXPRESS;Initial Catalog=PBL3;User ID=nhamcotdo;Password=06042002";//Nhâm
-        String connectionSTR = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=PBL3;Integrated Security=True";//Linh
-        //String connectionSTR = @"Data Source=DESKTOP-4BO7E9S\SQLEXPRESS;Initial Catalog=PBL3;Integrated Security = true";//duc
+        //String connectionSTR = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=PBL3;Integrated Security=True";//Linh
+        String connectionSTR = @"Data Source=DESKTOP-4BO7E9S;Initial Catalog=PBL3;User ID=sa;Password=123";
 
         SqlConnection cnn;
         private DBHelper()
